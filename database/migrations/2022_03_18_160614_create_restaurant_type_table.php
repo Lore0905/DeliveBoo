@@ -15,13 +15,13 @@ class CreateRestaurantTypeTable extends Migration
     {
         Schema::create('restaurant_type', function (Blueprint $table) {
             $table->unsignedBigInteger('restaurant_id');
-            $table->foreign('restaurant')
+            $table->foreign('restaurant_id')
                 ->references('id')
-                ->on('restaurant');
+                ->on('restaurants');
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type')
+            $table->foreign('type_id')
                 ->references('id')
-                ->on('type');
+                ->on('types');
 
             $table->primary(['restaurant_id', 'type_id']);
         });
