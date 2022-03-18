@@ -20,7 +20,7 @@ class CreateFoods extends Migration
             $table->text('img')->nullable();
             $table->text('descriptions');
             $table->string('ingrediants', 220);
-            $price->decimal(5, 2);
+            $table->decimal('price', 5, 2);
             $table->timestamps();
         });
     }
