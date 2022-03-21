@@ -49931,8 +49931,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
