@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
 {
+    protected $table = 'Foods';
     // Relazione One to Many con Restaurant
 
     public function restaurant(){
