@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
+    protected $fillable = [
+        'name',
+        'address',
+        'image',
+        'vat',
+        'phone_number'
+    ];
+
     // Relazione One to One con User
 
     public function user(){
@@ -21,7 +29,8 @@ class Restaurant extends Model
     // Relazione Many to Many con Type
 
     public function types(){
-        return $this->belongToMany('App\Type');
+        return $this->belongsToMany('App\Type');
     }
+
 
 }

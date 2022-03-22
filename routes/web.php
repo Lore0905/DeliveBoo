@@ -21,7 +21,14 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function() {
         Route::get('/', 'HomeController@index')->name('home');
+
+        // Restaurant Create
+        Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create');
+
+        // Restaurant Store
+        Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
     });
+
 
 Route::get('{any}', function(){
     return view('guest.home');
