@@ -27,6 +27,9 @@ Route::middleware('auth')
 
         // Restaurant Store
         Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
+        
+        // Restaurant Show 
+        Route::get('/restaurant/{slug}', 'RestaurantController@show')->name('restaurant.show');
     });
 
 

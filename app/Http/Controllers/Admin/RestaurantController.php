@@ -48,9 +48,15 @@ class RestaurantController extends Controller
             $new_restaurant->types()->sync($form_data['types']);
         }
 
-        return redirect()->route('admin.home');
+        return redirect()->route('admin.restaurant.show', ['slug' => $new_restaurant->id]);
     }
 
+    public function show($id) {
+
+        $restaurant_to_show = Restaurant::findOrFail($id);
+        
+        return view('admin.restaurant.show', compact('restaurant_to_show'));
+    }
 
     // Funzione per la validazione
     protected function getValidationRules()
