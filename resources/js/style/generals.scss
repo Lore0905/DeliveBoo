@@ -1,0 +1,27 @@
+@import '~bootstrap/scss/bootstrap';
+@import './variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: 'IBM Plex Sans', sans-serif;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.m_button{
+    color: white;
+    text-decoration: none;
+    padding: 16px 25px;
+    background-color: $primary_color;
+    border-radius: 8px;
+
+    &:hover{
+        border: 1px solid white;
+        color: white;
+    }
+}
