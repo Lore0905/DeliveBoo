@@ -1,8 +1,8 @@
 <template>
     <div>
         <Header/>
-        <!-- <News /> -->
-        <!-- <Selection /> -->
+        <News />
+        <Selection />
         <Work />
     </div>
 </template>
