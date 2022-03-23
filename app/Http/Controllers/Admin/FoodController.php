@@ -59,7 +59,13 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-        //
+        $food = Food::findOrFail($id);
+        $user = Auth::user();
+        // dd($food->restaurant->user->id);
+        if($food->restaurant->user->id !== $user->id ) {
+            abort('403');
+        }
+        return view('admin.foods.show', compact('food'));
     }
 
     /**

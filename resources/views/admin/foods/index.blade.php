@@ -21,7 +21,7 @@
                         
                         {{-- buttons --}}
                         <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
+                            <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="card-link btn btn-primary">Dettagli piatto</a>
                         </div>
         
                     </div>
