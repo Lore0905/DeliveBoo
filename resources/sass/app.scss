@@ -1,13 +1,13 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// partials
+// Partials
 
-    // restaurants
-    @import 'partials/admin/restaurants/create.scss';
+
+// Restaurants
+@import '/admin/restaurants/create.scss';
+
+

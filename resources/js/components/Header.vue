@@ -1,9 +1,42 @@
 <template>
+    <header>
     <div class="container">
-        <header>
-            <h1>Work in progress...</h1>
-        </header>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="left">
+                <i class="fas fa-frog"></i>
+                <span>
+                    deliveboo
+                </span>
+            </div>
+            <div class="right">
+                <div class="m_button_header">
+                    <a href="#">
+                        <i class="fas fa-house-user"></i>
+                        <span>
+                            Registrati o accedi
+                        </span>
+                    </a>
+                </div>
+                <div class="m_button_header d-none d-sm-none d-md-block">
+                    <a href="#">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>
+                            Collabora con noi
+                        </span>
+                    </a>
+                </div>
+                <div class="m_button_header d-none d-sm-none d-md-block">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                        <span>
+                            Menu
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+</header>
 </template>
 
 <script>
@@ -11,3 +44,47 @@ export default {
     name: 'Header'
 }
 </script>
+
+<style lang="scss" scoped>
+@import '../style/variables.scss';
+@import '../style/generals.scss';
+
+header{
+    background-color: $primary_color;
+    padding: 20px 0;
+
+    .left{
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        
+        .m_button_header{
+            padding: 0 10px;
+
+            a{
+                color: $secondary_color;
+                text-decoration: none;
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px 15px;
+                border: 1px solid lightgray;
+                font-weight: 300;
+
+                &:hover{
+                    border: 2px solid lightgray;
+                }
+
+                i{
+                    color: $primary_color;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+</style>
