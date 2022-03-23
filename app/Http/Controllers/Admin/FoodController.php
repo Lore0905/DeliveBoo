@@ -92,7 +92,13 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        // trova il foods con l'id passato
+        $foods = Food::findOrFail($id);
+
+        // elimino il food
+        $foods->delete();
+
+        return redirect()->route('admin.foods.index');
     }
 }
