@@ -44,7 +44,7 @@
             {{-- price --}}
             <div class="mb-3">
                 <label for="price" class="form-label">prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="inserisci il prezzo">
+                <input type="number" class="form-control" id="price" name="price" placeholder="inserisci il prezzo" step=".01">
             </div>
 
             {{-- checkbox --}}

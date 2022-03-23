@@ -73,7 +73,7 @@ class FoodController extends Controller
 
         $new_food->save();
 
-        return redirect()->route('admin.restaurant.show', ['food' => $new_food->id]);
+        return redirect()->route('admin.foods.show', ['food' => $new_food->id]);
 
     }
 
@@ -87,7 +87,7 @@ class FoodController extends Controller
     {
         $food = Food::findOrFail($id);
         $user = Auth::user();
-        // dd($food->restaurant->user->id);
+
         if($food->restaurant->user->id !== $user->id ) {
             abort('403');
         }
@@ -102,7 +102,13 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::findOrFail($id);
+        $user = Auth::user();
+        if($food->restaurant->user->id !== $user->id ) {
+            abort('403');
+        }
+
+        return view('admin.foods.edit', compact('food'));
     }
 
     /**
@@ -114,7 +120,32 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $foods_data = $request->all();
+        $request->validate($this->foodValidationRules());
+
+        $food = Food::findOrFail($id);
+
+        if($foods_data['name'] != $food->name){
+            $foods_data['slug'] = $this->getUniqueSlugFromName($foods_data['name']);
+        }
+
+        if($foods_data['image']) {
+
+            // delete old file 
+            if($food->img) {
+                Storage::delete($food->img);
+            }
+
+            // upload new file 
+            $img_path = Storage::put('img', $foods_data['image']);
+
+            // path to column
+            $foods_data['img'] = $img_path;
+        }
+
+        $food->update($foods_data);
+
+        return redirect()->route('admin.posts.show', ['food' => $food->id]);
     }
 
     /**
