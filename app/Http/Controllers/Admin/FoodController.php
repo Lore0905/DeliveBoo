@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 use App\Food;
 use App\Type;
 
@@ -48,7 +49,25 @@ class FoodController extends Controller
     {
         $foods_data = $request->all();
 
-        dd($foods_data);
+        // Validation
+        $request->validate($this->foodValidationRules());
+
+        $new_food = new Food();
+
+        $new_food->fill($foods_data);
+
+        // Funzione Slug
+        $new_food->slug = $this->getUniqueSlugFromName($new_food->name);
+
+        // Funzione per restaurant_id
+        $user = Auth::user();
+
+        $new_food->restaurant_id = $user->restaurant->id;
+
+        $new_food->save();
+
+        return redirect()->route('admin.restaurant.show', ['food' => $new_food->id]);
+
     }
 
     /**
@@ -59,7 +78,6 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -94,5 +112,36 @@ class FoodController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function foodValidationRules()
+    {
+        return[
+            'name' => 'required|max:20',
+            'img' => 'image|max:1000',
+            'descriptions' => 'required|',
+            'ingrediants' => 'required|max:220',
+            'price' => 'required|numeric',
+            'visible' => 'between:0,1'
+        ];
+    }
+
+    // Funzione per lo slug
+    protected function getUniqueSlugFromName($name) {
+        // Controlliamo se esiste già un post con questo slug.
+        $slug = Str::slug($name);
+        $slug_base = $slug;
+        
+        $restaurant_found = Food::where('slug', '=', $slug)->first();
+        $counter = 1;
+        while($restaurant_found) {
+            // Se esiste, aggiungiamo -1 allo slug
+            // ricontrollo che non esista lo slug con -1, se esiste provo con -2
+            $slug = $slug_base . '-' . $counter;
+            $restaurant_found = Food::where('slug', '=', $slug)->first();
+            $counter++;
+        }
+
+        return $slug;
     }
 }
