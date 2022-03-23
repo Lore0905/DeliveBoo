@@ -20,7 +20,7 @@
             {{-- name --}}
             <div class="mb-3">
                 <label for="name" class="form-label">Nome del piatto</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="inserisci il nome del piatto">
+                <input type="text" class="form-control" id="name" name="name" placeholder="inserisci il nome del piatto" value="{{old('name')}}">
             </div>
 
             {{-- img --}}
@@ -32,26 +32,32 @@
             {{-- ingredienti --}}
             <div class="mb-3">
                 <label for="ingredienti" class="form-label">Ingredienti</label>
-                <input type="text" class="form-control" id="ingredienti" name="ingrediants" placeholder="inserisci i tuoi ingredienti">
+                <input type="text" class="form-control" id="ingredienti" name="ingrediants" placeholder="inserisci i tuoi ingredienti" value="{{old('ingrediants')}}">
             </div>
 
             {{-- description --}}
             <div class="mb-3">
                 <label for="descriptions" class="form-label">description</label>
-                <textarea class="form-control" id="descriptions" name="descriptions">test </textarea>
+                <textarea class="form-control" id="descriptions" name="descriptions">{{old('descriptions')}}</textarea>
             </div>
 
             {{-- price --}}
             <div class="mb-3">
                 <label for="price" class="form-label">prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="inserisci il prezzo">
+                <input type="number" class="form-control" id="price" name="price" placeholder="inserisci il prezzo" value="{{old('price')}}">
             </div>
 
             {{-- checkbox --}}
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="visible" checked value="1" name="visible">
+                <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="visible" 
+                value="1" 
+                name="visible" 
+                {{old('visible') == '1' ? 'checked' : ''}}>
                 <label for="visible"  >
-                    visibile
+                    Visibile
                 </label>
             </div>
 

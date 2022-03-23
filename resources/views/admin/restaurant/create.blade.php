@@ -19,7 +19,7 @@
         
             <div class="mb-3">
                 <label for="name" class="form-label">Nome del ristorante</label>
-                <input type="text" class="form-control" id="name" name="name" value="">
+                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
             </div>
             {{-- Image Input --}}
             <div class="mb-3">
@@ -28,21 +28,26 @@
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">Indirizzo del ristorante</label>
-                <input type="text" class="form-control" name="address" id="address" value="">
+                <input type="text" class="form-control" name="address" id="address" value="{{old('address')}}">
             </div>
             <div class="mb-3">
                 <label for="vat" class="form-label">Partita IVA </label>
-                <input type="text" class="form-control" id="vat" name="vat" value="">
+                <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat')}}">
             </div>
             <div class="mb-3">
                 <label for="phone_number" class="form-label">Numero di telefono</label>
-                <input type="text" class="form-control" id="phone_number" name="phone_number" value="">
+                <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{old('phone_number')}}">
             </div>
             {{-- checkbox --}}
             <div class="mb-3 wrapping-checkbox">
                 @foreach ($types as $type)
                     <div class="checkbox-restaurant">
-                        <input type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}">
+                        <input 
+                        type="checkbox" name="types[]" 
+                        id="type-{{$type->id}}" 
+                        value="{{$type->id}}"
+                        {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}
+                        >
                         <label for="type-{{$type->id}}">
                             {{$type->name}}
                         </label>
