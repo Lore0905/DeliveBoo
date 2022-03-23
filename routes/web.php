@@ -30,6 +30,9 @@ Route::middleware('auth')
         
         // Restaurant Show 
         Route::get('/restaurant/{id}', 'RestaurantController@show')->name('restaurant.show');
+
+        // crud food
+        Route::resource('foods', 'FoodController');
     });
 
 
