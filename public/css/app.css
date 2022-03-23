@@ -10962,3 +10962,25 @@ a.text-dark:focus {
   }
 }
 
+.container-input-restaurant {
+  font-size: 17px;
+}
+
+.container-input-restaurant .wrapping-checkbox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-input-restaurant .wrapping-checkbox .checkbox-restaurant {
+  padding: 10px 20px;
+  align-items: center;
+  font-size: 17px;
+}
+
+.container-input-restaurant .button-create-restaurant {
+  padding: 5px 20px;
+  font-size: 17px;
+  border-radius: 10px;
+}
+

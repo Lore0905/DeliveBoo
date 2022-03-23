@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data" class="container-input-restaurant">
             @csrf
             @method('POST')
         
@@ -33,16 +33,19 @@
                 <label for="phone_number" class="form-label">Numero di telefono</label>
                 <input type="text" class="form-control" id="phone_number" name="phone_number" value="">
             </div>
-            <div class="mb-3">
+            {{-- checkbox --}}
+            <div class="mb-3 wrapping-checkbox">
                 @foreach ($types as $type)
-                <input type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}">
-                <label for="type-{{$type->id}}">
-                    {{$type->name}}
-                </label>
+                    <div class="checkbox-restaurant">
+                        <input type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}">
+                        <label for="type-{{$type->id}}">
+                            {{$type->name}}
+                        </label>
+                    </div>
                 @endforeach
             </div>
                 
-            <button type="submit">
+            <button type="submit" class="button-create-restaurant">
                 Invia
             </button>
         </form>
