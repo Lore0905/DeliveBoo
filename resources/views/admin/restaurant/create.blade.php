@@ -21,6 +21,11 @@
                 <label for="name" class="form-label">Nome del ristorante</label>
                 <input type="text" class="form-control" id="name" name="name" value="">
             </div>
+            {{-- Image Input --}}
+            <div class="mb-3">
+                <input type="file" id="image" name="image" value="">
+                <label for="image">Immagine</label>
+            </div>
             <div class="mb-3">
                 <label for="address" class="form-label">Indirizzo del ristorante</label>
                 <input type="text" class="form-control" name="address" id="address" value="">

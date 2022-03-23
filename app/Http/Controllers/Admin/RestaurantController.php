@@ -9,6 +9,7 @@ use App\Restaurant;
 use Illuminate\Support\Str;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -40,6 +41,12 @@ class RestaurantController extends Controller
         // Funzione User
         $user = Auth::user();
         $new_restaurant->user_id = $user->id;
+
+        // Storage Immagine
+        if (isset($form_data['image'])){
+            $img_path = Storage::put('image', $form_data['image']);
+            $new_restaurant->image = $img_path;
+        }
 
         $new_restaurant->save();
 
