@@ -9,6 +9,15 @@ class Food extends Model
     protected $table = 'Foods';
     // Relazione One to Many con Restaurant
 
+    protected $fillable = [
+        'name',
+        'img',
+        'descriptions',
+        'ingrediants',
+        'price',
+        'visible'
+    ];
+
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }
