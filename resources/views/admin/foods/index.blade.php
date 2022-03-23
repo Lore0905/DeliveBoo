@@ -11,7 +11,7 @@
                     <div class="card mb-3" >
 
                         {{-- img --}}
-                        <img class="card-img-top" src="{{$food->img}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/' . $food->img) }}" alt="{{$food->name . 'immagine'}}">
 
                         {{-- body --}}
                         <div class="card-body">

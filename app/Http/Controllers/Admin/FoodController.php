@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Food;
 use App\Type;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
 {
@@ -64,7 +65,15 @@ class FoodController extends Controller
 
         $new_food->restaurant_id = $user->restaurant->id;
 
+        // Storage Immagine
+        if (isset($foods_data['img'])){
+            $img_path = Storage::put('img', $foods_data['img']);
+            $new_food->img = $img_path;
+        }
+
         $new_food->save();
+
+        dd($foods_data);
 
         return redirect()->route('admin.restaurant.show', ['food' => $new_food->id]);
 
