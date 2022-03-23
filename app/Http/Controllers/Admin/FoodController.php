@@ -128,8 +128,8 @@ class FoodController extends Controller
         if($foods_data['name'] != $food->name){
             $foods_data['slug'] = $this->getUniqueSlugFromName($foods_data['name']);
         }
-
-        if($foods_data['image']) {
+        
+        if(isset($foods_data['img'])) {
 
             // delete old file 
             if($food->img) {
@@ -137,7 +137,7 @@ class FoodController extends Controller
             }
 
             // upload new file 
-            $img_path = Storage::put('img', $foods_data['image']);
+            $img_path = Storage::put('img', $foods_data['img']);
 
             // path to column
             $foods_data['img'] = $img_path;
@@ -145,7 +145,7 @@ class FoodController extends Controller
 
         $food->update($foods_data);
 
-        return redirect()->route('admin.posts.show', ['food' => $food->id]);
+        return redirect()->route('admin.foods.show', ['food' => $food->id]);
     }
 
     /**

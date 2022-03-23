@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form action="{{route('admin.foods.udate',['food'=>$food->id])}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.foods.update',['food'=>$food->id])}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -25,7 +25,7 @@
 
             {{-- img --}}
             <div class="mb-3">
-                <label for="img" class="form-label">img</label>
+                <label for="img" class="form-label">Immagine</label>
                 <input type="file"  id="img" name="img" placeholder="inserisci la tua immagine" value="{{ old('img', $food->img) }}">
             </div>
 
@@ -44,7 +44,7 @@
             {{-- price --}}
             <div class="mb-3">
                 <label for="price" class="form-label">prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="inserisci il prezzo" value="{{ old('price', $food->price) }}">
+                <input type="number" step=".01" class="form-control" id="price" name="price" placeholder="inserisci il prezzo" value="{{ old('price', $food->price) }}">
             </div>
 
             {{-- checkbox --}}
