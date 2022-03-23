@@ -3,6 +3,16 @@
 @section('content')
     <div class="container">
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{route('admin.foods.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')
@@ -22,13 +32,13 @@
             {{-- ingredienti --}}
             <div class="mb-3">
                 <label for="ingredienti" class="form-label">Ingredienti</label>
-                <input type="text" class="form-control" id="ingredienti" name="ingredienti" placeholder="inserisci i tuoi ingredienti">
+                <input type="text" class="form-control" id="ingredienti" name="ingrediants" placeholder="inserisci i tuoi ingredienti">
             </div>
 
             {{-- description --}}
             <div class="mb-3">
-                <label for="description" class="form-label">description</label>
-                <textarea class="form-control">test </textarea>
+                <label for="descriptions" class="form-label">description</label>
+                <textarea class="form-control" id="descriptions" name="descriptions">test </textarea>
             </div>
 
             {{-- price --}}
