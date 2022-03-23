@@ -29,7 +29,7 @@ Route::middleware('auth')
         Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
         
         // Restaurant Show 
-        Route::get('/restaurant/{slug}', 'RestaurantController@show')->name('restaurant.show');
+        Route::get('/restaurant/{id}', 'RestaurantController@show')->name('restaurant.show');
     });
 
 
