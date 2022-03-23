@@ -13,11 +13,20 @@
 
             <p>{{ $food->descriptions }}</p>
 
-            {{-- <a class="btn btn-primary mb-2" href="{{ route('admin.restaurant.edit', ['food' => $food->id]) }}">Modifica piatto</a> --}}
-
             <p><span class="font-weight-bold">Ingredienti:</span> {{ $food->ingrediants }}</p>
 
             <div class="font-weight-bold">{{ $food->price }} €</div>
+
+            {{-- edit / delete buttons  --}}
+
+            <a class="btn btn-primary mb-2" href="{{ route('admin.foods.edit', ['food' => $food->id]) }}">Modifica piatto</a>
+
+            <form action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="post">
+                @csrf
+                @method('DELETE')
+    
+                <button class="btn btn-danger" onclick="return confirm('Sei sicuro di voler eliminare il piatto?')">Elimina</button>
+            </form>
         </div>
     </section>
 @endsection
