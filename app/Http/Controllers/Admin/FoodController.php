@@ -73,8 +73,6 @@ class FoodController extends Controller
 
         $new_food->save();
 
-        dd($foods_data);
-
         return redirect()->route('admin.restaurant.show', ['food' => $new_food->id]);
 
     }

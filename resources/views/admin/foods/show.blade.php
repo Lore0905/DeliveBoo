@@ -7,9 +7,9 @@
             <h1>{{ $food->name }}</h1>
             <div class="my-3"><span class="font-weight-bold">Slug:</span> {{ $food->slug }}</div>
 
-            {{-- @if ($food->img)
+            @if ($food->img)
                 <img class="" src="{{ asset('storage/' . $food->img) }}" alt="{{ $food->name }}">
-            @endif --}}
+            @endif
 
             <p>{{ $food->descriptions }}</p>
 
