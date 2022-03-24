@@ -2,6 +2,14 @@
 
 @section('content')
 
-    <h1>ciao sono la home</h1>
+    <h1>Benvenuto {{$user->name}}</h1>
+
+    <p>
+        {{$user->name}}
+    </p>
+
+    <p>
+        {{$user->email}}
+    </p>
     
 @endsection

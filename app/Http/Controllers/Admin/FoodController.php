@@ -156,11 +156,16 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {   
-        // trova il foods con l'id passato
-        $foods = Food::findOrFail($id);
+        // Trova il foods con l'id passato
+        $food = Food::findOrFail($id);
 
-        // elimino il food
-        $foods->delete();
+        // Eliminare la foto insieme al piatto
+        if ($food->img) {
+            Storage::delete($food->img);
+        }
+
+        // Elimino il food
+        $food->delete();
 
         return redirect()->route('admin.foods.index');
     }
