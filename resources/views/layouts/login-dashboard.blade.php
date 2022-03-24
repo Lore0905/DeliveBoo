@@ -16,17 +16,20 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    {{-- font awesome --}}
+    <script src="https://kit.fontawesome.com/bfab6b0bc8.js" crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-md-nowrap p-0">
+    <nav class="navbar navbar-expand-md flex-md-nowrap login-dashboard">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DeliveBoo</a>
         <ul class="navbar-nav px-3 ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();">
                     Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -37,31 +40,41 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4">
+            <nav class="col-md-2 d-none d-md-block sidebar py-4 nav-dashboard">
                 <div class="sidebar-sticky">
+
+                    {{-- ristorante --}}
+                    <div class="ristorante-dashboard">
+                        <div id="img-ristorante">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h6>nome ristorante</h6>
+                    </div>
+                    {{-- end ristorante --}}
+
                     <ul class="nav flex-column">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link active" href="{{ route('admin.home') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home "><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 Dashboard
                             </a>
                         </li>
                         @if ( Auth::user()->restaurant )
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route('admin.foods.index') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    <i class="fa-solid fa-burger icon"></i>
                                     Il mio Menù
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route('admin.foods.create') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    <i class="fa-solid fa-plus icon"></i>
                                     Crea il tuo piatto
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route('admin.orders') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    <i class="fa-solid fa-cart-shopping icon"></i>
                                     Visualizza i tuoi ordini
                                 </a>
                             </li>
