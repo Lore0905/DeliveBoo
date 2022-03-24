@@ -85,8 +85,8 @@ class RestaurantController extends Controller
             'name' => 'required|max:255',
             'image' => 'image|max:1000',
             'address' => 'required|max:255',
-            'vat' => 'required|numeric',
-            'phone_number' => 'required|numeric',
+            'vat' => 'required|numeric|unique:restaurants,vat',
+            'phone_number' => 'required|numeric|unique:restaurants,phone_number',
             'types' => 'required|exists:types,id'
         ];
     }
