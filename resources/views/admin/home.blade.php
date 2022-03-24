@@ -4,22 +4,16 @@
 
     <h1>Benvenuto {{$user->name}}</h1>
 
-    <p>
-        {{$user->name}}
-    </p>
-
-    <p>
-        {{$user->email}}
-    </p>
+    <div class="mb-3">{{$user->email}}</div>
 
     @if (isset($user->restaurant->user_id))
-        <p>
-            <a href="#">visualizza il tuo ristorante</a> 
-        </p>        
+        <div class="mb-3">
+            <a href={{ route('admin.restaurant.show', ['id' => $user->restaurant->id])  }}>Visualizza il tuo ristorante</a> 
+        </div>        
     @else
-        <p>
-            <a href="#">crea il tuo ristorante</a>
-        </p>
+        <div class="mb-3">
+            <a href={{ route('admin.restaurant.create') }}>Crea il tuo ristorante</a>
+        </div>
     @endif
     
     
