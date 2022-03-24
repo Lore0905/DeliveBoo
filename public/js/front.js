@@ -1808,7 +1808,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "right" }, [
               _c("div", { staticClass: "m_button_header" }, [
-                _c("a", { attrs: { href: "#" } }, [
+                _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
                   _c("i", { staticClass: "fas fa-house-user" }),
                   _vm._v(" "),
                   _c("span", [
