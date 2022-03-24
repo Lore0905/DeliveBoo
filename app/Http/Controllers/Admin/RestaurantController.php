@@ -16,12 +16,14 @@ class RestaurantController extends Controller
     public function create()
     {
         $types = Type::all();
+        $user = Auth::user();
 
         $data = [
             'types' => $types,
+            'user' => $user,
         ];
 
-        $user = Auth::user();
+        
 
         if (isset($user->restaurant->user_id)) {
             // return view('admin.restaurant.show', ['id' => $user->restaurant->id]);
