@@ -19,11 +19,13 @@ class OrderController extends Controller
         $orders_array = [];
 
         foreach ($orders as $order) {
-
+            
             foreach ($order->foods as $food) {
-
+                
                 if ($food->restaurant_id === $user->restaurant->id) {
-                    $order_array[] = $order;
+                   
+                    $orders_array[] = $order;
+                    
                 } 
             }
         }
@@ -31,7 +33,7 @@ class OrderController extends Controller
         $data = [
             'orders' => $orders_array
         ];
-
+        
         return view('admin.orders.index', $data);
     }
 }

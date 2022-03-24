@@ -35,7 +35,7 @@ Route::middleware('auth')
         Route::resource('foods', 'FoodController');
 
         // Orders Index
-        Route::get('/orders', 'OrderController@index');
+        Route::get('/orders', 'OrderController@index')->name('orders');
     });
 
 
