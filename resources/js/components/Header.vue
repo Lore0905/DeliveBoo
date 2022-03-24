@@ -10,7 +10,7 @@
             </div>
             <div class="right">
                 <div class="m_button_header">
-                    <a href="#">
+                    <a href="http://127.0.0.1:8000/admin">
                         <i class="fas fa-house-user"></i>
                         <span>
                             Registrati o accedi
