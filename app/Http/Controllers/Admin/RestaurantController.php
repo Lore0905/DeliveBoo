@@ -23,14 +23,14 @@ class RestaurantController extends Controller
 
         $user = Auth::user();
 
-        // if (isset($user->restaurant->user_id)) {
-        //     // return view('admin.restaurant.show', ['id' => $user->restaurant->id]);
-        //     return '404';
-        // } else {
-        //     return view('admin.restaurant.create', $data);
-        // }
+        if (isset($user->restaurant->user_id)) {
+            // return view('admin.restaurant.show', ['id' => $user->restaurant->id]);
+            return '404';
+        } else {
+            return view('admin.restaurant.create', $data);
+        }
 
-        return view('admin.restaurant.create', $data);
+        // return view('admin.restaurant.create', $data);
         
     }
 
