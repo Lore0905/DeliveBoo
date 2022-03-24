@@ -1808,7 +1808,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "right" }, [
               _c("div", { staticClass: "m_button_header" }, [
-                _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
+                _c("a", { attrs: { href: "/admin" } }, [
                   _c("i", { staticClass: "fas fa-house-user" }),
                   _vm._v(" "),
                   _c("span", [
@@ -14971,7 +14971,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
