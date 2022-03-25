@@ -1,6 +1,7 @@
 <template>
     <div>
         <Header/>
+        <Serchbox/>
         <!-- <News /> -->
         <Selection />
         <Work />
@@ -14,14 +15,16 @@ import Header from '../components/Header.vue';
 import News from '../components/News.vue';
 import Selection from '../components/Selection.vue';
 import Work from '../components/Work.vue';
+import Serchbox from '../components/Serchbox.vue';
 
 export default {
     name: 'App',
     components: {
         Header,
+        Serchbox,
         News,
         Selection,
-        Work
+        Work,
     }
 }
 </script>
