@@ -94,8 +94,7 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../style/variables.scss';
-@import '../style/generals.scss';
+@import '../../sass/partials/_variables.scss';
 
 .news{
     background-color: #f9fafa;

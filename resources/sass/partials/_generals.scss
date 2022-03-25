@@ -1,12 +1,5 @@
-@import '~bootstrap/scss/bootstrap';
-@import './variables.scss';
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    // font-family: 'IBM Plex Sans', sans-serif;
-}
+
 
 img{
     width: 100%;
@@ -24,4 +17,9 @@ img{
         border: 1px solid white;
         color: white;
     }
+}
+
+// logo
+.logo{
+    width: 60px;
 }

@@ -25,3 +25,8 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" >
+@import '../../sass/partials/_variables.scss';
+@import '../../sass/partials/_generals.scss';
+</style>

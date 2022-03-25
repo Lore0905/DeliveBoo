@@ -1,0 +1,33 @@
+// import
+@import '../../partials/_variables.scss';
+
+// Deliveboo
+.link-app{
+    display: flex;
+    align-items: center;
+}
+
+// ul-blade
+.ul-blade{
+    li{
+        a{
+            margin-left: 15px;
+            border-radius: 5px;
+            background-color: $primary_color;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            &#login{
+                color: white;
+                padding: 7px 16px;
+            }
+            &#register{
+                color: white;
+                padding: 7px 16px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                background-color: #2b74fa;
+            }
+        }
+    }
+}

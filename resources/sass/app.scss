@@ -7,12 +7,14 @@
 // -------------------------------------------------
 
 // Partials
-
+@import '/partials/_variables.scss';
+@import '/partials/_generals.scss';
 
 // Restaurants
 @import '/admin/restaurants/create.scss';
 
 // layout
 @import '/admin/layout/login-dashboard.scss';
+@import '/admin/layout/app.scss';
 
 
