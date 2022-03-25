@@ -73,6 +73,10 @@
                     </div>
                 @endforeach
             </div>
+            {{-- error --}}
+            @error('types')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
                 
             {{-- button --}}
             <button type="submit" class="button-create-restaurant">
