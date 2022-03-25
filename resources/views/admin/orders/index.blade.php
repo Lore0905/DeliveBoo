@@ -11,6 +11,14 @@
                 <div class="mb-2 text-center font-weight-bold">
                     {{$order->customer_name}}
                 </div>
+                {{-- <div class="mb-2">
+                    <span class="font-weight-bold">Data:</span>
+                    {{dd($order->foods->pivot)}}
+                    @foreach ($order->foods as $item)
+                        {{$item->pivot->date}}
+                        
+                    @endforeach
+                </div> --}}
                 <div class="mb-2">
                     <span class="font-weight-bold">Indirizzo:</span>
                     {{$order->customer_address}}
