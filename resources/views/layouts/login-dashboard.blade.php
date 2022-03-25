@@ -48,7 +48,7 @@
                         <div id="img-ristorante">
                             <i class="fa-solid fa-utensils"></i>
                         </div>
-                        <h6>nome ristorante</h6>
+                        <h6>{{Auth::user()->restaurant->name}}</h6>
                     </div>
                     {{-- end ristorante --}}
 

@@ -2312,15 +2312,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("News"),
-      _vm._v(" "),
-      _c("Selection"),
-      _vm._v(" "),
-      _c("Work"),
-    ],
+    [_c("Header"), _vm._v(" "), _c("Selection"), _vm._v(" "), _c("Work")],
     1
   )
 }
@@ -14971,7 +14963,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
