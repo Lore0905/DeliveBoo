@@ -10,13 +10,24 @@
 // ul-blade
 .ul-blade{
     li{
-        color: white;
         a{
-            padding: 5px 20px;
-            margin-left: 10px;
-            border-radius: 10px;
-            color: inherit;
+            margin-left: 15px;
+            border-radius: 5px;
             background-color: $primary_color;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            &#login{
+                color: white;
+                padding: 7px 16px;
+            }
+            &#register{
+                color: white;
+                padding: 7px 16px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                background-color: #2b74fa;
+            }
         }
     }
 }

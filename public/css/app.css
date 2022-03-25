@@ -11079,15 +11079,26 @@ img {
   align-items: center;
 }
 
-.ul-blade li {
-  color: white;
+.ul-blade li a {
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #00ccbc;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-.ul-blade li a {
-  padding: 5px 20px;
-  margin-left: 10px;
-  border-radius: 10px;
-  color: inherit;
-  background-color: #00ccbc;
+.ul-blade li a#login {
+  color: white;
+  padding: 7px 16px;
+}
+
+.ul-blade li a#register {
+  color: white;
+  padding: 7px 16px;
+}
+
+.ul-blade li a:hover {
+  transform: scale(1.1);
+  background-color: #2b74fa;
 }
 
