@@ -14,6 +14,7 @@ class CreateFoodOrderTable extends Migration
     public function up()
     {
         Schema::create('food_order', function (Blueprint $table) {
+
             $table->unsignedBigInteger('food_id');
             $table->foreign('food_id')
                 ->references('id')
@@ -27,7 +28,7 @@ class CreateFoodOrderTable extends Migration
             $table->primary(['food_id', 'order_id']);
 
             $table->unsignedSmallInteger('quantity');
-            $table->date('date');
+            $table->dateTime('date');
         });
     }
 
