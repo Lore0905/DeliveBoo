@@ -1,5 +1,5 @@
 // import
-@import '../../../js/style/variables.scss';
+@import '../../partials/_variables.scss';
 
 // start login-daschboard
 .login-dashboard{
@@ -9,9 +9,6 @@ border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
         color: $primary_color;
         display: flex;
         align-items: center;
-        .logo{
-            width: 60px;
-        }
     }
 }
 // end login dashboard

@@ -95,8 +95,7 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../style/variables.scss';
-@import '../style/generals.scss';
+@import '../../sass/partials/_variables.scss';
 
 .work{
     padding: 30px 0;

@@ -109,8 +109,7 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../style/variables.scss';
-@import '../style/generals.scss';
+@import '../../sass/partials/_variables.scss';
 
 .selection{
     padding: 20px 0;

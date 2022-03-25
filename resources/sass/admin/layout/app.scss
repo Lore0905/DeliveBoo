@@ -1,0 +1,22 @@
+// import
+@import '../../partials/_variables.scss';
+
+// Deliveboo
+.link-app{
+    display: flex;
+    align-items: center;
+}
+
+// ul-blade
+.ul-blade{
+    li{
+        color: white;
+        a{
+            padding: 5px 20px;
+            margin-left: 10px;
+            border-radius: 10px;
+            color: inherit;
+            background-color: $primary_color;
+        }
+    }
+}
