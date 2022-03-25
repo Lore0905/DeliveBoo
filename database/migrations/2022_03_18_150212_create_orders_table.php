@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('customer_name', 255);
             $table->string('customer_email', 255);
+            $table->string('customer_address', 255);
+            $table->string('customer_phone_number', 30)->unique();
             $table->string('payment_status')->default('In Progress');
             $table->decimal('total_amount', 9, 2);
             $table->timestamps();
