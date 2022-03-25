@@ -52,7 +52,11 @@
                             <img src="{{ asset('/img/ristorante.png') }}" alt="">
                             {{-- <i class="fa-solid fa-utensils"></i> --}}
                         </div>
-                        <h6>{{Auth::user()->restaurant->name}}</h6>
+                        @if (isset(Auth::user()->restaurant->name))
+                            <h6>{{Auth::user()->restaurant->name}}</h6>
+                        @else
+                            <h6>Nome del ristorante</h6>
+                        @endif
                     </div>
                     {{-- end ristorante --}}
 
