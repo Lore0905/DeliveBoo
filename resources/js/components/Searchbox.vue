@@ -10,18 +10,28 @@
                         <!-- title -->
                         <h1>I piatti che ami, a domicilio.</h1>
 
+                        <div>
+                            <div v-for="restaurant in restaurants" :key="restaurant.id">
+                                <div v-for="item in restaurant" :key="item.id">
+                                    {{item.name}}
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- select -->
                         <div class="wrapping-select">
                             <h6>Scegli la tipologia di ristorante che vuoi cercare</h6>
 
                             <div class="row">
                                 <div class="col-6">
-                                    <select name="" id="">
-                                        <option value="">Risotorante</option>
+                                    <select v-model="type_id" @change="getRestaurants()" name="" id="">
+                                        <option value="">
+                                            Cerca qualcosa
+                                        </option>
+                                        <option v-for="type in types" :key="type.id" :value="type.id">
+                                            {{type.name}}
+                                        </option>
                                     </select>
-                                </div>
-                                <div class="col-6">
-                                    <button type="button" class="btn btn-primary">Cerca</button>
                                 </div>
                             </div>
 
@@ -45,7 +55,33 @@
 
 <script>
 export default {
-    name: "Serchbox"
+    name: "Serchbox",
+    data: function(){
+        return{
+            types : [],
+            type_id : '',
+            restaurants: '',
+        }
+    },
+    methods: {
+        getTypes: function(){
+            axios.get('/api/types')
+            .then((response) => {
+                // console.log(response.data.types);
+                this.types = response.data.types;
+            });
+        },
+        getRestaurants: function(){
+            axios.get('/api/restaurants/' + this.type_id)
+            .then((response) =>{
+                this.restaurants = response.data.restaurants;
+                console.log(this.restaurants);
+            });
+        },
+    },
+    created: function(){
+        this.getTypes();
+    }
 }
 </script>
 
