@@ -75,7 +75,7 @@ class RestaurantController extends Controller
         $restaurant_to_show = Restaurant::findOrFail($id);
         $user = Auth::user();
         if($restaurant_to_show->user->id !== $user->id) {
-            abort('404');
+            abort('403');
         }
         return view('admin.restaurant.show', compact('restaurant_to_show'));
     }
