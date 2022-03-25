@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-        <News />
+        <!-- <News /> -->
         <Selection />
         <Work />
     </div>

@@ -10984,3 +10984,64 @@ a.text-dark:focus {
   border-radius: 10px;
 }
 
+.login-dashboard {
+  padding: 10px 40px;
+  border-bottom: 1px solid rgba(46, 51, 51, 0.1);
+}
+
+.login-dashboard a {
+  color: #00ccbc;
+}
+
+.nav-dashboard {
+  min-height: 100vh;
+  border-right: 1px solid rgba(46, 51, 51, 0.1);
+  padding: 10px 40px;
+}
+
+.nav-dashboard .sidebar-sticky .ristorante-dashboard {
+  display: flex;
+  background-color: #00ccbc;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 1px 1px 10px rgba(46, 51, 51, 0.5);
+}
+
+.nav-dashboard .sidebar-sticky .ristorante-dashboard #img-ristorante {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-dashboard .sidebar-sticky .ristorante-dashboard h6 {
+  margin: 0px;
+}
+
+.nav-dashboard .sidebar-sticky ul {
+  margin-top: 40px;
+}
+
+.nav-dashboard .sidebar-sticky ul li {
+  margin-bottom: 10px;
+}
+
+.nav-dashboard .sidebar-sticky ul li a {
+  color: #2e3333;
+}
+
+.nav-dashboard .sidebar-sticky ul li a .icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.nav-dashboard .sidebar-sticky ul li.active {
+  border-left: 4px solid #00ccbc;
+}
+
