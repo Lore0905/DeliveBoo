@@ -24,7 +24,10 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md flex-md-nowrap login-dashboard">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DeliveBoo</a>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+            <img src="{{ asset('/img/logo-senza-scritta.png') }}" alt="" class="logo">
+            <span>DeliveBoo</span>
+        </a>
         <ul class="navbar-nav px-3 ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"
@@ -46,7 +49,8 @@
                     {{-- ristorante --}}
                     <div class="ristorante-dashboard">
                         <div id="img-ristorante">
-                            <i class="fa-solid fa-utensils"></i>
+                            <img src="{{ asset('/img/ristorante.png') }}" alt="">
+                            {{-- <i class="fa-solid fa-utensils"></i> --}}
                         </div>
                         <h6>{{Auth::user()->restaurant->name}}</h6>
                     </div>

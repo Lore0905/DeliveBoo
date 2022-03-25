@@ -7,6 +7,11 @@ padding: 10px 40px;
 border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
     a{
         color: $primary_color;
+        display: flex;
+        align-items: center;
+        .logo{
+            width: 60px;
+        }
     }
 }
 // end login dashboard
@@ -28,14 +33,18 @@ border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
             padding: 10px;
             box-shadow: 1px 1px 10px rgba($color: #2e3333, $alpha: 0.5);
             #img-ristorante{
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
                 background-color: white;
                 margin: 0 10px;
                 border-radius: 50%;
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 justify-content: center;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             h6{
                 margin: 0px;
