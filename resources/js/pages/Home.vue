@@ -15,11 +15,27 @@ import Work from '../components/Work.vue';
 
 export default {
     name: 'Home',
+    data:function(){
+        return{
+            restaurants: [],
+        }
+    },
     components: {
         Header,
         News,
         Selection,
         Work
+    },
+    methods: {
+        getRestaurants: function(){
+            axios.get('/api/restaurants')
+            .then((response) => {
+                this.restaurants = response.data.restaurants;
+            });
+        }
+    },
+    created: function(){
+        this.getRestaurants();
     }
 }
 </script>

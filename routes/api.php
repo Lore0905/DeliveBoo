@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// API Products
+Route::get('/restaurants', 'Api\RestaurantController@index');
+
+Route::get('/restaurants/{select_type}', 'Api\RestaurantController@show');
+
+
