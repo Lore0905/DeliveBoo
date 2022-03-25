@@ -22,15 +22,17 @@
 @section('content')
     <div class="container">
         <section>
-            <h3 style="margin: 10px">Il tuo ristorante:</h3>
+            <h5>Il tuo ristorante:</h3>
             <div class="row">
 
                 <div class="card">
-                    <img src="{{ asset('storage/' . $restaurant_to_show->image ) }}" alt="{{ $restaurant_to_show->name . ' image' }}">
+
                     <div class="card-body">
-                      <h3 class="card-title">{{$restaurant_to_show->name}}</h5>
-                      <p class="card-text">Some description of the restaurant?</p>
+                        <h3 class="card-title">{{$restaurant_to_show->name}}</h5>
                     </div>
+
+                    <img src="{{ asset('storage/' . $restaurant_to_show->image ) }}" alt="{{ $restaurant_to_show->name . ' image' }}">
+                    
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <p style="font-weight: bolder" class="d-inline-block">Indirizzo:</p>
