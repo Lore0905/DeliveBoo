@@ -23,6 +23,8 @@ Route::get('/restaurants', 'Api\RestaurantController@index');
 
 Route::get('/restaurants/{select_type}', 'Api\RestaurantController@show');
 
+Route::get('/restaurant/{slug}', 'Api\RestaurantController@foods');
+
 // API Types
 Route::get('/types', 'Api\TypeController@index');
 

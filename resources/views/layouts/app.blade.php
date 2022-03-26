@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
 
                 {{-- link Laravel --}}
@@ -51,7 +51,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" id="register" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" id="register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                 </li>
                             @endif
                         @else
@@ -78,7 +78,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="padd">
             @yield('content')
         </main>
     </div>
