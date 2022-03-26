@@ -25,6 +25,6 @@ class Food extends Model
     // Relazione Many to Many con Order
 
     public function orders(){
-        return $this->belongsToMany('App\Order')->withPivot('date', 'quantity');
+        return $this->belongsToMany('App\Order')->withPivot('quantity');
     }
 }

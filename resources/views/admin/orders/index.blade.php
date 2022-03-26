@@ -7,18 +7,15 @@
 
     <div class="d-flex align-items-center p-2">
         @foreach ($orders as $order)
+        
             <div class="border mx-2 p-2">
                 <div class="mb-2 text-center font-weight-bold">
                     {{$order->customer_name}}
                 </div>
-                {{-- <div class="mb-2">
+                <div class="mb-2">
                     <span class="font-weight-bold">Data:</span>
-                    {{dd($order->foods->pivot)}}
-                    @foreach ($order->foods as $item)
-                        {{$item->pivot->date}}
-                        
-                    @endforeach
-                </div> --}}
+                    {{ $order->created_at->format('d/m - H:i') }}
+                </div>
                 <div class="mb-2">
                     <span class="font-weight-bold">Indirizzo:</span>
                     {{$order->customer_address}}
@@ -31,6 +28,16 @@
                     <span class="font-weight-bold">Email:</span>
                     {{$order->customer_email}}
                 </div>
+
+                <div class="mb-2">
+                    <span class="font-weight-bold">Piatto ordinato:</span>
+                    <ul>
+                        @foreach ($order->foods as $item)
+                            <li>{{ $item->name }} - {{$item->pivot->quantity}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
                 <div class="mb-2">
                     <span class="font-weight-bold">Totale:</span>
                     {{$order->total_amount}}€

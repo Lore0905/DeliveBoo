@@ -28,7 +28,6 @@ class CreateFoodOrderTable extends Migration
             $table->primary(['food_id', 'order_id']);
 
             $table->unsignedSmallInteger('quantity');
-            $table->dateTime('date');
         });
     }
 
