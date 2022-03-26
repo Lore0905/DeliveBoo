@@ -7,9 +7,10 @@
         </div>
 
         <!-- {{-- Riga superiore --}} -->
-        <div class="row py-4">
+        <div class="row">
             <div class="col-6">
                 <div class="image top">
+                    <img src="https://cdn.agrodolce.it/vnP3wy-Bi2SMpEaXmwshVH8IVPw=/2121x1414/smart/https://www.agrodolce.it/app/uploads/2021/09/istock-1286622470.jpg" alt="">
                 </div>
             </div>
             <div class="col-6 text">
@@ -31,7 +32,7 @@
         </div>
 
         <!-- {{-- Riga ingeriore --}} -->
-        <div class="row">
+        <div class="riga d-flex align-items-center">
             <div class="col-6 text">
                 <div class="">
                     <div class="title">
@@ -44,11 +45,11 @@
                     <div class="button-area">
                         <!-- {{-- App Store --}} -->
                         <button class="download" href="#">
-                            <div class="row">
-                                <div class="col-3">
+                            <div class="d-flex align-items-center">
+                                <div class="">
                                     <i class="fab fa-apple"></i>
                                 </div>
-                                <div class="col-9 button-text">
+                                <div class="button-text">
                                     <div class="top-text">
                                         Scarica su
                                     </div>
@@ -61,11 +62,11 @@
 
                         <!-- {{-- Google Play --}} -->
                         <button class="download" href="#">
-                            <div class="row">
-                                <div class="col-3">
+                            <div class="d-flex align-item-center">
+                                <div class="">
                                     <i class="fab fa-google-play"></i>
                                 </div>
-                                <div class="col-9 button-text">
+                                <div class=" button-text">
                                     <div class="top-text text-uppercase">
                                         Disponibile su
                                     </div>
@@ -80,6 +81,7 @@
             </div>
             <div class="col-6">
                 <div class="image bottom">
+                    <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple116/v4/0a/44/29/0a442918-ac0a-1c11-c4a5-0ecf1348bda4/Production-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="">
                 </div>
             </div>
         </div>
@@ -106,25 +108,32 @@
         font-style: italic;
     }
 
-    .row{
+    .riga{
+        width: 100%;
 
         .image{
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: contain;
+            // width: 100%;
+            // height: 100%;
+            // background-repeat: no-repeat;
+            // background-size: contain;
+            border: 1px solid black;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
 
-        .top{
-            background-image: url('https://cdn.agrodolce.it/vnP3wy-Bi2SMpEaXmwshVH8IVPw=/2121x1414/smart/https://www.agrodolce.it/app/uploads/2021/09/istock-1286622470.jpg');
-        }
+        // .top{
+        //     background-image: url('https://cdn.agrodolce.it/vnP3wy-Bi2SMpEaXmwshVH8IVPw=/2121x1414/smart/https://www.agrodolce.it/app/uploads/2021/09/istock-1286622470.jpg');
+        // }
 
-        .bottom{
-            background-image: url('https://is5-ssl.mzstatic.com/image/thumb/Purple116/v4/0a/44/29/0a442918-ac0a-1c11-c4a5-0ecf1348bda4/Production-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png');
-        }
+        // .bottom{
+        //     background-image: url('https://is5-ssl.mzstatic.com/image/thumb/Purple116/v4/0a/44/29/0a442918-ac0a-1c11-c4a5-0ecf1348bda4/Production-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png');
+        // }
 
         .text{
-            background-color: white;
+            background-color: red;
             color: $secondary_color;
 
             .title{
@@ -147,22 +156,24 @@
                     background-color: black;
                     border: 1px solid lightgray;
                     border-radius: 10px;
+                    margin-bottom: 10px;
 
                     i{
                         color: white;
                         font-size: 35px;
+                        margin-right: 10px;
                         // vertical-align: middle;
                     }
 
                     .button-text{
 
                         .top-text{
-                            font-size: 12px;
+                            font-size: 10px;
                             text-align: left;
                         }
 
                         .bottom-text{
-                            font-size: 20px;
+                            font-size: 15px;
                             text-align: left;
                         }
                     }
