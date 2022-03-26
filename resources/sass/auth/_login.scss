@@ -1,0 +1,25 @@
+@import '../partials/_variables.scss';
+
+.login{
+    padding: 150px 0;
+    background-color: $primary_color;
+    height: 100vh;
+}
+
+.btn-deliveboo{
+    background-color: $primary_color;
+    border: 1px solid $primary_color;
+    color: white;
+
+    &:hover{
+        color: $secondary_color;
+    }
+}
+
+.delive-link{
+    color: $primary_color;
+
+    &:hover{
+        color: $secondary_color;
+    }
+}

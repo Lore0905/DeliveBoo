@@ -13,8 +13,11 @@
 // Restaurants
 @import '/admin/restaurants/create.scss';
 
-// layout
+// Layout
 @import '/admin/layout/login-dashboard.scss';
-@import '/admin/layout/app.scss';
+@import '/admin/layout/layout_app.scss';
+
+// Auth
+@import '/auth/_login.scss';
 
 

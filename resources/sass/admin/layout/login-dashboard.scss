@@ -3,13 +3,36 @@
 
 // start login-daschboard
 .login-dashboard{
-padding: 10px 40px;
-border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
-    a{
-        color: $primary_color;
-        display: flex;
-        align-items: center;
-    }
+    background-color: $primary_color;
+    padding: 10px 40px;
+    border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
+        a{
+            color: white;
+            display: flex;
+            align-items: center;
+
+            span{
+                font-size: 25px;
+            }
+
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        .nav-link{
+            border: 1px solid white;
+            border-radius: 10px;
+            font-size: 18px;
+
+            &:hover{
+                border: 2px solid white;
+                text-decoration: underline;
+            }
+        }
 }
 // end login dashboard
 
