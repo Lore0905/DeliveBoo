@@ -23,13 +23,15 @@ class OrderController extends Controller
             foreach ($order->foods as $food) {
                 
                 if ($food->restaurant_id === $user->restaurant->id) {
-                   
-                    $orders_array[] = $order;
+                    
+                    if(!in_array($order, $orders_array)) {
+                        $orders_array[] = $order;
+                    }
                     
                 } 
             }
         }
-
+        
         $data = [
             'orders' => $orders_array
         ];
