@@ -89,7 +89,7 @@ class FoodController extends Controller
         $user = Auth::user();
 
         if($food->restaurant->user->id !== $user->id ) {
-            abort('403');
+            abort(404);
         }
         return view('admin.foods.show', compact('food'));
     }
@@ -105,7 +105,7 @@ class FoodController extends Controller
         $food = Food::findOrFail($id);
         $user = Auth::user();
         if($food->restaurant->user->id !== $user->id ) {
-            abort('403');
+            abort(404);
         }
 
         return view('admin.foods.edit', compact('food'));
