@@ -13,7 +13,7 @@
                         <div>
                             <div v-for="restaurant in restaurants" :key="restaurant.id">
                                 <div v-for="item in restaurant" :key="item.id">
-                                    {{item.name}}
+                                    <router-link class="link-to" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">{{item.name}}</router-link>
                                 </div>
                             </div>
                         </div>
