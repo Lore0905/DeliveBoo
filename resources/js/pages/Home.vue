@@ -2,7 +2,7 @@
     <div>
         <Header/>
         <Searchbox/>
-        <News />
+        <!-- <News /> -->
         <Selection />
         <Work />
     </div>
@@ -10,7 +10,7 @@
 
 <script>
 import Header from '../components/Header.vue';
-import News from '../components/News.vue';
+// import News from '../components/News.vue';
 import Selection from '../components/Selection.vue';
 import Work from '../components/Work.vue';
 import Searchbox from '../components/Searchbox.vue';
@@ -25,7 +25,7 @@ export default {
     components: {
         Header,
         Searchbox,
-        News,
+        // News,
         Selection,
         Work
     },
