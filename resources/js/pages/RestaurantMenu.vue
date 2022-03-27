@@ -1,6 +1,9 @@
 <template>
   <div>
-      <h1>ciao sono il menu</h1>
+      <h1>{{ restaurant.name }}</h1>
+      <div v-for="food in menu" :key="food.id">
+          {{food.name}}
+      </div>
   </div>
 </template>
 
@@ -9,15 +12,20 @@ export default {
     name: 'RestaurantMenu',
     data: function() {
         return {
-            menu: {}
+            menu: {},
+            restaurant: '',
         }
     },
     methods: {
         getMenu: function() {
+
             axios.get('/api/restaurant/' + this.$route.params.slug)
             .then((response) => {
                 this.menu = response.data.results.foods;
+                this.restaurant = response.data.results;
+                // console.log(this.menu);
             });
+
         }
     },
     created: function() {

@@ -2123,13 +2123,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Serchbox",
   data: function data() {
     return {
       types: [],
-      type_id: '',
-      restaurants: ''
+      array_types_id: [],
+      restaurants: []
     };
   },
   methods: {
@@ -2137,17 +2146,28 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/api/types').then(function (response) {
-        // console.log(response.data.types);
         _this.types = response.data.types;
       });
     },
     getRestaurants: function getRestaurants() {
       var _this2 = this;
 
-      axios.get('/api/restaurants/' + this.type_id).then(function (response) {
-        _this2.restaurants = response.data.restaurants;
-        console.log(_this2.restaurants);
+      // svuota l'array prima di una nuova chiamata 
+      this.restaurants = [];
+      this.array_types_id.forEach(function (type) {
+        axios.get('/api/restaurants/' + type).then(function (response) {
+          _this2.restaurants.push(response.data.restaurants);
+        });
       });
+    },
+    getTypeValue: function getTypeValue(n) {
+      // n argument: is a number
+      if (!this.array_types_id.includes(n)) {
+        this.array_types_id.push(n);
+      } else {
+        // indexOf() dichiara l'indice di n presente nell'array , passandoglielo come argomento.  
+        this.array_types_id.splice(this.array_types_id.indexOf(n), 1);
+      }
     }
   },
   created: function created() {
@@ -2455,11 +2475,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
   data: function data() {
     return {
-      menu: {}
+      menu: {},
+      restaurant: ''
     };
   },
   methods: {
@@ -2468,6 +2492,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/api/restaurant/' + this.$route.params.slug).then(function (response) {
         _this.menu = response.data.results.foods;
+        _this.restaurant = response.data.results; // console.log(this.menu);
       });
     }
   },
@@ -2574,7 +2599,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  height: 50vh;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col-6 h1 {\n  color: black;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select h6 {\n  text-align: left;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select select {\n  width: 80%;\n  border-radius: 5px;\n}", ""]);
+exports.push([module.i, ".wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  height: 50vh;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col-6 h1 {\n  color: black;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select h6 {\n  text-align: left;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .types-container .type-box {\n  background-color: lightgreen;\n  text-transform: capitalize;\n  color: #2e3333;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .ms_btn {\n  background-color: #00ccbc;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -4146,26 +4171,33 @@ var render = function () {
                 return _c(
                   "div",
                   { key: restaurant.id },
-                  _vm._l(restaurant, function (item) {
+                  _vm._l(restaurant, function (items) {
                     return _c(
                       "div",
-                      { key: item.id },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "link-to",
-                            attrs: {
-                              to: {
-                                name: "restaurant-menu",
-                                params: { slug: item.slug },
+                      { key: items.id },
+                      _vm._l(items, function (item) {
+                        return _c(
+                          "div",
+                          { key: item.id },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "link-to",
+                                attrs: {
+                                  to: {
+                                    name: "restaurant-menu",
+                                    params: { slug: item.slug },
+                                  },
+                                },
                               },
-                            },
-                          },
-                          [_vm._v(_vm._s(item.name))]
-                        ),
-                      ],
-                      1
+                              [_vm._v(_vm._s(item.name))]
+                            ),
+                          ],
+                          1
+                        )
+                      }),
+                      0
                     )
                   }),
                   0
@@ -4180,63 +4212,53 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col" }, [
                   _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type_id,
-                          expression: "type_id",
-                        },
-                      ],
-                      attrs: { name: "", id: "" },
-                      on: {
-                        change: [
-                          function ($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function (o) {
-                                return o.selected
-                              })
-                              .map(function (o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.type_id = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          },
-                          function ($event) {
+                    "div",
+                    { staticClass: "types-container d-flex flex-wrap my-2" },
+                    _vm._l(_vm.types, function (type) {
+                      return _c(
+                        "div",
+                        { key: type.id, staticClass: "type-box my-1 mx-1" },
+                        [
+                          _c(
+                            "label",
+                            { attrs: { for: "single-type-" + type.id } },
+                            [_vm._v(_vm._s(type.name))]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              type: "checkbox",
+                              id: "single-type-" + type.id,
+                              value: "type.id",
+                            },
+                            on: {
+                              click: function ($event) {
+                                return _vm.getTypeValue(type.id)
+                              },
+                            },
+                          }),
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn ms_btn",
+                        on: {
+                          click: function ($event) {
                             return _vm.getRestaurants()
                           },
-                        ],
+                        },
                       },
-                    },
-                    [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v(
-                          "\n                                          Cerca qualcosa\n                                      "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _vm._l(_vm.types, function (type) {
-                        return _c(
-                          "option",
-                          { key: type.id, domProps: { value: type.id } },
-                          [
-                            _vm._v(
-                              "\n                                          " +
-                                _vm._s(type.name) +
-                                "\n                                      "
-                            ),
-                          ]
-                        )
-                      }),
-                    ],
-                    2
-                  ),
+                      [_vm._v("Cerca")]
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -4611,16 +4633,21 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]),
+      _vm._v(" "),
+      _vm._l(_vm.menu, function (food) {
+        return _c("div", { key: food.id }, [
+          _vm._v("\n        " + _vm._s(food.name) + "\n    "),
+        ])
+      }),
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("ciao sono il menu")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

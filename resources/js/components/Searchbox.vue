@@ -12,8 +12,10 @@
 
                         <div>
                             <div v-for="restaurant in restaurants" :key="restaurant.id">
-                                <div v-for="item in restaurant" :key="item.id">
-                                    <router-link class="link-to" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">{{item.name}}</router-link>
+                                <div v-for="items in restaurant" :key="items.id">
+                                    <div v-for="item in items" :key="item.id">
+                                        <router-link class="link-to" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">{{item.name}}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -23,15 +25,22 @@
                             <h6>Scegli la tipologia di ristorante che vuoi cercare</h6>
 
                             <div class="row">
-                                <div class="col-6">
-                                    <select v-model="type_id" @change="getRestaurants()" name="" id="">
-                                        <option value="">
-                                            Cerca qualcosa
-                                        </option>
-                                        <option v-for="type in types" :key="type.id" :value="type.id">
-                                            {{type.name}}
-                                        </option>
-                                    </select>
+                                <div class="col">
+
+                                    <!-- checkbox with types  -->
+                                    <div class="types-container d-flex flex-wrap my-2">
+                                        <div class="type-box my-1 mx-1" v-for="type in types" :key="type.id">
+
+                                            <!-- new // test -->
+                                            <label :for="'single-type-' + type.id">{{type.name}}</label>
+                                            <input @click="getTypeValue(type.id)" type="checkbox" :id="'single-type-' + type.id" value="type.id">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- test button to get filtered restaurants -->
+                                    <div>
+                                        <button class="btn ms_btn" @click="getRestaurants()">Cerca</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -59,25 +68,42 @@ export default {
     data: function(){
         return{
             types : [],
-            type_id : '',
-            restaurants: '',
+            array_types_id : [],
+            restaurants: [],
         }
     },
     methods: {
         getTypes: function(){
+
             axios.get('/api/types')
             .then((response) => {
-                // console.log(response.data.types);
                 this.types = response.data.types;
             });
+
         },
         getRestaurants: function(){
-            axios.get('/api/restaurants/' + this.type_id)
-            .then((response) =>{
-                this.restaurants = response.data.restaurants;
-                console.log(this.restaurants);
+
+            // svuota l'array prima di una nuova chiamata 
+            this.restaurants = [];
+
+            this.array_types_id.forEach(type => {
+
+                axios.get('/api/restaurants/' + type)
+                .then((response) =>{
+                    this.restaurants.push(response.data.restaurants);
+                });
+
             });
         },
+        getTypeValue: function(n) {
+            // n argument: is a number
+            if(!this.array_types_id.includes(n)) {
+                this.array_types_id.push(n);
+            } else {
+                // indexOf() dichiara l'indice di n presente nell'array , passandoglielo come argomento.  
+                this.array_types_id.splice(this.array_types_id.indexOf(n), 1);
+            }
+        }
     },
     created: function(){
         this.getTypes();
@@ -114,11 +140,27 @@ export default {
                     h6{
                         text-align: left;
                     }
-                    select{
-                        width: 80%;
-                        border-radius: 5px;
-                        
+                    // select{
+                    //     width: 80%;
+                    //     border-radius: 5px;  
+                    // }
+                    .row {
+                        .col {
+                            .types-container {
+                                .type-box {
+                                    // test 
+                                    background-color: lightgreen;
+                                    text-transform: capitalize;
+                                    color: $secondary_color;
+                                }
+                            }
+                            .ms_btn {
+                                background-color: $primary_color;
+                                color: white;
+                            }
+                        }
                     }
+
                 }
             }
         }
