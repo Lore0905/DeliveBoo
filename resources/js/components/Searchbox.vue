@@ -145,7 +145,7 @@ export default {
 .wrapping-serchbox{
     background-color: $primary_color;
     min-width: 100%;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
     position: relative;
     padding: 50px 0px;
