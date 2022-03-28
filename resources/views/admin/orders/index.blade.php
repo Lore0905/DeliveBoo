@@ -4,7 +4,12 @@
     <h1>
         Ordini
     </h1>
-
+    <div class="py-5">
+        {{-- se l'array è vuoto, significa che il ristorante non ha ordini --}}
+        @if (empty($orders))
+            <h2>non hai ancora ordini</h2>
+        @else
+    </div>
     <div class="d-flex align-items-center p-2">
         @foreach ($orders as $order)
         
@@ -45,4 +50,6 @@
             </div>
         @endforeach
     </div>
+    @endif
+    
 @endsection
