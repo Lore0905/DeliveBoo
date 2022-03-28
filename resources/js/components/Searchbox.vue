@@ -42,7 +42,7 @@
 
                                             <!-- test button to get filtered restaurants -->
                                             <div>
-                                                <button class="btn ms_btn" @click="getRestaurants()">Cerca</button>
+                                                <button class="btn ms_btn" @click="getRestaurants(), displaySearch = false">Cerca</button>
                                             </div>
                                         </div>
                                     </div>
