@@ -5,7 +5,7 @@
                 <div class="row">
 
                     <!-- COL -->
-                    <div class="col-6 ">
+                    <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-6">
 
                         <!-- title -->
                         <h1>I piatti che ami, a domicilio.</h1>
@@ -53,7 +53,7 @@
                     </div>
 
                     <!-- COL -->
-                    <div class="col-6">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                         <img src="https://cwa.roocdn.com/_next/static/media/campaign.df080c2b8ecbb022c066558c655167a1.svg" alt="">
                     </div>
                 </div>
@@ -153,10 +153,14 @@ export default {
     .container{
         
         .row{
-            .col-6{
+            .col{
+                margin-bottom: 20px;
                 // title
                 h1{
                     color: black;
+                    font-weight: 600;
+                    text-align: center;
+                    padding-bottom: 10px;
                 }
                 // select
                 .wrapping-select{
@@ -167,22 +171,11 @@ export default {
                     z-index: 100;
                     
                     h6{
-                        text-align: left;
+                        text-align: center;
+                        padding-bottom: 10px;
                     }
-                    // select{
-                    //     width: 80%;
-                    //     border-radius: 5px;  
-                    // }
                     .row {
                         .col {
-                            .types-container {
-                                .type-box {
-                                    // test 
-                                    background-color: lightgreen;
-                                    text-transform: capitalize;
-                                    color: $secondary_color;
-                                }
-                            }
                             .ms_btn {
                                 background-color: $primary_color;
                                 color: white;
@@ -209,6 +202,8 @@ export default {
     .search-menu{
         display: none;
         position: absolute;
+        text-transform: capitalize;
+        z-index: 2;
         top: 60px;
         left: 0;
 

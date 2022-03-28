@@ -68,6 +68,7 @@ header{
 
             a{
                 color: $secondary_color;
+                display: inline-block;
                 text-decoration: none;
                 background-color: white;
                 border-radius: 10px;
