@@ -1926,6 +1926,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -1934,7 +1937,12 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     selectedElement: Array
   },
-  methods: {}
+  methods: {
+    deleteElement: function deleteElement(element) {
+      this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+      element.quantity = 0;
+    }
+  }
 });
 
 /***/ }),
@@ -2479,8 +2487,7 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         this.selectedElement.push(element);
-      } // console.log(this.selectedElement);
-
+      }
     },
     changeValue: function changeValue(food, submitType) {
       var _this2 = this;
@@ -3940,11 +3947,24 @@ var render = function () {
             _vm._v("\n                " + _vm._s(food.name) + "\n            "),
           ]),
           _vm._v(" "),
-          _c("div", [
+          _c("span", [
             _vm._v(
               "\n                " + _vm._s(food.quantity) + "\n            "
             ),
           ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              on: {
+                click: function ($event) {
+                  return _vm.deleteElement(food)
+                },
+              },
+            },
+            [_c("i", { staticClass: "fas fa-trash" })]
+          ),
         ])
       }),
       0

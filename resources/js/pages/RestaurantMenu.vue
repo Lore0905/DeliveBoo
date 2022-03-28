@@ -74,8 +74,6 @@ export default {
                 }
                 this.selectedElement.push(element);
             }
-            
-            // console.log(this.selectedElement);
 
         },
         changeValue: function(food, submitType){
