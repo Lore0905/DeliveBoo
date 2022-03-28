@@ -2028,13 +2028,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Serchbox",
   data: function data() {
     return {
       types: [],
       array_types_id: [],
-      restaurants: []
+      restaurants: [],
+      displaySearch: false
     };
   },
   methods: {
@@ -2475,7 +2481,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  height: 50vh;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col-6 h1 {\n  color: black;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select h6 {\n  text-align: left;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .types-container .type-box {\n  background-color: lightgreen;\n  text-transform: capitalize;\n  color: #2e3333;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .ms_btn {\n  background-color: #00ccbc;\n  color: white;\n}", ""]);
+exports.push([module.i, "@-webkit-keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@-webkit-keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n@keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n.wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  height: 50vh;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col-6 h1 {\n  color: black;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select h6 {\n  text-align: left;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .types-container .type-box {\n  background-color: lightgreen;\n  text-transform: capitalize;\n  color: #2e3333;\n}\n.wrapping-serchbox .container .row .col-6 .wrapping-select .row .col .ms_btn {\n  background-color: #00ccbc;\n  color: white;\n}\n.wrapping-serchbox .dropdown-test {\n  position: relative;\n}\n.wrapping-serchbox .search-menu {\n  display: none;\n  position: absolute;\n  top: 60px;\n  left: 0;\n  width: 100%;\n  background-color: white;\n  color: #2e3333;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid lightgray;\n  box-shadow: 5px 5px 15px -5px #000000;\n  -webkit-animation: reverseGrowDown 500ms linear;\n          animation: reverseGrowDown 500ms linear;\n  transform-origin: center top;\n}\n.wrapping-serchbox .search-menu.active {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n  align-items: space-around;\n  -webkit-animation: growDown 500ms linear;\n          animation: growDown 500ms linear;\n  transform-origin: top center;\n}\n.wrapping-serchbox button {\n  padding: 0 10px;\n  color: #2e3333;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 2px solid lightgray;\n  font-weight: 300;\n}\n.wrapping-serchbox button:hover {\n  border: 2px solid lightgray;\n}\n.wrapping-serchbox button i {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
 
 // exports
 
@@ -3916,50 +3922,74 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col" }, [
-                  _c(
-                    "div",
-                    { staticClass: "types-container d-flex flex-wrap my-2" },
-                    _vm._l(_vm.types, function (type) {
-                      return _c(
-                        "div",
-                        { key: type.id, staticClass: "type-box my-1 mx-1" },
-                        [
-                          _c(
-                            "label",
-                            { attrs: { for: "single-type-" + type.id } },
-                            [_vm._v(_vm._s(type.name))]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: {
-                              type: "checkbox",
-                              id: "single-type-" + type.id,
-                              value: "type.id",
-                            },
-                            on: {
-                              click: function ($event) {
-                                return _vm.getTypeValue(type.id)
-                              },
-                            },
-                          }),
-                        ]
-                      )
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c("div", [
+                  _c("div", { staticClass: "dropdown-test" }, [
                     _c(
                       "button",
                       {
-                        staticClass: "btn ms_btn",
+                        staticClass: "search-button",
                         on: {
                           click: function ($event) {
-                            return _vm.getRestaurants()
+                            _vm.displaySearch = !_vm.displaySearch
                           },
                         },
                       },
-                      [_vm._v("Cerca")]
+                      [
+                        _c("i", { staticClass: "fas fa-search" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("Cerca qualcosa")]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "search-menu",
+                        class: _vm.displaySearch == true ? "active" : "",
+                      },
+                      [
+                        _vm._l(_vm.types, function (type) {
+                          return _c(
+                            "div",
+                            { key: type.id, staticClass: "type-box my-1 mx-1" },
+                            [
+                              _c(
+                                "label",
+                                { attrs: { for: "single-type-" + type.id } },
+                                [_vm._v(_vm._s(type.name))]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "checkbox",
+                                  id: "single-type-" + type.id,
+                                  value: "type.id",
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.getTypeValue(type.id)
+                                  },
+                                },
+                              }),
+                            ]
+                          )
+                        }),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn ms_btn",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.getRestaurants()
+                                },
+                              },
+                            },
+                            [_vm._v("Cerca")]
+                          ),
+                        ]),
+                      ],
+                      2
                     ),
                   ]),
                 ]),
@@ -20495,7 +20525,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

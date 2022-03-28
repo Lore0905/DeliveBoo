@@ -27,19 +27,24 @@
                             <div class="row">
                                 <div class="col">
 
-                                    <!-- checkbox with types  -->
-                                    <div class="types-container d-flex flex-wrap my-2">
-                                        <div class="type-box my-1 mx-1" v-for="type in types" :key="type.id">
+                                    <div class="dropdown-test">
+                                        <button class="search-button" @click="displaySearch = !displaySearch" >
+                                            <i class="fas fa-search"></i>
+                                            <span>Cerca qualcosa</span>
+                                        </button>
+                                        <div class="search-menu" :class=" displaySearch == true ? 'active' : '' ">
+                                            <div class="type-box my-1 mx-1" v-for="type in types" :key="type.id">
 
-                                            <!-- new // test -->
-                                            <label :for="'single-type-' + type.id">{{type.name}}</label>
-                                            <input @click="getTypeValue(type.id)" type="checkbox" :id="'single-type-' + type.id" value="type.id">
+                                                <!-- new // test -->
+                                                <label :for="'single-type-' + type.id">{{type.name}}</label>
+                                                <input @click="getTypeValue(type.id)" type="checkbox" :id="'single-type-' + type.id" value="type.id">
+                                            </div>
+
+                                            <!-- test button to get filtered restaurants -->
+                                            <div>
+                                                <button class="btn ms_btn" @click="getRestaurants()">Cerca</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <!-- test button to get filtered restaurants -->
-                                    <div>
-                                        <button class="btn ms_btn" @click="getRestaurants()">Cerca</button>
                                     </div>
                                 </div>
                             </div>
@@ -70,6 +75,7 @@ export default {
             types : [],
             array_types_id : [],
             restaurants: [],
+            displaySearch: false,
         }
     },
     methods: {
@@ -113,6 +119,29 @@ export default {
 
 <style lang="scss">
 @import '../../sass/partials/_variables.scss';
+
+@keyframes growDown {
+    0% {
+        opacity: 0;
+        transform: scaleY(0)
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1)
+    }
+}
+
+@keyframes reverseGrowDown {
+    0% {
+        opacity: 1;
+        transform: scaleY(1)
+    }
+    100% {
+        opacity: 0;
+        transform: scaleY(0)
+    }
+}
+
 .wrapping-serchbox{
     background-color: $primary_color;
     min-width: 100%;
@@ -172,6 +201,60 @@ export default {
     //     width: 100%;
     //     height: 100%;
     // }
+
+    // Custom Popup select menu TEST
+    .dropdown-test{
+        position: relative;
+    }
+    .search-menu{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: white;
+        color: $secondary_color;
+
+        padding: 10px 15px;
+
+        border-radius: 10px;
+        border: 1px solid lightgray;
+
+        -webkit-box-shadow: 5px 5px 15px -5px #000000; 
+        box-shadow: 5px 5px 15px -5px #000000;
+
+        animation: reverseGrowDown 500ms linear;
+        transform-origin: center top;
+    }
+    .search-menu.active{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: space-around;
+        animation: growDown 500ms linear;
+        transform-origin: top center;
+    }
+    button{
+        padding: 0 10px;
+        color: $secondary_color;
+        text-decoration: none;
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 15px;
+        border: 2px solid lightgray;
+        font-weight: 300;
+
+        &:hover{
+            border: 2px solid lightgray;
+        }
+
+        i{
+            color: $primary_color;
+            padding-right: 5px;
+        }
+    }
 }
 
 
