@@ -60,19 +60,16 @@ export default {
         },
         addItemCart: function(element){
 
-            this.selectedElement.push(element);
+            // this.selectedElement.push(element);
 
 
             // Se un utent riclicka su un elemento già cliccato
             
             if(!this.selectedElement.includes(element)){
                 this.selectedElement.push(element);
-
-            }else if(this.selectedElement.includes(element)){
-                console.log(this.selectedElement);
             }
 
-            // console.log(this.selectedElement);
+            console.log(this.selectedElement);
 
         },
         changeValue: function(food, submitType){

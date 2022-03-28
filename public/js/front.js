@@ -2466,14 +2466,13 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addItemCart: function addItemCart(element) {
-      this.selectedElement.push(element); // Se un utent riclicka su un elemento già cliccato
-
+      // this.selectedElement.push(element);
+      // Se un utent riclicka su un elemento già cliccato
       if (!this.selectedElement.includes(element)) {
         this.selectedElement.push(element);
-      } else if (this.selectedElement.includes(element)) {
-        console.log(this.selectedElement);
-      } // console.log(this.selectedElement);
+      }
 
+      console.log(this.selectedElement);
     },
     changeValue: function changeValue(food, submitType) {
       var _this2 = this;
