@@ -2,6 +2,7 @@
   <div>
     <div class="col col-6">
         <h1>{{ restaurant.name }}</h1>
+        
         <div class="py-4" v-for="food in menu" :key="food.id">
             <a href="#">
                 {{food.name}}
@@ -15,8 +16,8 @@
             <button class="btn border mx-2" @click="changeValue(food, 'add')">
                 +
             </button>
-            <button @click="addItemCart(food)" class="btn">
-                Add
+            <button class="btn m_button" @click="addItemCart(food)" :disabled="food.quantity === 0" >
+                Aggiungi al carrello
             </button>
         </div>
     </div>
@@ -60,16 +61,19 @@ export default {
         },
         addItemCart: function(element){
 
-            // this.selectedElement.push(element);
-
-
-            // Se un utent riclicka su un elemento già cliccato
-            
-            if(!this.selectedElement.includes(element)){
+            /* Se la quantità selezionatà è pari a 0 non viene aggiunto l'elemento al carrello e compare un alert
+                altrimenti viene aggiunta dopo aver verificato che non sia già presente */
+                
+            if(element.quantity <= 0) {
+                alert('Hai selezionato una quantità non valida');
+            } else {
+                if(this.selectedElement.includes(element))  {
+                    this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+                }
                 this.selectedElement.push(element);
             }
-
-            console.log(this.selectedElement);
+            
+            // console.log(this.selectedElement);
 
         },
         changeValue: function(food, submitType){

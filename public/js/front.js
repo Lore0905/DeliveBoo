@@ -2440,6 +2440,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
@@ -2466,13 +2467,18 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addItemCart: function addItemCart(element) {
-      // this.selectedElement.push(element);
-      // Se un utent riclicka su un elemento già cliccato
-      if (!this.selectedElement.includes(element)) {
-        this.selectedElement.push(element);
-      }
+      /* Se la quantità selezionatà è pari a 0 non viene aggiunto l'elemento al carrello e compare un alert
+          altrimenti viene aggiunta dopo aver verificato che non sia già presente */
+      if (element.quantity <= 0) {
+        alert('Hai selezionato una quantità non valida');
+      } else {
+        if (this.selectedElement.includes(element)) {
+          this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+        }
 
-      console.log(this.selectedElement);
+        this.selectedElement.push(element);
+      } // console.log(this.selectedElement);
+
     },
     changeValue: function changeValue(food, submitType) {
       var _this2 = this;
@@ -4178,7 +4184,8 @@ var render = function () {
                                 staticClass: "btn ms_btn",
                                 on: {
                                   click: function ($event) {
-                                    return _vm.getRestaurants()
+                                    _vm.getRestaurants(),
+                                      (_vm.displaySearch = false)
                                   },
                                 },
                               },
@@ -4614,14 +4621,15 @@ var render = function () {
             _c(
               "button",
               {
-                staticClass: "btn",
+                staticClass: "btn m_button",
+                attrs: { disabled: food.quantity === 0 },
                 on: {
                   click: function ($event) {
                     return _vm.addItemCart(food)
                   },
                 },
               },
-              [_vm._v("\n              Add\n          ")]
+              [_vm._v("\n              Aggiungi al carrello\n          ")]
             ),
           ])
         }),
@@ -20871,7 +20879,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
