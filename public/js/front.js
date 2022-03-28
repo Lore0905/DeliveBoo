@@ -1932,7 +1932,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
-    return {};
+    return {
+      foods: this.selectedElement
+    };
   },
   props: {
     selectedElement: Array
@@ -2512,6 +2514,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getMenu();
+  },
+  watch: {
+    selectedElement: {
+      handler: function handler() {
+        console.log('Selected Element array changed!');
+        localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement));
+      },
+      deep: true
+    }
+  },
+  mounted: function mounted() {
+    console.log('App Mounted');
+
+    if (localStorage.getItem('selectedElement')) {
+      this.selectedElement = JSON.parse(localStorage.getItem('selectedElement'));
+    } // console.log(selectedElement.id);
+
   }
 });
 
