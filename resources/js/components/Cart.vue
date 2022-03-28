@@ -8,9 +8,12 @@
                 <h4>
                     {{food.name}}
                 </h4>
-                <div>
+                <span>
                     {{food.quantity}}
-                </div>
+                </span>
+                <button @click="deleteElement(food)" class="btn btn-danger">
+                    <i class="fas fa-trash"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -28,7 +31,11 @@
             selectedElement: Array,
         },
         methods: {
+            deleteElement: function(element){
+                this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
 
+                element.quantity = 0;
+            }
         }
     }
 </script>
