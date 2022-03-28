@@ -100,6 +100,25 @@ export default {
     },
     created: function() {
         this.getMenu();
+    },
+    watch: {
+        selectedElement: {
+            handler() {
+                console.log('Selected Element array changed!');
+
+                localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement));
+            },
+            deep: true,
+        },
+    },
+    mounted(){
+        console.log('App Mounted');
+
+        if (localStorage.getItem('selectedElement')){  
+            this.selectedElement = JSON.parse(localStorage.getItem('selectedElement'));
+        }
+
+        // console.log(selectedElement.id);
     }
 }
 </script>

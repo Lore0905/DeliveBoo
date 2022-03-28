@@ -24,7 +24,7 @@
         name:'Cart',
         data: function(){
             return{
-
+                foods : this.selectedElement,
             }
         },
         props:{
@@ -36,7 +36,7 @@
 
                 element.quantity = 0;
             }
-        }
+        },
     }
 </script>
 
