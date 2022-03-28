@@ -65,13 +65,22 @@ export default {
 
             /* Se la quantità selezionatà è pari a 0 non viene aggiunto l'elemento al carrello e compare un alert
                 altrimenti viene aggiunta dopo aver verificato che non sia già presente */
+                    
+            // console.log(this.selectedElement.map(element=>element.id));
+            
+            // console.log(this.selectedElement.findIndex(element => element.id === '1'));
+
+            let item = this.selectedElement.find(item => item.id === element.id);
+
+            console.log(item);
                 
             if(element.quantity <= 0) {
                 alert('Hai selezionato una quantità non valida');
             } else {
-                if(this.selectedElement.includes(element))  {
-                    this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+                if( item != undefined ){
+                    this.selectedElement.splice(this.selectedElement.indexOf(item), 1);
                 }
+                
                 this.selectedElement.push(element);
             }
 

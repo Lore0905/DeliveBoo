@@ -2481,11 +2481,18 @@ __webpack_require__.r(__webpack_exports__);
     addItemCart: function addItemCart(element) {
       /* Se la quantità selezionatà è pari a 0 non viene aggiunto l'elemento al carrello e compare un alert
           altrimenti viene aggiunta dopo aver verificato che non sia già presente */
+      // console.log(this.selectedElement.map(element=>element.id));
+      // console.log(this.selectedElement.findIndex(element => element.id === '1'));
+      var item = this.selectedElement.find(function (item) {
+        return item.id === element.id;
+      });
+      console.log(item);
+
       if (element.quantity <= 0) {
         alert('Hai selezionato una quantità non valida');
       } else {
-        if (this.selectedElement.includes(element)) {
-          this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+        if (item != undefined) {
+          this.selectedElement.splice(this.selectedElement.indexOf(item), 1);
         }
 
         this.selectedElement.push(element);
@@ -20930,7 +20937,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
