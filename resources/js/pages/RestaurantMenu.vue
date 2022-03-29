@@ -4,46 +4,55 @@
             <Header/>
         </header>
         <div class="wrapping-restaurant" >
-            <h1>{{ restaurant.name }}</h1> 
+            <h1>{{ restaurant.name }}</h1>
+            <div class="restaurant-info">
+                <span class="font-weight-bold">Indirizzo:</span><span class="spec-info">{{ restaurant.address }}</span>
+                <span class="font-weight-bold">Telefono:</span><span class="spec-info">{{ restaurant.phone_number }}</span>
+            </div>
             <div class="row">
-                <div class="col col-sm-6 selected-quantity">
-                    <div class="py-4" v-for="food in menu" :key="food.id">
+                <div class="col col-9 col-sm-9 selected-quantity">
+                    <div class="foods-box">
+                        <div class="py-4 cards-box" v-for="food in menu" :key="food.id">
 
-                        <!-- card -->
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{food.name}}</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <!-- card -->
+                            <div class="card" style="width: 18rem;">
+                                <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                                <div class="card-body">
+                                    <h5 class="card-title">{{food.name}}</h5>
+                                    <p class="card-text">{{food.descriptions}}</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    
+                                    <li class="list-group-item">Ingredienti: {{ food.ingrediants }}</li>
+                                    <li class="list-group-item">Prezzo: {{food.price}} €</li>
+                                </ul>
+                                <div class="card-body">
+                                    <!-- <a href="#" class="card-link">Card link</a> -->
+                                    <!-- <a href="#" class="card-link">Another link</a> -->
+                                    <div class="text-center">
+                                        <button class="btn border mx-2" @click="changeValue(food, 'subtract')">
+                                            -
+                                        </button>
+                                        <span>
+                                            {{food.quantity}}
+                                        </span>
+                                        <button class="btn border mx-2" @click="changeValue(food, 'add')">
+                                            +
+                                        </button>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <button class="btn m_button" @click="addItemCart(food)" :disabled="food.quantity === 0" >
+                                            Aggiungi al carrello
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                            <!-- card -->
                         </div>
-                        <!-- card -->
-                    
-                        <button class="btn border mx-2" @click="changeValue(food, 'subtract')">
-                            -
-                        </button>
-                        <span>
-                            {{food.quantity}}
-                        </span>
-                        <button class="btn border mx-2" @click="changeValue(food, 'add')">
-                            +
-                        </button>
-                        <button class="btn m_button" @click="addItemCart(food)" :disabled="food.quantity === 0" >
-                            Aggiungi al carrello
-                        </button>
                     </div>
                 </div>
 
-                <div class="col col-sm-6">
+                <div class="col col-3 col-sm-3">
                     <Cart :selectedElement="selectedElement" />
                 </div>
             </div>
@@ -160,13 +169,27 @@ export default {
 .wrapping-restaurant{
     padding: 50px;
     h1{
-        margin-left: 50px;
+        // margin-left: 50px;
     }
-
+    .restaurant-info {
+        .spec-info {
+            margin: 0 10px;
+        }
+    }
     .row{
         justify-content: center;
         .selected-quantity{
             border-right: 1px solid black;
+
+            .foods-box {
+                display: flex;
+                flex-wrap: wrap;
+                // justify-content: space-between;
+
+                .cards-box {
+                    width: calc(100% / 3);
+                }
+            }
         }
         
     }
