@@ -11,11 +11,11 @@
             </div>
             <div class="row">
                 <div class="col col-9 col-sm-9 selected-quantity">
-                    <div class="foods-box">
+                    <div class="foods-box row row-cols-md-1 row-cols-lg-3">
                         <div class="py-4 cards-box" v-for="food in menu" :key="food.id">
 
                             <!-- card -->
-                            <div class="card" style="width: 18rem;">
+                            <div class="card">
                                 <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
                                 <div class="card-body">
                                     <h5 class="card-title">{{food.name}}</h5>
@@ -182,12 +182,15 @@ export default {
             border-right: 1px solid black;
 
             .foods-box {
-                display: flex;
-                flex-wrap: wrap;
+                // display: flex;
+                // flex-wrap: wrap;
                 // justify-content: space-between;
 
                 .cards-box {
-                    width: calc(100% / 3);
+                    // width: calc(100% / 3);
+                    .card {
+                        margin: 10px;
+                    }
                 }
             }
         }
