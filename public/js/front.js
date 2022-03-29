@@ -2730,7 +2730,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  border-right: 1px solid black;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box[data-v-14400205] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box[data-v-14400205] {\n  width: 33.3333333333%;\n}", ""]);
+exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  border-right: 1px solid black;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
 
 // exports
 
@@ -4735,103 +4735,99 @@ var render = function () {
         _c("div", { staticClass: "col col-9 col-sm-9 selected-quantity" }, [
           _c(
             "div",
-            { staticClass: "foods-box" },
+            { staticClass: "foods-box row row-cols-md-1 row-cols-lg-3" },
             _vm._l(_vm.menu, function (food) {
               return _c(
                 "div",
                 { key: food.id, staticClass: "py-4 cards-box" },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "card", staticStyle: { width: "18rem" } },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(food.name)),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(_vm._s(food.descriptions)),
-                        ]),
+                  _c("div", { staticClass: "card" }, [
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(food.name)),
                       ]),
                       _vm._v(" "),
-                      _c("ul", { staticClass: "list-group list-group-flush" }, [
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _vm._v("Ingredienti: " + _vm._s(food.ingrediants)),
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _vm._v("Prezzo: " + _vm._s(food.price) + " €"),
-                        ]),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(_vm._s(food.descriptions)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "list-group list-group-flush" }, [
+                      _c("li", { staticClass: "list-group-item" }, [
+                        _vm._v("Ingredienti: " + _vm._s(food.ingrediants)),
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("div", { staticClass: "text-center" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn border mx-2",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.changeValue(food, "subtract")
-                                },
+                      _c("li", { staticClass: "list-group-item" }, [
+                        _vm._v("Prezzo: " + _vm._s(food.price) + " €"),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "text-center" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn border mx-2",
+                            on: {
+                              click: function ($event) {
+                                return _vm.changeValue(food, "subtract")
                               },
                             },
-                            [
-                              _vm._v(
-                                "\n                                        -\n                                    "
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [
+                          },
+                          [
                             _vm._v(
-                              "\n                                        " +
-                                _vm._s(food.quantity) +
-                                "\n                                    "
+                              "\n                                        -\n                                    "
                             ),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn border mx-2",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.changeValue(food, "add")
-                                },
-                              },
-                            },
-                            [
-                              _vm._v(
-                                "\n                                        +\n                                    "
-                              ),
-                            ]
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(food.quantity) +
+                              "\n                                    "
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "text-center mt-3" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn m_button",
-                              attrs: { disabled: food.quantity === 0 },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.addItemCart(food)
-                                },
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn border mx-2",
+                            on: {
+                              click: function ($event) {
+                                return _vm.changeValue(food, "add")
                               },
                             },
-                            [
-                              _vm._v(
-                                "\n                                        Aggiungi al carrello\n                                    "
-                              ),
-                            ]
-                          ),
-                        ]),
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        +\n                                    "
+                            ),
+                          ]
+                        ),
                       ]),
-                    ]
-                  ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "text-center mt-3" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn m_button",
+                            attrs: { disabled: food.quantity === 0 },
+                            on: {
+                              click: function ($event) {
+                                return _vm.addItemCart(food)
+                              },
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Aggiungi al carrello\n                                    "
+                            ),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                  ]),
                 ]
               )
             }),
@@ -21101,14 +21097,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
-
-
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
-module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
 
 
 /***/ })
