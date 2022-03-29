@@ -10,7 +10,7 @@
                         <!-- title -->
                         <h1>I piatti che ami, a domicilio.</h1>
 
-                        <div>
+                        <!-- <div>
                             <div v-for="restaurant in restaurants" :key="restaurant.id">
                                 <div v-for="items in restaurant" :key="items.id">
                                     <div v-for="item in items" :key="item.id">
@@ -18,7 +18,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- select -->
                         <div class="wrapping-select">
@@ -57,19 +57,21 @@
                         <img src="https://cwa.roocdn.com/_next/static/media/campaign.df080c2b8ecbb022c066558c655167a1.svg" alt="">
                     </div>
                 </div>
+                <RestaurantList :restaurants="restaurants" />
             </div>
-            <!-- background
-            <div id="background-wave">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,300 0,300 C 163.06666666666666,271.06666666666666 326.1333333333333,242.13333333333333 483,268 C 639.8666666666667,293.8666666666667 790.5333333333333,374.53333333333336 949,389 C 1107.4666666666667,403.46666666666664 1273.7333333333333,351.73333333333335 1440,300 C 1440,300 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="#d0eb99ff" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
-            </div> -->
         </div>
         
   </div>
 </template>
 
 <script>
+import RestaurantList from './RestaurantList.vue';
+
 export default {
     name: "Serchbox",
+    components: {
+        RestaurantList,
+    },
     data: function(){
         return{
             types : [],
@@ -96,10 +98,14 @@ export default {
 
                 axios.get('/api/restaurants/' + type)
                 .then((response) =>{
+
                     this.restaurants.push(response.data.restaurants);
+                    
                 });
 
             });
+
+            console.log(this.restaurants);
         },
         getTypeValue: function(n) {
             // n argument: is a number
@@ -145,7 +151,6 @@ export default {
 .wrapping-serchbox{
     background-color: $primary_color;
     min-width: 100%;
-    height: 70vh;
     overflow: hidden;
     position: relative;
     padding: 50px 0px;
