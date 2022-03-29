@@ -6,6 +6,8 @@ Vue.use(VueRouter);
 import Home from './pages/Home.vue';
 import RestaurantMenu from './pages/RestaurantMenu.vue';
 import notFound from './pages/notFound.vue';
+import Checkout from './pages/Checkout.vue';
+
 
 const router = new VueRouter({
     mode: "history",
@@ -19,6 +21,11 @@ const router = new VueRouter({
             path: "/restaurant-menu/:slug",
             name: "restaurant-menu",
             component: RestaurantMenu
+        },
+        {
+            path: "/checkout",
+            name: "checkout",
+            component: Checkout
         },
         {
             path: "/*",

@@ -15,6 +15,14 @@
                     <i class="fas fa-trash"></i>
                 </button>
             </div>
+            <div v-if="selectedElement.length > 0">
+                <router-link class="btn m_button link-to" :to="{ name: 'checkout' }">
+                    Procedi all'ordine
+                </router-link>
+                <!-- <button class="btn m_button">
+                    Procedi all'ordine
+                </button> -->
+            </div>
         </div>
     </div>
 </template>
