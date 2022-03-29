@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if ($foods)
+        @if ($foods->isEmpty())
             <h2 class="py-5">Non hai ancora nessun piatto inserito nel menù...</h2>
 
             <h3>Ti consiglio di aggiungerlo </h3>
