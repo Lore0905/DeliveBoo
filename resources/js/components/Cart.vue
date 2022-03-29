@@ -1,10 +1,10 @@
 <template>
     <div>
         <div>
-            Carrello:
+            <span class="font-weight-bold">Carrello:</span>
         </div>
         <div>
-            <div class="py-4" v-for="food in selectedElement" :key="food.id">
+            <div class="py-4 cart-item" v-for="food in selectedElement" :key="food.id">
                 <h4>
                     {{food.name}}
                 </h4>
