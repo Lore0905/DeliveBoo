@@ -13,6 +13,12 @@ class RestaurantController extends Controller
 
         $restaurants = Restaurant::all();
 
+        foreach ($restaurants as $restaurant) {
+            if ($restaurant->image) {
+                $restaurant->image = url('storage/' . $restaurant->image);
+            }
+        }
+
         return response()->json([
             'success' => true,
             'restaurants' => $restaurants,
@@ -40,6 +46,12 @@ class RestaurantController extends Controller
     public function foods($slug) {
 
         $restaurant = Restaurant::where('slug', '=', $slug)->with(['foods'])->first();
+
+        foreach ($restaurant->foods as $food) {
+            if ($food->img) {
+                $food->img = url('storage/' . $food->img);
+            }
+        }
         
         if($restaurant) {
             return response()->json([
