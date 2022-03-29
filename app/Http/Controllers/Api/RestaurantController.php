@@ -32,9 +32,10 @@ class RestaurantController extends Controller
         $restaurant_array = [];
 
         foreach ($pivot as $item) {
-            $restaurant_to_show = Restaurant::where('id', '=', $item->restaurant_id)->get();
+            $restaurant_to_show = Restaurant::where('id', '=', $item->restaurant_id)->first();
 
             $restaurant_array[] = $restaurant_to_show;
+
         }
 
         return response()->json([
