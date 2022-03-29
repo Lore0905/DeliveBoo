@@ -1,42 +1,66 @@
 <template>
     <div>
-        <h1>{{ restaurant.name }}</h1> 
-        <div class="row">
-            <div class="col col-sm-6">
-                
-                <div class="py-4" v-for="food in menu" :key="food.id">
-                    <a href="#">
-                        {{food.name}}
-                    </a>
-                    <button class="btn border mx-2" @click="changeValue(food, 'subtract')">
-                        -
-                    </button>
-                    <span>
-                        {{food.quantity}}
-                    </span>
-                    <button class="btn border mx-2" @click="changeValue(food, 'add')">
-                        +
-                    </button>
-                    <button class="btn m_button" @click="addItemCart(food)" :disabled="food.quantity === 0" >
-                        Aggiungi al carrello
-                    </button>
+        <header>
+            <Header/>
+        </header>
+        <div class="wrapping-restaurant" >
+            <h1>{{ restaurant.name }}</h1> 
+            <div class="row">
+                <div class="col col-sm-6 selected-quantity">
+                    <div class="py-4" v-for="food in menu" :key="food.id">
+
+                        <!-- card -->
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{food.name}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                        <!-- card -->
+                    
+                        <button class="btn border mx-2" @click="changeValue(food, 'subtract')">
+                            -
+                        </button>
+                        <span>
+                            {{food.quantity}}
+                        </span>
+                        <button class="btn border mx-2" @click="changeValue(food, 'add')">
+                            +
+                        </button>
+                        <button class="btn m_button" @click="addItemCart(food)" :disabled="food.quantity === 0" >
+                            Aggiungi al carrello
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col col-sm-6">
+                    <Cart :selectedElement="selectedElement" />
                 </div>
             </div>
-
-            <div class="col col-sm-6">
-                <Cart :selectedElement="selectedElement" />
-            </div>
+        
         </div>
     </div>    
 </template>
 
 <script>
 import Cart from '../components/Cart.vue';
+import Header from '../components/Header.vue';
 
 export default {
     name: 'RestaurantMenu',
     components: {
-        Cart
+        Cart,
+        Header
     },
     data: function() {
         return {
@@ -132,6 +156,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.wrapping-restaurant{
+    padding: 50px;
+    h1{
+        margin-left: 50px;
+    }
 
-</style>
+    .row{
+        justify-content: center;
+        .selected-quantity{
+            border-right: 1px solid black;
+        }
+        
+    }
+}
+</style>>
