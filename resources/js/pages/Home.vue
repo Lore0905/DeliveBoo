@@ -3,8 +3,8 @@
         <Header/>
         <Searchbox/>
         <!-- <News /> -->
-        <!-- <Selection />
-        <Work /> -->
+        <Selection />
+        <Work />
     </div>
 </template>
 

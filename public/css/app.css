@@ -11119,6 +11119,14 @@ ul {
   background-color: #2b74fa;
 }
 
+.admin-home {
+  text-align: center;
+}
+
+.admin-home h1 {
+  text-transform: capitalize;
+}
+
 .admin-home .email {
   font-size: 20px;
   padding: 20px 0;
