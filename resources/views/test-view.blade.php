@@ -9,130 +9,67 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
-        @if (session('success_message'))
-            <div class="alert alert-success">
-                {{session('success_message')}}
-            </div>
-        @endif
-        @if (count($errors)> 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        {{-- Content  --}}
+        <div class="content container">
 
-            {{-- content  --}}
+            {{-- <div>
+                @if (success)
+                    Grazie per i tuoi dati
+                @endif
+            </div> --}}
 
-            <div class="content">
+            {{-- test  --}}
+            <form method="post" action="{{route('orders.store')}}">
+                @csrf
+                @method('POST')
 
-                {{-- test  --}}
-                <form method="post" action="">
-                    @csrf
-                    @method('POST')
+                <label for="customer_name">Nome</label>
+                <input type="text" id="customer_name" name="customer_name">
 
-                    <label for="customer-name">Nome</label>
-                    <input type="text" id="customer-name">
+                <label for="customer_email">Email</label>
+                <input type="email" name="customer_email" id="customer_email">
 
-                    <button>prova</button>
-                </form>
-                {{-- end test  --}}
+                <label for="customer_address">Indirizzo</label>
+                <input type="text" name="customer_address" id="customer_address">
 
-                <form method="post" id="payment-form" action="{{url('/checkout')}}">
-                    @csrf
-                    <section>
-                        <label for="amount">
-                            <span class="input-label">Amount</span>
-                            <div class="input-wrapper amount-wrapper">
-                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
-                            </div>
-                        </label>
-    
-                        <div class="bt-drop-in-wrapper">
-                            <div id="bt-dropin"></div>
+                <label for="customer_phone_number">Numero telefonico</label>
+                <input type="text" name="customer_phone_number" id="customer_phone_number">
+
+                <label for="total_amount">Totale</label>
+                <input type="text" name="total_amount" id="total_amount">
+
+                <button type="submit">Invia</button>
+            </form>
+            {{-- end test  --}}
+
+            <form method="post" id="payment-form" action="{{url('/checkout')}}">
+                @csrf
+                <section>
+                    <label for="amount">
+                        <span class="input-label">Amount</span>
+                        <div class="input-wrapper amount-wrapper">
+                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
                         </div>
-                    </section>
-    
-                    <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button class="button" type="submit"><span>Test Transaction</span></button>
-                </form>
-            </div>
+                    </label>
+
+                    <div class="bt-drop-in-wrapper">
+                        <div id="bt-dropin"></div>
+                    </div>
+                </section>
+
+                <input id="nonce" name="payment_method_nonce" type="hidden" />
+                <button class="button" type="submit"><span>Test Transaction</span></button>
+            </form>
         </div>
 
-        {{-- script  --}}
 
 
+
+
+        {{-- Script  --}}
         <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"></script>
         <script>
             var form = document.querySelector('#payment-form');

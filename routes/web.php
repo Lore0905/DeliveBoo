@@ -39,6 +39,9 @@ Route::middleware('auth')
         Route::get('/orders', 'OrderController@index')->name('orders');
     });
 
+// Orders Store
+Route::post('/orders/store', 'Admin\OrderController@store')->name('orders.store');
+
 
 // ROUTE TEST
 
