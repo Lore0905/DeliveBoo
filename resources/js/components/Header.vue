@@ -2,12 +2,12 @@
     <header>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="left">
+            <a class="left" href="/">
                 <i class="fas fa-frog"></i>
                 <span>
                     deliveboo
                 </span>
-            </div>
+            </a>
             <div class="right">
                 <div class="m_button_header">
                     <a href="/admin">
@@ -57,6 +57,7 @@ header{
         color: white;
         font-size: 25px;
         font-weight: 600;
+        
     }
 
     .right{
@@ -77,7 +78,7 @@ header{
                 font-weight: 300;
 
                 &:hover{
-                    border: 2px solid lightgray;
+                    transform: scale(1.1);
                 }
 
                 i{
