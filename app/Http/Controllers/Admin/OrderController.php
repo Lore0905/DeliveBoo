@@ -40,39 +40,39 @@ class OrderController extends Controller
         return view('admin.orders.index', $data);
     }
 
-    public function store(Request $request){
+    // public function store(Request $request){
 
-        $form_data = $request->all();
+    //     $form_data = $request->all();
 
-        $validator = Validator::make($form_data,[
-            'customer_name' => 'required|max:255',
-            'customer_email' => 'required|max:255|email',
-            'customer_address' => 'required|max:255',
-            'customer_phone_number' => 'required|max:30',
-            'total_amount' => 'required'
-        ]);
+    //     $validator = Validator::make($form_data,[
+    //         'customer_name' => 'required|max:255',
+    //         'customer_email' => 'required|max:255|email',
+    //         'customer_address' => 'required|max:255',
+    //         'customer_phone_number' => 'required|max:30',
+    //         'total_amount' => 'required'
+    //     ]);
 
-        $request->validate([
-            'customer_name' => 'required|max:255',
-            'customer_email' => 'required|max:255|email',
-            'customer_address' => 'required|max:255',
-            'customer_phone_number' => 'required|max:30',
-            'total_amount' => 'required'
-        ]);
+    //     $request->validate([
+    //         'customer_name' => 'required|max:255',
+    //         'customer_email' => 'required|max:255|email',
+    //         'customer_address' => 'required|max:255',
+    //         'customer_phone_number' => 'required|max:30',
+    //         'total_amount' => 'required'
+    //     ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ]);
-        }
+    //     if ($validator->fails()) {
+    //         return response()->json([
+    //             'success' => false,
+    //             'errors' => $validator->errors()
+    //         ]);
+    //     }
 
-        $new_order = new Order();
-        $new_order->fill($form_data);
-        $new_order->save();
+    //     $new_order = new Order();
+    //     $new_order->fill($form_data);
+    //     $new_order->save();
 
-        return response()->json([
-            'success' => true,
-        ]);
-    }
+    //     return response()->json([
+    //         'success' => true,
+    //     ]);
+    // }
 }

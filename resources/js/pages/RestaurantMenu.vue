@@ -1,8 +1,5 @@
 <template>
     <div>
-        <header>
-            <Header/>
-        </header>
         <div class="wrapping-restaurant" >
             <h1>{{ restaurant.name }}</h1>
             <div class="restaurant-info">
@@ -63,13 +60,11 @@
 
 <script>
 import Cart from '../components/Cart.vue';
-import Header from '../components/Header.vue';
 
 export default {
     name: 'RestaurantMenu',
     components: {
         Cart,
-        Header
     },
     data: function() {
         return {
@@ -169,9 +164,6 @@ export default {
 <style lang="scss" scoped>
 .wrapping-restaurant{
     padding: 50px;
-    h1{
-        // margin-left: 50px;
-    }
     .restaurant-info {
         .spec-info {
             margin: 0 10px;

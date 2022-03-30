@@ -16,13 +16,9 @@
                 </button>
             </div>
             <div v-if="selectedElement.length > 0">
-                <!-- <router-link class="btn m_button link-to" :to="{ name: 'checkout' }">
+                <router-link class="btn m_button link-to" :to="{ name: 'order-form' }">
                     Procedi all'ordine
-                </router-link> -->
-                <a href="/payment">test</a>
-                <!-- <button class="btn m_button">
-                    Procedi all'ordine
-                </button> -->
+                </router-link>
             </div>
             <div>
                 <span>{{ totalAmmount }}</span>
