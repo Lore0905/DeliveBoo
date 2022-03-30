@@ -45,7 +45,7 @@ Route::post('/orders/store', 'Admin\OrderController@store')->name('orders.store'
 
 // ROUTE TEST
 
-Route::get('/test', function () {
+Route::get('/payment', function () {
 
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),

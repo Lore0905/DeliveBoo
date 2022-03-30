@@ -18,30 +18,47 @@
         {{-- Content  --}}
         <div class="content container my-4">
 
-            {{-- test  --}}
+            {{-- Form Order  --}}
             <form method="post" action="{{route('orders.store')}}" class="d-flex flex-column">
                 @csrf
                 @method('POST')
 
                 <label for="customer_name">Nome</label>
-                <input type="text" id="customer_name" name="customer_name">
+                <input class="my-3" type="text" id="customer_name" name="customer_name">
+
+                @error('customer_name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <label for="customer_email">Email</label>
-                <input type="email" name="customer_email" id="customer_email">
+                <input class="my-3" type="email" name="customer_email" id="customer_email">
+
+                @error('customer_email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <label for="customer_address">Indirizzo</label>
-                <input type="text" name="customer_address" id="customer_address">
+                <input class="my-3" type="text" name="customer_address" id="customer_address">
+
+                @error('customer_address')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <label for="customer_phone_number">Numero telefonico</label>
-                <input type="text" name="customer_phone_number" id="customer_phone_number">
+                <input class="my-3" type="text" name="customer_phone_number" id="customer_phone_number">
+
+                @error('customer_phone_number')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <label for="total_amount">Totale</label>
-                <input type="text" name="total_amount" id="total_amount">
+                <input class="my-3" disabled type="text" name="total_amount" id="total_amount">
 
-                <button type="submit">Invia</button>
+                <button class="my-4 btn border" type="submit">Invia</button>
             </form>
-            {{-- end test  --}}
+            {{-- End Form Order  --}}
 
+            {{-- Form Pagamento --}}
             <form method="post" id="payment-form" action="{{url('/checkout')}}">
                 @csrf
                 <section>
@@ -58,8 +75,9 @@
                 </section>
 
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="button" type="submit"><span>Test Transaction</span></button>
+                <button class="btn border" type="submit"><span>Paga</span></button>
             </form>
+            {{-- End Form Pagamento --}}
         </div>
 
 

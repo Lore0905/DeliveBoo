@@ -52,7 +52,13 @@ class OrderController extends Controller
             'total_amount' => 'required'
         ]);
 
-        // dd($form_data);
+        $request->validate([
+            'customer_name' => 'required|max:255',
+            'customer_email' => 'required|max:255|email',
+            'customer_address' => 'required|max:255',
+            'customer_phone_number' => 'required|max:30',
+            'total_amount' => 'required'
+        ]);
 
         if ($validator->fails()) {
             return response()->json([
