@@ -16,9 +16,10 @@
                 </button>
             </div>
             <div v-if="selectedElement.length > 0">
-                <router-link class="btn m_button link-to" :to="{ name: 'checkout' }">
+                <!-- <router-link class="btn m_button link-to" :to="{ name: 'checkout' }">
                     Procedi all'ordine
-                </router-link>
+                </router-link> -->
+                <a href="/test">test</a>
                 <!-- <button class="btn m_button">
                     Procedi all'ordine
                 </button> -->

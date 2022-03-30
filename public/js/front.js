@@ -1937,6 +1937,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -4229,20 +4230,7 @@ var render = function () {
         }),
         _vm._v(" "),
         _vm.selectedElement.length > 0
-          ? _c(
-              "div",
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn m_button link-to",
-                    attrs: { to: { name: "checkout" } },
-                  },
-                  [_vm._v("\n                Procedi all'ordine\n            ")]
-                ),
-              ],
-              1
-            )
+          ? _c("div", [_c("a", { attrs: { href: "/test" } }, [_vm._v("test")])])
           : _vm._e(),
       ],
       2
