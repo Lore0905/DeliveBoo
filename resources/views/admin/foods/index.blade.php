@@ -1,40 +1,76 @@
 @extends('layouts.login-dashboard')
 
 @section('content')
-    <div class="container">
-        @if ($foods->isEmpty())
-            <h2 class="py-5">Non hai ancora nessun piatto inserito nel menù...</h2>
-
-            <h3>Ti consiglio di aggiungerlo </h3>
-
-            <a href="/admin/foods/create">aggiungi il tuo piatto</a>
-        @endif
-        <div class="row row-cols-3">
-
-            @foreach ($foods as $food)
-            {{-- col --}}
-            <div class="col">
-
-                <div class="card mb-3" >
-
-                    {{-- img --}}
-                    <img class="card-img-top" src="{{ asset('storage/' . $food->img) }}" alt="{{$food->name . 'immagine'}}">
-
-                    {{-- body --}}
-                    <div class="card-body">
-                        <h5 class="card-title">{{$food->name}}</h5>
-                        <p class="card-text">{{$food->descriptions}}</p>
-                    </div>
-                    
-                    {{-- buttons --}}
-                    <div class="card-body">
-                        <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="card-link btn btn-primary">Dettagli piatto</a>
-                    </div>
     
+    <div class="foods-index">
+
+        <div class="container">
+
+            @if ($foods->isEmpty())
+
+                <h2 class="py-5">Non hai ancora nessun piatto inserito nel menù...</h2>
+
+                <h5>Ti consiglio di aggiungerlo </h5>
+
+                <a href="/admin/foods/create">Aggiungi il tuo primo piatto</a>
+
+            @endif
+
+            <div class="foods row">
+
+                @foreach ($foods as $food)
+                <div class="single-food col-xs-12 col-sm-12 col-md-6 col-lg-4">
+
+                    {{-- {{dd($food)}} --}}
+
+                    {{-- Immagine --}}
+                    <div class="food-img">
+                        <img src="{{asset('storage/' . $food->img)}}" alt="{{$food->name}}">
+                    </div>
+
+                    {{-- Nome piatto --}}
+                    <div class="food-name">
+                        {{$food->name}}
+                    </div>
+
+                    {{-- Descrizione --}}
+                    <div class="food-description">
+                        <span class="left-column">
+                            Descrizione:
+                        </span>
+                        {{$food->descriptions}}
+                    </div>
+
+                    {{-- Ingredienti --}}
+                    {{-- <div class="food-ingrediants">
+                        <span class="left-column">
+                            Ingredienti:
+                        </span>
+                        {{$food->ingrediants}}
+                    </div> --}}
+
+                    {{-- Prezzo --}}
+                    <div class="price-food">
+                        <span class="left-column">
+                            Prezzo:
+                        </span>
+                        {{$food->price}} $
+                    </div>
+
+                    {{-- Visualizza --}}
+                    <div>
+                        <a class="link" href="{{route('admin.foods.show', ['food' => $food->id])}}">
+                            Visualizza il piatto
+                        </a>
+                    </div>
+
                 </div>
+                @endforeach
 
             </div>
-            @endforeach
+
         </div>
+
     </div>
+
 @endsection

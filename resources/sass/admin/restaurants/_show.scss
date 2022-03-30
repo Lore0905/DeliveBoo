@@ -1,0 +1,45 @@
+.restaurant-show{
+    padding: 40px 0;
+    border: 1px solid $secondary_color;
+    border-radius: 10px;
+    text-align: center;
+
+    .single-restaurant{
+        color: $secondary_color;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+
+        .slug{
+            font-size: 15px;
+            padding-bottom: 20px;
+        }
+
+        .column-name{
+            font-weight: 600;
+        }
+
+        .types, .address, .phone-number, .vat, .image{
+            font-size: 20px;
+            padding-bottom: 20px;
+            text-transform: capitalize;
+
+            i{
+                margin-right: 10px;
+                color: $primary_color;
+            }
+        }
+
+        .image{
+
+            img{
+                width: 80%;
+            }
+        }
+    }
+
+}

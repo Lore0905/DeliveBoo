@@ -1,0 +1,52 @@
+.foods-index{
+    color: $secondary_color;
+
+    a{
+        color: $primary_color;
+    }
+
+    .foods{
+
+        .single-food{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            padding: 20px 10px;
+            text-align: center;
+            // border: 1px solid $secondary_color;
+
+            .food-img{
+                width: 100%;
+
+                img{
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+            }
+
+            .food-name{
+                font-size: 25px;
+                font-weight: 600;
+                padding: 10px 0;
+                text-transform: uppercase;
+            }
+
+            .food-description, .food-ingrediants, .price-food{
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+
+            .left-column{
+                font-weight: 600;
+            }
+
+            .link{
+                color: $secondary_color;
+                display: inline;
+                text-transform: uppercase;
+                font-size: 15px;
+                margin: 15px 0;
+            }
+        }
+    }
+}

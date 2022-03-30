@@ -2754,7 +2754,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  border: 2px solid lightgray;\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
+exports.push([module.i, "img[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nul[data-v-1f42fb90] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-1f42fb90] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-1f42fb90]:hover {\n  border: 1px solid #2e3333;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  border: 2px solid lightgray;\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
 
 // exports
 
@@ -2868,7 +2868,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img {\n  width: 100%;\n  height: 100%;\n}\n.m_button {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo {\n  width: 60px;\n}", ""]);
+exports.push([module.i, "img {\n  width: 100%;\n  height: 100%;\n}\n.m_button {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo {\n  width: 60px;\n}\nul {\n  list-style-type: none;\n}\n.m_button_form_create {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create:hover {\n  border: 1px solid #2e3333;\n}", ""]);
 
 // exports
 
@@ -4230,7 +4230,9 @@ var render = function () {
         }),
         _vm._v(" "),
         _vm.selectedElement.length > 0
-          ? _c("div", [_c("a", { attrs: { href: "/test" } }, [_vm._v("test")])])
+          ? _c("div", [
+              _c("a", { attrs: { href: "/payment" } }, [_vm._v("test")]),
+            ])
           : _vm._e(),
       ],
       2

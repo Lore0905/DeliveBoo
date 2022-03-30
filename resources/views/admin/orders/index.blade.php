@@ -7,7 +7,7 @@
     <div class="py-5">
         {{-- se l'array è vuoto, significa che il ristorante non ha ordini --}}
         @if (empty($orders))
-            <h2>non hai ancora ordini</h2>
+            <h2>Non hai ancora ordini</h2>
         @else
     </div>
     <div class="d-flex align-items-center p-2">

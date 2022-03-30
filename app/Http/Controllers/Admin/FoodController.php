@@ -67,7 +67,7 @@ class FoodController extends Controller
 
         // Storage Immagine
         if (isset($foods_data['img'])){
-            $img_path = Storage::put('img', $foods_data['img']);
+            $img_path = Storage::put('image', $foods_data['img']);
             $new_food->img = $img_path;
         }
 
