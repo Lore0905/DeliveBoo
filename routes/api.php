@@ -28,4 +28,6 @@ Route::get('/restaurant/{slug}', 'Api\RestaurantController@foods');
 // API Types
 Route::get('/types', 'Api\TypeController@index');
 
+// API Order
+Route::post('/orders/store', 'Api\OrderController@store');
 

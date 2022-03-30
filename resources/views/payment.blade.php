@@ -19,7 +19,7 @@
         <div class="content container my-4">
 
             {{-- Form Order  --}}
-            <form method="post" action="{{route('orders.store')}}" class="d-flex flex-column">
+            {{-- <form method="post" action="{{route('orders.store')}}" class="d-flex flex-column">
                 @csrf
                 @method('POST')
 
@@ -55,7 +55,7 @@
                 <input class="my-3" disabled type="text" name="total_amount" id="total_amount">
 
                 <button class="my-4 btn border" type="submit">Invia</button>
-            </form>
+            </form> --}}
             {{-- End Form Order  --}}
 
             {{-- Form Pagamento --}}

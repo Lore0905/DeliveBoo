@@ -40,15 +40,11 @@ Route::middleware('auth')
         Route::get('/orders', 'OrderController@index')->name('orders');
     });
 
-// Orders Store
-Route::post('/orders/store', 'Admin\OrderController@store')->name('orders.store');
-
-
 // Braintree
 
-Route::get('/payment', 'Braintree\PaymentController@show');
+Route::get('/payment', 'Braintree\PaymentController@show')->name('payment');
 
-Route::post('/checkout', 'Braintree\PaymentController@store');
+Route::post('/checkout', 'Braintree\PaymentController@store')->name('checkout');
 
 
 Route::get('{any}', function(){
