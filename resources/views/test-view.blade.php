@@ -9,20 +9,17 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        {{-- Link CSS --}}
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
     </head>
     <body>
 
         {{-- Content  --}}
-        <div class="content container">
-
-            {{-- <div>
-                @if (success)
-                    Grazie per i tuoi dati
-                @endif
-            </div> --}}
+        <div class="content container my-4">
 
             {{-- test  --}}
-            <form method="post" action="{{route('orders.store')}}">
+            <form method="post" action="{{route('orders.store')}}" class="d-flex flex-column">
                 @csrf
                 @method('POST')
 
