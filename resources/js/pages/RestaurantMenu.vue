@@ -76,6 +76,7 @@ export default {
             menu: [],
             restaurant: '',
             selectedElement: [],
+            totalAmmount: 0,
         }
     },
     methods: {
@@ -112,14 +113,15 @@ export default {
             } else {
                 if( item != undefined ){
                     this.selectedElement.splice(this.selectedElement.indexOf(item), 1);
+                    
                 }
-                
                 this.selectedElement.push(element);
+               
             }
 
         },
         changeValue: function(food, submitType){
-            // console.log(food);
+            
             this.menu.forEach(element => {
 
                 if(element.id === food.id){
@@ -160,7 +162,6 @@ export default {
             this.selectedElement = JSON.parse(localStorage.getItem('selectedElement'));
         }
 
-        // console.log(selectedElement.id);
     }
 }
 </script>
