@@ -34,6 +34,10 @@ class RestaurantController extends Controller
         foreach ($pivot as $item) {
             $restaurant_to_show = Restaurant::where('id', '=', $item->restaurant_id)->first();
 
+            if($restaurant_to_show->image) {
+                $restaurant_to_show->image = url('storage/' . $restaurant_to_show->image);
+            }
+
             $restaurant_array[] = $restaurant_to_show;
 
         }
