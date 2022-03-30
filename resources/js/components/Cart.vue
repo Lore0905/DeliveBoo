@@ -19,7 +19,7 @@
                 <!-- <router-link class="btn m_button link-to" :to="{ name: 'checkout' }">
                     Procedi all'ordine
                 </router-link> -->
-                <a href="/test">test</a>
+                <a href="/payment">test</a>
                 <!-- <button class="btn m_button">
                     Procedi all'ordine
                 </button> -->

@@ -55,7 +55,7 @@ Route::get('/payment', function () {
     ]);
 
     $token = $gateway->ClientToken()->generate();
-    return view('test-view', compact('token'));
+    return view('payment', compact('token'));
 });
 
 Route::post('/checkout', function(Request $request) {
