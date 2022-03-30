@@ -11323,6 +11323,23 @@ ul {
   border-radius: 10px;
 }
 
+.food-edit {
+  color: #2e3333;
+}
+
+.food-edit form label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.food-edit form input {
+  margin-bottom: 20px;
+}
+
+.food-edit form .image-label {
+  display: block;
+}
+
 .login {
   padding: 150px 0;
   background-color: #00ccbc;
