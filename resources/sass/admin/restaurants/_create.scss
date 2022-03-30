@@ -1,0 +1,37 @@
+
+.create-restaurant{
+
+    form{
+        color: $secondary_color;
+
+        label{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input{
+            margin-bottom: 20px;
+        }
+
+        .image-label{
+            display: block;
+        }
+
+        .checkbox{
+            margin-bottom: 20px;
+
+            .types-title{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            input{
+                margin-right: 13px;
+            }
+
+            .checkbox-label{
+                font-size: 15px;
+            }
+        }
+    }
+}

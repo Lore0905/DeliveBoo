@@ -1,15 +1,14 @@
-// import
-@import '../../partials/_variables.scss';
-
 // start login-daschboard
 .login-dashboard{
     background-color: $primary_color;
+    text-align: center;
     padding: 10px 40px;
     border-bottom: 1px solid rgba($color: #2e3333, $alpha: 0.1);
         a{
             color: white;
             display: flex;
             align-items: center;
+            text-decoration: none;
 
             span{
                 font-size: 25px;
@@ -30,7 +29,6 @@
 
             &:hover{
                 border: 2px solid white;
-                text-decoration: underline;
             }
         }
 }
@@ -38,21 +36,24 @@
 
 // star nav-dashboard
 .nav-dashboard{
-    min-height: 100vh;
-    border-right: 1px solid rgba($color: #2e3333, $alpha: 0.1);
+    // min-height: 100vh;
+    // border-right: 1px solid rgba($color: #2e3333, $alpha: 0.1);
     padding: 10px 40px;
 
     .sidebar-sticky{
-        // ristorante
+
+        // Ristorante
         .ristorante-dashboard{
             display: flex;
             background-color: $primary_color;
             justify-content: center;
             align-items: center;
+            text-align: center;
             border-radius: 20px;
-            padding: 10px;
-            box-shadow: 1px 1px 10px rgba($color: #2e3333, $alpha: 0.5);
+            padding: 10px 20px;
+            // box-shadow: 1px 1px 10px rgba($color: #2e3333, $alpha: 0.5);
             #img-ristorante{
+                margin-right: 10px;
                 width: 40px;
                 height: 40px;
                 background-color: white;
@@ -66,8 +67,9 @@
                     height: 100%;
                 }
             }
-            h6{
-                margin: 0px;
+            .restaurant-name{
+                font-size: 20px;
+                font-weight: 600;
             }
         }
         // lista di link

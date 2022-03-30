@@ -10,12 +10,23 @@
 @import '/partials/_variables.scss';
 @import '/partials/_generals.scss';
 
-// Restaurants
-@import '/admin/restaurants/create.scss';
+// Layouts
+@import 'layout/login-dashboard.scss';
+@import 'layout/layout_app.scss';
 
-// Layout
-@import '/admin/layout/login-dashboard.scss';
-@import '/admin/layout/layout_app.scss';
+// ADMIN
+
+    // Pagina Home
+    @import 'admin/_home.scss';
+
+    // Restaurants
+    @import 'admin/restaurants/_create.scss';
+    @import 'admin/restaurants/_show.scss';
+
+    // Foods
+    @import 'admin/foods/_index.scss';
+    @import 'admin/foods/_create.scss';
+    @import 'admin/foods/_show.scss';
 
 // Auth
 @import '/auth/_login.scss';

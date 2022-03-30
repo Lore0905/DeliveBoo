@@ -2,19 +2,25 @@
 
 @section('content')
 
-    <h1>Benvenuto {{$user->name}}</h1>
+    <div class="admin-home container">
+        <h1>Benvenuto {{$user->name}}</h1>
 
-    <div class="mb-3">{{$user->email}}</div>
+        {{-- {{dd($user)}} --}}
 
-    @if (isset($user->restaurant->user_id))
-        <div class="mb-3">
-            <a href={{ route('admin.restaurant.show', ['id' => $user->restaurant->id])  }}>Visualizza il tuo ristorante</a> 
-        </div>        
-    @else
-        <div class="mb-3">
-            <a href={{ route('admin.restaurant.create') }}>Crea il tuo ristorante</a>
+        <div class="email">
+            La tua email: {{$user->email}}
         </div>
-    @endif
+
+        @if (isset($user->restaurant->user_id))
+            <div>
+                <a class="link" href={{ route('admin.restaurant.show', ['id' => $user->restaurant->id])  }}>Visualizza il tuo ristorante</a> 
+            </div>        
+        @else
+            <div>
+                <a class="link" href={{ route('admin.restaurant.create') }}>Crea il tuo ristorante</a>
+            </div>
+        @endif
+    </div>
     
     
 @endsection

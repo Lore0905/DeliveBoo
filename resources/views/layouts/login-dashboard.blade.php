@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     {{-- font awesome --}}
     <script src="https://kit.fontawesome.com/bfab6b0bc8.js" crossorigin="anonymous"></script>
@@ -23,39 +23,41 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md flex-md-nowrap login-dashboard">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-            <img src="{{ asset('/img/logo-senza-scritta.png') }}" alt="" class="logo">
-            <span>DeliveBoo</span>
-        </a>
-        <ul class="navbar-nav px-3 ml-auto">
-            <li class="nav-item">
+    <nav>
+        <div class="d-flex align-items-center justify-content-between login-dashboard">
+            <div>
+                <a class="" href="/">
+                    <img src="{{ asset('/img/logo-senza-scritta.png') }}" alt="" class="logo">
+                    <span>DeliveBoo</span>
+                </a>
+            </div>
+            <div>
                 <a class="nav-link" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
+                    onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                     Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block sidebar py-4 nav-dashboard">
+            <nav class="col-md-4 col-lg-3 d-md-block sidebar py-4 nav-dashboard">
                 <div class="sidebar-sticky">
 
                     {{-- ristorante --}}
-                    <div class="ristorante-dashboard">
-                        <div id="img-ristorante">
+                    <div class="ristorante-dashboard d-md-inline-block flex-md-column d-lg-flex">
+                        <div id="img-ristorante" class="d-xl-inline">
                             <img src="{{ asset('/img/ristorante.png') }}" alt="">
                             {{-- <i class="fa-solid fa-utensils"></i> --}}
                         </div>
                         @if (isset(Auth::user()->restaurant->name))
-                            <h6>{{Auth::user()->restaurant->name}}</h6>
+                            <div class="restaurant-name">{{Auth::user()->restaurant->name}}</div>
                         @else
-                            <h6>Nome del ristorante</h6>
+                            <div class="restaurant-name">Nome del ristorante</div>
                         @endif
                     </div>
                     {{-- end ristorante --}}
@@ -92,7 +94,7 @@
                 </div>
             </nav>
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4">
+            <main role="main" class="col-md-8 ml-sm-auto col-lg-9 px-4 py-4">
                 @yield('content')
             </main>
         </div>

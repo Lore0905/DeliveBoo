@@ -1,89 +1,89 @@
 @extends('layouts.login-dashboard')
 
-@section('content')
-    <div class="container">
 
-        <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data" class="container-input-restaurant">
+
+
+@section('content')
+    
+    <div class="create-restaurant">
+
+        <div class="container">
+
+            <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')
-            
-            {{-- nome del ristorante --}}
-            <div class="mb-3">
+
+                {{-- Nome del ristorante --}}
                 <label for="name" class="form-label">Nome del ristorante</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
-            </div>
-            {{-- error --}}
-            @error('name')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
 
-            {{-- Image--}}
-            <div class="mb-3">
-                <input type="file" id="image" name="image" value="">
-                <label for="image">Immagine</label>
-            </div>
-            {{-- error --}}
-            @error('image')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+                @error('name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
-            {{-- indirizzo del ristorante --}}
-            <div class="mb-3">
+                {{-- Immagine del ristorante --}}
+                <label class="image-label" for="image">Immagine del ristorante</label>
+                <input class="image-label" type="file" id="image" name="image" value="">
+
+                @error('image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                {{-- Indirizzo del ristorante --}}
                 <label for="address" class="form-label">Indirizzo del ristorante</label>
                 <input type="text" class="form-control" name="address" id="address" value="{{old('address')}}">
-            </div>
-            {{-- error --}}
-            @error('address')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            
+                @error('address')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
-            {{-- partita iva --}}
-            <div class="mb-3">
+                {{-- Partita IVA --}}
                 <label for="vat" class="form-label">Partita IVA </label>
                 <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat')}}">
-            </div>
-            {{-- error --}}
-            @error('vat')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
 
-            {{-- numero di telefono --}}
-            <div class="mb-3">
+                @error('vat')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                {{-- Numero di telefono --}}     
                 <label for="phone_number" class="form-label">Numero di telefono</label>
                 <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{old('phone_number')}}">
-            </div>
-            {{-- error --}}
-            @error('phone_number')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
 
-            {{-- checkbox --}}
-            <div class="mb-3 wrapping-checkbox">
-                @foreach ($types as $type)
-                    <div class="checkbox-restaurant">
+                @error('phone_number')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                {{-- Tipologie --}}
+                <div class="checkbox">
+                    <div class="types-title">
+                        Tipologia del tuo ristorante:
+                    </div>
+                    @foreach ($types as $type)
+                        <label class="checkbox-label" for="type-{{$type->id}}">
+                            {{$type->name}}
+                        </label>
                         <input 
                         type="checkbox" name="types[]" 
                         id="type-{{$type->id}}" 
                         value="{{$type->id}}"
                         {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}
                         >
-                        <label for="type-{{$type->id}}">
-                            {{$type->name}}
-                        </label>
-                    </div>
-                @endforeach
-            </div>
-            {{-- error --}}
-            @error('types')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-                
-            {{-- button --}}
-            <button type="submit" class="button-create-restaurant">
-                Invia
-            </button>
-        </form>
+                    @endforeach
+                </div>
+
+                @error('types')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                {{-- Bottone --}}
+                <button type="submit" class="btn m_button_form_create">
+                    Invia
+                </button>
+
+            </form>
+
+        </div>
+
     </div>
-    
 
 @endsection

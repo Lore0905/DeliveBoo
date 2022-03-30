@@ -23,3 +23,20 @@ img{
 .logo{
     width: 60px;
 }
+
+// UL
+ul{
+    list-style-type: none;
+}
+
+// Button Form
+.m_button_form_create{
+    border: 1px solid $primary_color;
+    background-color: $primary_color;
+    font-size: 20px;
+    font-weight: 600;
+
+    &:hover{
+        border: 1px solid $secondary_color;
+    }
+}
