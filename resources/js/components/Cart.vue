@@ -24,6 +24,9 @@
                     Procedi all'ordine
                 </button> -->
             </div>
+            <div>
+                <span>{{ totalAmmount }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -34,6 +37,7 @@
         data: function(){
             return{
                 foods : this.selectedElement,
+                totalAmmount: 0,
             }
         },
         props:{
@@ -44,8 +48,23 @@
                 this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
 
                 element.quantity = 0;
+            },
+            updateCartAmmount: function(){
+                this.totalAmmount = 0;
+
+                this.selectedElement.forEach(element => {
+                    this.totalAmmount = this.totalAmmount + (element.price * element.quantity);
+                });
+
             }
         },
+        watch: {
+            selectedElement: {
+                handler() {
+                    this.updateCartAmmount();
+                }
+            }
+        }
     }
 </script>
 

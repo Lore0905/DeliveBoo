@@ -1938,11 +1938,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
     return {
-      foods: this.selectedElement
+      foods: this.selectedElement,
+      totalAmmount: 0
     };
   },
   props: {
@@ -1952,6 +1956,21 @@ __webpack_require__.r(__webpack_exports__);
     deleteElement: function deleteElement(element) {
       this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
       element.quantity = 0;
+    },
+    updateCartAmmount: function updateCartAmmount() {
+      var _this = this;
+
+      this.totalAmmount = 0;
+      this.selectedElement.forEach(function (element) {
+        _this.totalAmmount = _this.totalAmmount + element.price * element.quantity;
+      });
+    }
+  },
+  watch: {
+    selectedElement: {
+      handler: function handler() {
+        this.updateCartAmmount();
+      }
     }
   }
 });
@@ -2597,7 +2616,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       menu: [],
       restaurant: '',
-      selectedElement: []
+      selectedElement: [],
+      totalAmmount: 0
     };
   },
   methods: {
@@ -2635,7 +2655,6 @@ __webpack_require__.r(__webpack_exports__);
     changeValue: function changeValue(food, submitType) {
       var _this2 = this;
 
-      // console.log(food);
       this.menu.forEach(function (element) {
         if (element.id === food.id) {
           if (submitType === 'subtract') {
@@ -2670,8 +2689,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (localStorage.getItem('selectedElement')) {
       this.selectedElement = JSON.parse(localStorage.getItem('selectedElement'));
-    } // console.log(selectedElement.id);
-
+    }
   }
 });
 
@@ -4234,6 +4252,8 @@ var render = function () {
               _c("a", { attrs: { href: "/payment" } }, [_vm._v("test")]),
             ])
           : _vm._e(),
+        _vm._v(" "),
+        _c("div", [_c("span", [_vm._v(_vm._s(_vm.totalAmmount))])]),
       ],
       2
     ),
@@ -21514,7 +21534,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
