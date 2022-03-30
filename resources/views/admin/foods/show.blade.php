@@ -78,7 +78,7 @@
                     <div class="left-column">
                         Copertina:
                     </div>
-                    <img src="{{asset('storage/img/' . $food->img)}}" alt="{{$food->name}}">
+                    <img src="{{asset('storage/' . $food->img)}}" alt="{{$food->name}}">
                 </div>
 
                 {{-- Link --}}

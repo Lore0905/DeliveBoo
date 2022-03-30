@@ -137,7 +137,7 @@ class FoodController extends Controller
             }
 
             // upload new file 
-            $img_path = Storage::put('img', $foods_data['img']);
+            $img_path = Storage::put('image', $foods_data['img']);
 
             // path to column
             $foods_data['img'] = $img_path;
