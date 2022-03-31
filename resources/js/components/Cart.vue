@@ -18,22 +18,13 @@
             <div v-if="selectedElement.length > 0">
                 <router-link class="btn m_button link-to" :to="{ name: 'order-form' }">
                     Procedi all'ordine
-
-                </router-link> -->
-                <!-- <button class="btn m_button">
-                    Procedi all'ordine
-                </button> -->
-
-                </router-link>
-
-                
+                </router-link>  
             </div>
     
-            
             <!-- totale ordine -->
             <div class="wrapping-total-amount">
                 <strong>Totale Ordine</strong>
-                <div class="total-amount">{{ totalAmmount.toFixed(2) }}</div>
+                <div class="total-amount">{{ totalAmount.toFixed(2) }}</div>
 
             </div>
         </div>

@@ -78,7 +78,7 @@ export default {
                 customer_email: this.customer_email,
                 customer_address: this.customer_address,
                 customer_phone_number: this.customer_phone_number,
-                total_amount: this.total_amount
+                total_amount: this.totalAmount
             })
             .then((response) =>{
                 if (response.data.success) {

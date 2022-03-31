@@ -1937,7 +1937,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -1985,6 +1988,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2615,7 +2620,7 @@ __webpack_require__.r(__webpack_exports__);
         customer_email: this.customer_email,
         customer_address: this.customer_address,
         customer_phone_number: this.customer_phone_number,
-        total_amount: this.total_amount
+        total_amount: this.totalAmount
       }).then(function (response) {
         if (response.data.success) {
           _this.customer_name = '', _this.customer_email = '', _this.customer_address = '', _this.customer_phone_number = '', _this.success = true, _this.errors = {};
@@ -4423,9 +4428,6 @@ var render = function () {
           ])
         }),
         _vm._v(" "),
-
-        _vm.selectedElement.length > 0 ? _c("div") : _vm._e(),
-
         _vm.selectedElement.length > 0
           ? _c(
               "div",
@@ -4442,19 +4444,14 @@ var render = function () {
               1
             )
           : _vm._e(),
-
         _vm._v(" "),
-
-        _c("div", [_c("span", [_vm._v(_vm._s(_vm.totalAmount))])]),
-
         _c("div", { staticClass: "wrapping-total-amount" }, [
           _c("strong", [_vm._v("Totale Ordine")]),
           _vm._v(" "),
           _c("div", { staticClass: "total-amount" }, [
-            _vm._v(_vm._s(_vm.totalAmmount.toFixed(2))),
+            _vm._v(_vm._s(_vm.totalAmount.toFixed(2))),
           ]),
         ]),
-
       ],
       2
     ),
@@ -22078,15 +22075,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
-=======
-
-module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
-
 
 
 /***/ })
