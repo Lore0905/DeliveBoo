@@ -46,8 +46,9 @@ Route::get('/payment/{id}', 'Braintree\PaymentController@show')->name('payment')
 
 Route::post('/checkout/{id}', 'Braintree\PaymentController@store')->name('checkout');
 
+Route::get('/success', 'Braintree\PaymentController@store')->name('guest.success');
 
 Route::get('{any}', function(){
     return view('guest.home');
-})->where("any", ".*")->name('any');
+})->where("any", ".*");
 
