@@ -1,46 +1,45 @@
 <template>
     <div class="restaurant-list">
         <!-- Primo ciclo for -->
-        <div class="row" v-for="restaurant in restaurants" :key="restaurant.id">
 
-            <!-- Secondo ciclo for -->
-            <div class="col" v-for="item in restaurant" :key="item.id">
+        <!-- Secondo ciclo for -->
+        <div class="col" v-for="item in restaurants" :key="item.id">
 
-                <div class="single-box">
+            <div class="single-box">
 
-                    <div class="box-details">
+                <div class="box-details">
 
-                        <!-- Immagine -->
-                        <div class="image">
-                            <img :src="item.image" alt="">
-                        </div>
+                    <!-- Immagine -->
+                    <div class="image">
+                        <img :src="item.image" alt="">
+                    </div>
 
-                        <!-- Nome -->
-                        <div class="name">
-                            {{item.name}}
-                        </div>
+                    <!-- Nome -->
+                    <div class="name">
+                        {{item.name}}
+                    </div>
 
-                        <!-- Indirizzo -->
-                        <div class="address">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{item.address}}
-                        </div>
+                    <!-- Indirizzo -->
+                    <div class="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{item.address}}
+                    </div>
 
-                        <!-- Numero telefonico -->
-                        <div class="phone">
-                            <i class="fas fa-phone-alt"></i>
-                            {{item.phone_number}}
-                        </div>
+                    <!-- Numero telefonico -->
+                    <div class="phone">
+                        <i class="fas fa-phone-alt"></i>
+                        {{item.phone_number}}
+                    </div>
 
-                        <!-- Link -->
-                        <router-link class="link-to link" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
-                            Vai al menù
-                        </router-link>
+                    <!-- Link -->
+                    <router-link class="link-to link" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
+                        Vai al menù
+                    </router-link>
 
-                    </div>    
-                </div>
+                </div>    
             </div>
         </div>
+
     </div>
 </template>
 
