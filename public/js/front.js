@@ -22142,7 +22142,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
 module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
+module.exports = __webpack_require__(/*! C:\Users\loren\classe-48\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+
 
 
 /***/ })
