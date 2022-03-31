@@ -50,7 +50,8 @@
                 </div>
 
                 <div class="col col-3 col-sm-3">
-                    <Cart :selectedElement="selectedElement" />
+                    <Cart :selectedElement="selectedElement" @amount="receiveAmount" />
+
                 </div>
             </div>
         
@@ -71,7 +72,7 @@ export default {
             menu: [],
             restaurant: '',
             selectedElement: [],
-            totalAmmount: 0,
+            totalAmount: 0,
         }
     },
     methods: {
@@ -136,6 +137,10 @@ export default {
                 }   
             });
         },
+        receiveAmount(totalAmount) {
+            // receive emit from Cart 
+            this.totalAmount = totalAmount;
+        }
     },
     created: function() {
         this.getMenu();
@@ -149,6 +154,12 @@ export default {
             },
             deep: true,
         },
+        totalAmount: {
+            handler() {
+                // emit to App vue 
+                this.$emit('amount', this.totalAmount);
+            }
+        }
     },
     mounted(){
         console.log('App Mounted');

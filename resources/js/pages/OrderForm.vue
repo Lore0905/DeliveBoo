@@ -40,7 +40,9 @@
                 </div>
 
                 <label for="total_amount">Totale</label>
-                <input v-model="total_amount" class="" disabled type="text" name="total_amount" id="total_amount">
+                <input v-model="totalAmount" class="" disabled type="text" name="total_amount" id="total_amount">
+
+                <!-- <input value="{{totalAmount}}" class="" disabled type="text" name="total_amount" id="total_amount"> -->
 
                 <button class="my-4 btn m_button_form_create" type="submit" @click.prevent="sendOrder()">
                     Invia
@@ -62,10 +64,12 @@ export default {
             customer_email: '',
             customer_address: '',
             customer_phone_number: '',
-            total_amount: 30,
             success: false,
             errors: {},
         }
+    },
+    props: {
+        totalAmount: Number
     },
     methods:{
         sendOrder: function(){

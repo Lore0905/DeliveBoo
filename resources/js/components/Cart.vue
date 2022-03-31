@@ -19,9 +19,11 @@
                 <router-link class="btn m_button link-to" :to="{ name: 'order-form' }">
                     Procedi all'ordine
                 </router-link>
+                <!-- test  -->
+                <!-- <button @click="$emit('amount', totalAmount)">prova</button> -->
             </div>
             <div>
-                <span>{{ totalAmmount }}</span>
+                <span>{{ totalAmount }}</span>
             </div>
         </div>
     </div>
@@ -33,7 +35,7 @@
         data: function(){
             return{
                 foods : this.selectedElement,
-                totalAmmount: 0,
+                totalAmount: 0,
             }
         },
         props:{
@@ -45,11 +47,11 @@
 
                 element.quantity = 0;
             },
-            updateCartAmmount: function(){
-                this.totalAmmount = 0;
+            updateCartAmount: function(){
+                this.totalAmount = 0;
 
                 this.selectedElement.forEach(element => {
-                    this.totalAmmount = this.totalAmmount + (element.price * element.quantity);
+                    this.totalAmount = this.totalAmount + (element.price * element.quantity);
                 });
 
             }
@@ -57,7 +59,9 @@
         watch: {
             selectedElement: {
                 handler() {
-                    this.updateCartAmmount();
+                    this.updateCartAmount();
+                    // emit to restaurantMenu 
+                    this.$emit('amount', this.totalAmount);
                 }
             }
         }
