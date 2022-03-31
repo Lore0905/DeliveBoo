@@ -59,6 +59,7 @@ class RestaurantController extends Controller
             $img_path = Storage::put('image', $form_data['image']);
             $new_restaurant->image = $img_path;
         }
+        // dd($form_data);
 
         $new_restaurant->save();
 

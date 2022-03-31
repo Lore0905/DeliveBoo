@@ -158,6 +158,7 @@ export default {
             handler() {
                 // emit to App vue 
                 this.$emit('amount', this.totalAmount);
+                this.$emit('selectedElement', this.selectedElement);
             }
         }
     },

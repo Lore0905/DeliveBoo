@@ -2612,11 +2612,13 @@ __webpack_require__.r(__webpack_exports__);
       customer_address: '',
       customer_phone_number: '',
       success: false,
-      errors: {}
+      errors: {},
+      test: ''
     };
   },
   props: {
-    totalAmount: Number
+    totalAmount: Number,
+    selectedElement: Array
   },
   methods: {
     sendOrder: function sendOrder() {
@@ -2627,8 +2629,11 @@ __webpack_require__.r(__webpack_exports__);
         customer_email: this.customer_email,
         customer_address: this.customer_address,
         customer_phone_number: this.customer_phone_number,
-        total_amount: this.totalAmount
+        total_amount: this.totalAmount,
+        selected_element: this.selectedElement
       }).then(function (response) {
+        console.log(response);
+
         if (response.data.success) {
           _this.customer_name = '', _this.customer_email = '', _this.customer_address = '', _this.customer_phone_number = '', _this.success = true, _this.errors = {};
         } else {
@@ -2797,6 +2802,7 @@ __webpack_require__.r(__webpack_exports__);
       handler: function handler() {
         // emit to App vue 
         this.$emit('amount', this.totalAmount);
+        this.$emit('selectedElement', this.selectedElement);
       }
     }
   },
@@ -2857,12 +2863,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   data: function data() {
     return {
-      totalAmount: ''
+      totalAmount: null,
+      selectedElement: ''
     };
   },
   components: {
@@ -2871,6 +2883,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     receiveAmount: function receiveAmount(totalAmount) {
       this.totalAmount = totalAmount;
+    },
+    receiveSelectedElement: function receiveSelectedElement(selectedElement) {
+      this.selectedElement = selectedElement;
     }
   }
 });
@@ -5216,7 +5231,7 @@ var render = function () {
               _vm.errors.customer_name
                 ? _c(
                     "div",
-                    _vm._l(_vm.errors.name, function (error, index) {
+                    _vm._l(_vm.errors.customer_name, function (error, index) {
                       return _c("p", { key: index }, [_vm._v(_vm._s(error))])
                     }),
                     0
@@ -5255,7 +5270,7 @@ var render = function () {
               _vm.errors.customer_email
                 ? _c(
                     "div",
-                    _vm._l(_vm.errors.name, function (error, index) {
+                    _vm._l(_vm.errors.customer_email, function (error, index) {
                       return _c("p", { key: index }, [_vm._v(_vm._s(error))])
                     }),
                     0
@@ -5294,9 +5309,12 @@ var render = function () {
               _vm.errors.customer_address
                 ? _c(
                     "div",
-                    _vm._l(_vm.errors.name, function (error, index) {
-                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
-                    }),
+                    _vm._l(
+                      _vm.errors.customer_address,
+                      function (error, index) {
+                        return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                      }
+                    ),
                     0
                   )
                 : _vm._e(),
@@ -5333,9 +5351,12 @@ var render = function () {
               _vm.errors.customer_phone_number
                 ? _c(
                     "div",
-                    _vm._l(_vm.errors.name, function (error, index) {
-                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
-                    }),
+                    _vm._l(
+                      _vm.errors.customer_phone_number,
+                      function (error, index) {
+                        return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                      }
+                    ),
                     0
                   )
                 : _vm._e(),
@@ -5618,8 +5639,14 @@ var render = function () {
         "main",
         [
           _c("router-view", {
-            attrs: { totalAmount: _vm.totalAmount },
-            on: { amount: _vm.receiveAmount },
+            attrs: {
+              totalAmount: _vm.totalAmount,
+              selectedElement: _vm.selectedElement,
+            },
+            on: {
+              selectedElement: _vm.receiveSelectedElement,
+              amount: _vm.receiveAmount,
+            },
           }),
         ],
         1
@@ -22071,7 +22098,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
+module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 
 
 /***/ })
