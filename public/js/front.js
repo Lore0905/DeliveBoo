@@ -1943,7 +1943,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       foods: this.selectedElement,
-      totalAmmount: 0
+      totalAmount: 0
     };
   },
   props: {
@@ -1954,19 +1954,21 @@ __webpack_require__.r(__webpack_exports__);
       this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
       element.quantity = 0;
     },
-    updateCartAmmount: function updateCartAmmount() {
+    updateCartAmount: function updateCartAmount() {
       var _this = this;
 
-      this.totalAmmount = 0;
+      this.totalAmount = 0;
       this.selectedElement.forEach(function (element) {
-        _this.totalAmmount = _this.totalAmmount + element.price * element.quantity;
+        _this.totalAmount = _this.totalAmount + element.price * element.quantity;
       });
     }
   },
   watch: {
     selectedElement: {
       handler: function handler() {
-        this.updateCartAmmount();
+        this.updateCartAmount(); // emit to restaurantMenu 
+
+        this.$emit('amount', this.totalAmount);
       }
     }
   }
@@ -2587,6 +2589,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'OrderForm',
   data: function data() {
@@ -2595,10 +2599,12 @@ __webpack_require__.r(__webpack_exports__);
       customer_email: '',
       customer_address: '',
       customer_phone_number: '',
-      total_amount: 30,
       success: false,
       errors: {}
     };
+  },
+  props: {
+    totalAmount: Number
   },
   methods: {
     sendOrder: function sendOrder() {
@@ -2693,6 +2699,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
@@ -2704,7 +2711,7 @@ __webpack_require__.r(__webpack_exports__);
       menu: [],
       restaurant: '',
       selectedElement: [],
-      totalAmmount: 0
+      totalAmount: 0
     };
   },
   methods: {
@@ -2757,6 +2764,10 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       });
+    },
+    receiveAmount: function receiveAmount(totalAmount) {
+      // receive emit from Cart 
+      this.totalAmount = totalAmount;
     }
   },
   created: function created() {
@@ -2769,6 +2780,12 @@ __webpack_require__.r(__webpack_exports__);
         localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement));
       },
       deep: true
+    },
+    totalAmount: {
+      handler: function handler() {
+        // emit to App vue 
+        this.$emit('amount', this.totalAmount);
+      }
     }
   },
   mounted: function mounted() {
@@ -2831,8 +2848,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
+  data: function data() {
+    return {
+      totalAmount: ''
+    };
+  },
   components: {
     Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    receiveAmount: function receiveAmount(totalAmount) {
+      this.totalAmount = totalAmount;
+    }
   }
 });
 
@@ -4417,6 +4444,9 @@ var render = function () {
           : _vm._e(),
 
         _vm._v(" "),
+
+        _c("div", [_c("span", [_vm._v(_vm._s(_vm.totalAmount))])]),
+
         _c("div", { staticClass: "wrapping-total-amount" }, [
           _c("strong", [_vm._v("Totale Ordine")]),
           _vm._v(" "),
@@ -4424,6 +4454,7 @@ var render = function () {
             _vm._v(_vm._s(_vm.totalAmmount.toFixed(2))),
           ]),
         ]),
+
       ],
       2
     ),
@@ -5325,8 +5356,8 @@ var render = function () {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.total_amount,
-                    expression: "total_amount",
+                    value: _vm.totalAmount,
+                    expression: "totalAmount",
                   },
                 ],
                 attrs: {
@@ -5335,13 +5366,13 @@ var render = function () {
                   name: "total_amount",
                   id: "total_amount",
                 },
-                domProps: { value: _vm.total_amount },
+                domProps: { value: _vm.totalAmount },
                 on: {
                   input: function ($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.total_amount = $event.target.value
+                    _vm.totalAmount = $event.target.value
                   },
                 },
               }),
@@ -5511,7 +5542,12 @@ var render = function () {
         _c(
           "div",
           { staticClass: "col col-3 col-sm-3" },
-          [_c("Cart", { attrs: { selectedElement: _vm.selectedElement } })],
+          [
+            _c("Cart", {
+              attrs: { selectedElement: _vm.selectedElement },
+              on: { amount: _vm.receiveAmount },
+            }),
+          ],
           1
         ),
       ]),
@@ -5582,7 +5618,20 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("Header"), _vm._v(" "), _c("main", [_c("router-view")], 1)],
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c(
+        "main",
+        [
+          _c("router-view", {
+            attrs: { totalAmount: _vm.totalAmount },
+            on: { amount: _vm.receiveAmount },
+          }),
+        ],
+        1
+      ),
+    ],
     1
   )
 }
@@ -22030,9 +22079,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 
+module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+=======
+
 module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 
 
 
