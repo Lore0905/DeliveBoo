@@ -44,10 +44,11 @@
             selectedElement: Array,
         },
         methods: {
-            deleteElement: function(element){
-                this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
+            deleteElement: function(food){
+                this.selectedElement.splice(this.selectedElement.indexOf(food), 1);
 
-                element.quantity = 0;
+                food.quantity = 0;
+
             },
             updateCartAmount: function(){
                 this.totalAmount = 0;

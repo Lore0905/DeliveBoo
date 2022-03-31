@@ -31,7 +31,7 @@
                                             -
                                         </button>
                                         <span>
-                                            {{food.quantity}}
+                                            {{ food.quantity }}
                                         </span>
                                         <button class="btn border mx-2" @click="changeValue(food, 'add')">
                                             +
@@ -84,10 +84,16 @@ export default {
                 this.restaurant = response.data.results;
 
                 response.data.results.foods.forEach(element => {
-                    element['quantity'] = 0;
+                    if (isNaN(element['quantity'])){
+                        element['quantity'] = 0;
+                    }
+                    
                 });
 
                 this.menu = response.data.results.foods;
+
+
+                this.getFoodQuantityFromCart();
             });
 
         },
@@ -115,6 +121,7 @@ export default {
                
             }
 
+            console.log(this.selectedElement);
         },
         changeValue: function(food, submitType){
             
@@ -140,6 +147,20 @@ export default {
         receiveAmount(totalAmount) {
             // receive emit from Cart 
             this.totalAmount = totalAmount;
+        },
+        getFoodQuantityFromCart: function(){
+
+
+            this.menu.forEach(element => {
+                let item = this.selectedElement.find(item => item.id === element.id);
+
+                if (item != undefined){
+                    element.quantity = item.quantity;
+                    console.log(element.quantity);
+                } else {
+                    element.quantity = 0;
+                }
+            });
         }
     },
     created: function() {
@@ -151,6 +172,20 @@ export default {
                 console.log('Selected Element array changed!');
 
                 localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement));
+
+
+                // IF per ordinare solamente da 1 ristorante per volta.
+                this.selectedElement.forEach(element => {
+                    let item = this.selectedElement.find(item => item.restaurant_id != element.restaurant_id);
+                    if (item != undefined) {
+                        localStorage.clear();
+                        this.selectedElement=[];
+                        this.selectedElement.push(item);
+                    }
+                });
+                
+                this.getFoodQuantityFromCart();
+
             },
             deep: true,
         },
@@ -160,7 +195,7 @@ export default {
                 this.$emit('amount', this.totalAmount);
                 this.$emit('selectedElement', this.selectedElement);
             }
-        }
+        },
     },
     mounted(){
         console.log('App Mounted');
@@ -168,8 +203,7 @@ export default {
         if (localStorage.getItem('selectedElement')){  
             this.selectedElement = JSON.parse(localStorage.getItem('selectedElement'));
         }
-
-    }
+    },
 }
 </script>
 

@@ -1953,9 +1953,9 @@ __webpack_require__.r(__webpack_exports__);
     selectedElement: Array
   },
   methods: {
-    deleteElement: function deleteElement(element) {
-      this.selectedElement.splice(this.selectedElement.indexOf(element), 1);
-      element.quantity = 0;
+    deleteElement: function deleteElement(food) {
+      this.selectedElement.splice(this.selectedElement.indexOf(food), 1);
+      food.quantity = 0;
     },
     updateCartAmount: function updateCartAmount() {
       var _this = this;
@@ -2739,9 +2739,13 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/restaurant/' + this.$route.params.slug).then(function (response) {
         _this.restaurant = response.data.results;
         response.data.results.foods.forEach(function (element) {
-          element['quantity'] = 0;
+          if (isNaN(element['quantity'])) {
+            element['quantity'] = 0;
+          }
         });
         _this.menu = response.data.results.foods;
+
+        _this.getFoodQuantityFromCart();
       });
     },
     addItemCart: function addItemCart(element) {
@@ -2763,6 +2767,8 @@ __webpack_require__.r(__webpack_exports__);
 
         this.selectedElement.push(element);
       }
+
+      console.log(this.selectedElement);
     },
     changeValue: function changeValue(food, submitType) {
       var _this2 = this;
@@ -2786,6 +2792,22 @@ __webpack_require__.r(__webpack_exports__);
     receiveAmount: function receiveAmount(totalAmount) {
       // receive emit from Cart 
       this.totalAmount = totalAmount;
+    },
+    getFoodQuantityFromCart: function getFoodQuantityFromCart() {
+      var _this3 = this;
+
+      this.menu.forEach(function (element) {
+        var item = _this3.selectedElement.find(function (item) {
+          return item.id === element.id;
+        });
+
+        if (item != undefined) {
+          element.quantity = item.quantity;
+          console.log(element.quantity);
+        } else {
+          element.quantity = 0;
+        }
+      });
     }
   },
   created: function created() {
@@ -2794,8 +2816,24 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     selectedElement: {
       handler: function handler() {
+        var _this4 = this;
+
         console.log('Selected Element array changed!');
-        localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement));
+        localStorage.setItem('selectedElement', JSON.stringify(this.selectedElement)); // IF per ordinare solamente da 1 ristorante per volta.
+
+        this.selectedElement.forEach(function (element) {
+          var item = _this4.selectedElement.find(function (item) {
+            return item.restaurant_id != element.restaurant_id;
+          });
+
+          if (item != undefined) {
+            localStorage.clear();
+            _this4.selectedElement = [];
+
+            _this4.selectedElement.push(item);
+          }
+        });
+        this.getFoodQuantityFromCart();
       },
       deep: true
     },
@@ -22104,7 +22142,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 module.exports = __webpack_require__(/*! C:\Users\loren\classe-48\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+
 
 
 /***/ })
