@@ -4,7 +4,12 @@
         <Header />
 
         <main>
-            <router-view @amount="receiveAmount" :totalAmount="totalAmount"></router-view>
+            <router-view 
+            @selectedElement="receiveSelectedElement" 
+            @amount="receiveAmount" 
+            :totalAmount="totalAmount"
+            :selectedElement="selectedElement"
+            ></router-view>
         </main>
     </div>
 </template>
@@ -17,7 +22,8 @@ export default {
     name: 'App',
     data: function() {
         return {
-            totalAmount: ''
+            totalAmount: null,
+            selectedElement: '',
         }
     },
     components: {
@@ -26,6 +32,9 @@ export default {
     methods: {
         receiveAmount(totalAmount) {
             this.totalAmount = totalAmount;
+        },
+        receiveSelectedElement(selectedElement){
+            this.selectedElement = selectedElement;
         }
     }
 }

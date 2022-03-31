@@ -15,28 +15,28 @@
                 <input v-model="customer_name" class="" type="text" id="customer_name" name="customer_name">
 
                 <div v-if="errors.customer_name">
-                    <p v-for="(error, index) in errors.name" :key="index">{{ error }}</p>
+                    <p v-for="(error, index) in errors.customer_name" :key="index">{{ error }}</p>
                 </div>
 
                 <label for="customer_email">Email</label>
                 <input v-model="customer_email" class="" type="email" name="customer_email" id="customer_email">
 
                 <div v-if="errors.customer_email">
-                    <p v-for="(error, index) in errors.name" :key="index">{{ error }}</p>
+                    <p v-for="(error, index) in errors.customer_email" :key="index">{{ error }}</p>
                 </div>
 
                 <label for="customer_address">Indirizzo</label>
                 <input v-model="customer_address" class="" type="text" name="customer_address" id="customer_address">
 
                 <div v-if="errors.customer_address">
-                    <p v-for="(error, index) in errors.name" :key="index">{{ error }}</p>
+                    <p v-for="(error, index) in errors.customer_address" :key="index">{{ error }}</p>
                 </div>
 
                 <label for="customer_phone_number">Numero telefonico</label>
                 <input v-model="customer_phone_number" class="" type="text" name="customer_phone_number" id="customer_phone_number">
 
                 <div v-if="errors.customer_phone_number">
-                    <p v-for="(error, index) in errors.name" :key="index">{{ error }}</p>
+                    <p v-for="(error, index) in errors.customer_phone_number" :key="index">{{ error }}</p>
                 </div>
 
                 <label for="total_amount">Totale</label>
@@ -66,10 +66,12 @@ export default {
             customer_phone_number: '',
             success: false,
             errors: {},
+            test: '',
         }
     },
     props: {
-        totalAmount: Number
+        totalAmount: Number,
+        selectedElement: Array
     },
     methods:{
         sendOrder: function(){
@@ -78,9 +80,11 @@ export default {
                 customer_email: this.customer_email,
                 customer_address: this.customer_address,
                 customer_phone_number: this.customer_phone_number,
-                total_amount: this.totalAmount
+                total_amount: this.totalAmount,
+                selected_element: this.selectedElement,
             })
             .then((response) =>{
+                console.log(response);
                 if (response.data.success) {
                     this.customer_name = '',
                     this.customer_email = '',
