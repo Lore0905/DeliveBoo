@@ -54,7 +54,8 @@ class PaymentController extends Controller
             $order->payment_status = 'Successful';
             $order->save();
             
-            // return view('guest.home');
+            return view('guest.success');
+
         } else {
             $errorString = "";
     
