@@ -77,6 +77,7 @@ export default {
             types : [],
             array_types_id : [],
             restaurants: [],
+            restaurantsType: [],
             displaySearch: false,
         }
     },
@@ -99,13 +100,16 @@ export default {
                 axios.get('/api/restaurants/' + type)
                 .then((response) =>{
 
-                    this.restaurants.push(response.data.restaurants);
-                    
+                    response.data.restaurants.forEach(element => {
+                        let item = this.restaurants.find(item => item.id === element.id);
+                        if (item === undefined){
+                            this.restaurants.push(element);
+                        }
+                    });
+                   
                 });
 
             });
-
-            console.log(this.restaurants);
         },
         getTypeValue: function(n) {
             // n argument: is a number

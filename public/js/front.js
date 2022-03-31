@@ -2091,7 +2091,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantList',
   props: {
@@ -2191,6 +2190,7 @@ __webpack_require__.r(__webpack_exports__);
       types: [],
       array_types_id: [],
       restaurants: [],
+      restaurantsType: [],
       displaySearch: false
     };
   },
@@ -2209,10 +2209,17 @@ __webpack_require__.r(__webpack_exports__);
       this.restaurants = [];
       this.array_types_id.forEach(function (type) {
         axios.get('/api/restaurants/' + type).then(function (response) {
-          _this2.restaurants.push(response.data.restaurants);
+          response.data.restaurants.forEach(function (element) {
+            var item = _this2.restaurants.find(function (item) {
+              return item.id === element.id;
+            });
+
+            if (item === undefined) {
+              _this2.restaurants.push(element);
+            }
+          });
         });
       });
-      console.log(this.restaurants);
     },
     getTypeValue: function getTypeValue(n) {
       // n argument: is a number
@@ -4590,72 +4597,61 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "restaurant-list" },
-    _vm._l(_vm.restaurants, function (restaurant) {
-      return _c(
-        "div",
-        { key: restaurant.id, staticClass: "row" },
-        _vm._l(restaurant, function (item) {
-          return _c("div", { key: item.id, staticClass: "col" }, [
-            _c("div", { staticClass: "single-box" }, [
+    _vm._l(_vm.restaurants, function (item) {
+      return _c("div", { key: item.id, staticClass: "col" }, [
+        _c("div", { staticClass: "single-box" }, [
+          _c(
+            "div",
+            { staticClass: "box-details" },
+            [
+              _c("div", { staticClass: "image" }, [
+                _c("img", { attrs: { src: item.image, alt: "" } }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "name" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(item.name) +
+                    "\n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "address" }, [
+                _c("i", { staticClass: "fas fa-map-marker-alt" }),
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(item.address) +
+                    "\n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "phone" }, [
+                _c("i", { staticClass: "fas fa-phone-alt" }),
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(item.phone_number) +
+                    "\n                "
+                ),
+              ]),
+              _vm._v(" "),
               _c(
-                "div",
-                { staticClass: "box-details" },
-                [
-                  _c("div", { staticClass: "image" }, [
-                    _c("img", { attrs: { src: item.image, alt: "" } }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "name" }, [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.name) +
-                        "\n                    "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "address" }, [
-                    _c("i", { staticClass: "fas fa-map-marker-alt" }),
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.address) +
-                        "\n                    "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "phone" }, [
-                    _c("i", { staticClass: "fas fa-phone-alt" }),
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.phone_number) +
-                        "\n                    "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "link-to link",
-                      attrs: {
-                        to: {
-                          name: "restaurant-menu",
-                          params: { slug: item.slug },
-                        },
-                      },
+                "router-link",
+                {
+                  staticClass: "link-to link",
+                  attrs: {
+                    to: {
+                      name: "restaurant-menu",
+                      params: { slug: item.slug },
                     },
-                    [
-                      _vm._v(
-                        "\n                        Vai al menù\n                    "
-                      ),
-                    ]
-                  ),
-                ],
-                1
+                  },
+                },
+                [_vm._v("\n                    Vai al menù\n                ")]
               ),
-            ]),
-          ])
-        }),
-        0
-      )
+            ],
+            1
+          ),
+        ]),
+      ])
     }),
     0
   )
@@ -22102,7 +22098,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
 module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 
 
 /***/ })
