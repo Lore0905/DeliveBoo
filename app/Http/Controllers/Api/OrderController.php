@@ -42,6 +42,7 @@ class OrderController extends Controller
         // Boolpress
         return response()->json([
             'success' => true,
+            'order' => $new_order->id,
             'test' => $new_order
         ]);
 

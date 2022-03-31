@@ -18,54 +18,14 @@
         {{-- Content  --}}
         <div class="content container my-4">
 
-            {{-- Form Order  --}}
-            {{-- <form method="post" action="{{route('orders.store')}}" class="d-flex flex-column">
-                @csrf
-                @method('POST')
-
-                <label for="customer_name">Nome</label>
-                <input class="my-3" type="text" id="customer_name" name="customer_name">
-
-                @error('customer_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <label for="customer_email">Email</label>
-                <input class="my-3" type="email" name="customer_email" id="customer_email">
-
-                @error('customer_email')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <label for="customer_address">Indirizzo</label>
-                <input class="my-3" type="text" name="customer_address" id="customer_address">
-
-                @error('customer_address')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <label for="customer_phone_number">Numero telefonico</label>
-                <input class="my-3" type="text" name="customer_phone_number" id="customer_phone_number">
-
-                @error('customer_phone_number')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <label for="total_amount">Totale</label>
-                <input class="my-3" disabled type="text" name="total_amount" id="total_amount">
-
-                <button class="my-4 btn border" type="submit">Invia</button>
-            </form> --}}
-            {{-- End Form Order  --}}
-
             {{-- Form Pagamento --}}
-            <form method="post" id="payment-form" action="{{url('/checkout')}}">
+            <form method="post" id="payment-form" action="{{route('checkout', ['id' => $order->id])}}">
                 @csrf
                 <section>
                     <label for="amount">
                         <span class="input-label">Amount</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
                         </div>
                     </label>
 

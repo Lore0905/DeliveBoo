@@ -2613,6 +2613,7 @@ __webpack_require__.r(__webpack_exports__);
       customer_phone_number: '',
       success: false,
       errors: {},
+      order: null,
       test: ''
     };
   },
@@ -2635,7 +2636,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response);
 
         if (response.data.success) {
-          _this.customer_name = '', _this.customer_email = '', _this.customer_address = '', _this.customer_phone_number = '', _this.success = true, _this.errors = {};
+          _this.customer_name = '', _this.customer_email = '', _this.customer_address = '', _this.customer_phone_number = '', _this.success = true, _this.order = response.data.order, _this.errors = {};
         } else {
           _this.success = false, _this.errors = response.data.errors;
         }
@@ -5185,9 +5186,14 @@ var render = function () {
       _vm.success
         ? _c("div", [
             _vm._v("Grazie per aver inserito i tuoi dati, \n            "),
-            _c("a", { attrs: { href: "/payment" } }, [
-              _vm._v("\n                'mo dacci i soldi\n            "),
-            ]),
+            _c(
+              "a",
+              {
+                staticClass: "btn m_button",
+                attrs: { href: "/payment/" + _vm.order },
+              },
+              [_vm._v("\n                Procedi al pagamento\n            ")]
+            ),
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -22098,9 +22104,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
+module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
