@@ -57,7 +57,6 @@
                 this.selectedElement.forEach(element => {
                     this.totalAmmount = this.totalAmmount + (element.price * element.quantity);
                 });
-
             }
         },
         watch: {
@@ -92,7 +91,6 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    position: relative;
 
     .wrapping-total-amount{
     border: 1px solid rgba($color: #000000, $alpha: 0.3);
@@ -100,8 +98,7 @@
     border-radius: 5px;
     display: inline-block;
     font-size: 20px;
-    position: absolute;
-    top: 86%;
+    
 
         .total-amount{
         font-size: 17px;
