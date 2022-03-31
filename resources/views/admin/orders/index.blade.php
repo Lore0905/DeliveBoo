@@ -10,10 +10,10 @@
             <h2>Non hai ancora ordini</h2>
         @else
     </div>
-    <div class="d-flex align-items-center p-2">
+    <div class="d-flex flex-wrap align-items-center p-2">
         @foreach ($orders as $order)
         
-            <div class="border mx-2 p-2">
+            <div class="border mb-2 mx-2 p-2">
                 <div class="mb-2 text-center font-weight-bold">
                     {{$order->customer_name}}
                 </div>

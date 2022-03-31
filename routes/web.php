@@ -42,12 +42,12 @@ Route::middleware('auth')
 
 // Braintree
 
-Route::get('/payment', 'Braintree\PaymentController@show')->name('payment');
+Route::get('/payment/{id}', 'Braintree\PaymentController@show')->name('payment');
 
-Route::post('/checkout', 'Braintree\PaymentController@store')->name('checkout');
+Route::post('/checkout/{id}', 'Braintree\PaymentController@store')->name('checkout');
 
 
 Route::get('{any}', function(){
     return view('guest.home');
-})->where("any", ".*");
+})->where("any", ".*")->name('any');
 

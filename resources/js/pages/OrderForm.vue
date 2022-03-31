@@ -4,8 +4,8 @@
         <div class="container">
 
             <div v-if="success">Grazie per aver inserito i tuoi dati, 
-                <a href="/payment">
-                    'mo dacci i soldi
+                <a class="btn m_button" :href="'/payment/' + order">
+                    Procedi al pagamento
                 </a>
             </div>
 
@@ -66,6 +66,7 @@ export default {
             customer_phone_number: '',
             success: false,
             errors: {},
+            order: null,
             test: '',
         }
     },
@@ -91,6 +92,7 @@ export default {
                     this.customer_address = '',
                     this.customer_phone_number = '',
                     this.success = true,
+                    this.order = response.data.order,
                     this.errors = {}
                 } else {
                     this.success = false,
