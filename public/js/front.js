@@ -1937,12 +1937,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -2483,10 +2478,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
-/* harmony import */ var _components_Selection_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Selection.vue */ "./resources/js/components/Selection.vue");
-/* harmony import */ var _components_Work_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Work.vue */ "./resources/js/components/Work.vue");
-/* harmony import */ var _components_Searchbox_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Searchbox.vue */ "./resources/js/components/Searchbox.vue");
+/* harmony import */ var _components_Selection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Selection.vue */ "./resources/js/components/Selection.vue");
+/* harmony import */ var _components_Work_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Work.vue */ "./resources/js/components/Work.vue");
+/* harmony import */ var _components_Searchbox_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Searchbox.vue */ "./resources/js/components/Searchbox.vue");
 //
 //
 //
@@ -2496,9 +2490,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
- // import News from '../components/News.vue';
-
+// import News from '../components/News.vue';
 
 
 
@@ -2510,11 +2502,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Searchbox: _components_Searchbox_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Searchbox: _components_Searchbox_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     // News,
-    Selection: _components_Selection_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Work: _components_Work_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Selection: _components_Selection_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Work: _components_Work_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   methods: {
     getRestaurants: function getRestaurants() {
@@ -2532,6 +2523,106 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/OrderForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'OrderForm',
+  data: function data() {
+    return {
+      customer_name: '',
+      customer_email: '',
+      customer_address: '',
+      customer_phone_number: '',
+      total_amount: 30,
+      success: false,
+      errors: {}
+    };
+  },
+  methods: {
+    sendOrder: function sendOrder() {
+      var _this = this;
+
+      axios.post('/api/orders/store', {
+        customer_name: this.customer_name,
+        customer_email: this.customer_email,
+        customer_address: this.customer_address,
+        customer_phone_number: this.customer_phone_number,
+        total_amount: this.total_amount
+      }).then(function (response) {
+        if (response.data.success) {
+          _this.customer_name = '', _this.customer_email = '', _this.customer_address = '', _this.customer_phone_number = '', _this.success = true, _this.errors = {};
+        } else {
+          _this.success = false, _this.errors = response.data.errors;
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/RestaurantMenu.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/RestaurantMenu.vue?vue&type=script&lang=js& ***!
@@ -2542,7 +2633,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
-/* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
 //
 //
 //
@@ -2603,16 +2693,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
   components: {
-    Cart: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Cart: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -2729,6 +2814,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
 //
 //
 //
@@ -2737,8 +2823,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App'
+  name: 'App',
+  components: {
+    Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -2851,6 +2946,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".work[data-v-b4996508] {\n  padding: 30px 0;\n}\n.work img[data-v-b4996508] {\n  width: 100%;\n  height: 100%;\n}\n.work .work-title[data-v-b4996508] {\n  color: #2e3333;\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n}\n.work .row .box[data-v-b4996508] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.work .row .box .red[data-v-b4996508] {\n  background-color: #fe483b;\n}\n.work .row .box .orange[data-v-b4996508] {\n  background-color: #ff8100;\n}\n.work .row .box .gray[data-v-b4996508] {\n  background-color: #bac3c3;\n}\n.work .row .box .bottom[data-v-b4996508] {\n  color: white;\n  padding: 40px 40px;\n  height: 100%;\n}\n.work .row .box .bottom .title[data-v-b4996508] {\n  font-size: 35px;\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n.work .row .box .bottom .description[data-v-b4996508] {\n  padding-bottom: 30px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".order-form[data-v-713f20f9] {\n  margin: 30px 0;\n}\n.order-form form label[data-v-713f20f9] {\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n.order-form form input[data-v-713f20f9] {\n  margin-bottom: 20px;\n}", ""]);
 
 // exports
 
@@ -3534,6 +3648,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Work.vue?vue&type=style&index=0&id=b4996508&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Work.vue?vue&type=style&index=0&id=b4996508&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4252,7 +4396,26 @@ var render = function () {
           ])
         }),
         _vm._v(" "),
+
         _vm.selectedElement.length > 0 ? _c("div") : _vm._e(),
+
+        _vm.selectedElement.length > 0
+          ? _c(
+              "div",
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn m_button link-to",
+                    attrs: { to: { name: "order-form" } },
+                  },
+                  [_vm._v("\n                Procedi all'ordine\n            ")]
+                ),
+              ],
+              1
+            )
+          : _vm._e(),
+
         _vm._v(" "),
         _c("div", { staticClass: "wrapping-total-amount" }, [
           _c("strong", [_vm._v("Totale Ordine")]),
@@ -4952,17 +5115,256 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("Searchbox"),
-      _vm._v(" "),
-      _c("Selection"),
-      _vm._v(" "),
-      _c("Work"),
-    ],
+    [_c("Searchbox"), _vm._v(" "), _c("Selection"), _vm._v(" "), _c("Work")],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "order-form" }, [
+    _c("div", { staticClass: "container" }, [
+      _vm.success
+        ? _c("div", [
+            _vm._v("Grazie per aver inserito i tuoi dati, \n            "),
+            _c("a", { attrs: { href: "/payment" } }, [
+              _vm._v("\n                'mo dacci i soldi\n            "),
+            ]),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success === false
+        ? _c(
+            "form",
+            {
+              staticClass: "d-flex flex-column",
+              attrs: { action: "", method: "post" },
+            },
+            [
+              _c("label", { attrs: { for: "customer_name" } }, [
+                _vm._v("Nome"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.customer_name,
+                    expression: "customer_name",
+                  },
+                ],
+                attrs: {
+                  type: "text",
+                  id: "customer_name",
+                  name: "customer_name",
+                },
+                domProps: { value: _vm.customer_name },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.customer_name = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _vm.errors.customer_name
+                ? _c(
+                    "div",
+                    _vm._l(_vm.errors.name, function (error, index) {
+                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "customer_email" } }, [
+                _vm._v("Email"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.customer_email,
+                    expression: "customer_email",
+                  },
+                ],
+                attrs: {
+                  type: "email",
+                  name: "customer_email",
+                  id: "customer_email",
+                },
+                domProps: { value: _vm.customer_email },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.customer_email = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _vm.errors.customer_email
+                ? _c(
+                    "div",
+                    _vm._l(_vm.errors.name, function (error, index) {
+                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "customer_address" } }, [
+                _vm._v("Indirizzo"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.customer_address,
+                    expression: "customer_address",
+                  },
+                ],
+                attrs: {
+                  type: "text",
+                  name: "customer_address",
+                  id: "customer_address",
+                },
+                domProps: { value: _vm.customer_address },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.customer_address = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _vm.errors.customer_address
+                ? _c(
+                    "div",
+                    _vm._l(_vm.errors.name, function (error, index) {
+                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "customer_phone_number" } }, [
+                _vm._v("Numero telefonico"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.customer_phone_number,
+                    expression: "customer_phone_number",
+                  },
+                ],
+                attrs: {
+                  type: "text",
+                  name: "customer_phone_number",
+                  id: "customer_phone_number",
+                },
+                domProps: { value: _vm.customer_phone_number },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.customer_phone_number = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _vm.errors.customer_phone_number
+                ? _c(
+                    "div",
+                    _vm._l(_vm.errors.name, function (error, index) {
+                      return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "total_amount" } }, [
+                _vm._v("Totale"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.total_amount,
+                    expression: "total_amount",
+                  },
+                ],
+                attrs: {
+                  disabled: "",
+                  type: "text",
+                  name: "total_amount",
+                  id: "total_amount",
+                },
+                domProps: { value: _vm.total_amount },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.total_amount = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "my-4 btn m_button_form_create",
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.sendOrder()
+                    },
+                  },
+                },
+                [_vm._v("\n                Invia\n            ")]
+              ),
+            ]
+          )
+        : _vm._e(),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4987,8 +5389,6 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("header", [_c("Header")], 1),
-    _vm._v(" "),
     _c("div", { staticClass: "wrapping-restaurant" }, [
       _c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]),
       _vm._v(" "),
@@ -5180,7 +5580,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", [_c("router-view")], 1)
+  return _c(
+    "div",
+    [_c("Header"), _vm._v(" "), _c("main", [_c("router-view")], 1)],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21235,6 +21639,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/OrderForm.vue":
+/*!******************************************!*\
+  !*** ./resources/js/pages/OrderForm.vue ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OrderForm.vue?vue&type=template&id=713f20f9&scoped=true& */ "./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true&");
+/* harmony import */ var _OrderForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./OrderForm.vue?vue&type=script&lang=js& */ "./resources/js/pages/OrderForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& */ "./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _OrderForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "713f20f9",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/OrderForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/OrderForm.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/pages/OrderForm.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=style&index=0&id=713f20f9&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_style_index_0_id_713f20f9_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderForm.vue?vue&type=template&id=713f20f9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/OrderForm.vue?vue&type=template&id=713f20f9&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderForm_vue_vue_type_template_id_713f20f9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/RestaurantMenu.vue":
 /*!***********************************************!*\
   !*** ./resources/js/pages/RestaurantMenu.vue ***!
@@ -21407,9 +21898,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_RestaurantMenu_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/RestaurantMenu.vue */ "./resources/js/pages/RestaurantMenu.vue");
 /* harmony import */ var _pages_notFound_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/notFound.vue */ "./resources/js/pages/notFound.vue");
 /* harmony import */ var _pages_Checkout_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Checkout.vue */ "./resources/js/pages/Checkout.vue");
+/* harmony import */ var _pages_OrderForm_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/OrderForm.vue */ "./resources/js/pages/OrderForm.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 
@@ -21428,6 +21921,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/checkout",
     name: "checkout",
     component: _pages_Checkout_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }, {
+    path: "/order-form",
+    name: "order-form",
+    component: _pages_OrderForm_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: "/*",
     name: 'not-found',
@@ -21532,7 +22029,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
 module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
+module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 
 
 /***/ })

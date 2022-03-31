@@ -7,6 +7,7 @@ import Home from './pages/Home.vue';
 import RestaurantMenu from './pages/RestaurantMenu.vue';
 import notFound from './pages/notFound.vue';
 import Checkout from './pages/Checkout.vue';
+import OrderForm from './pages/OrderForm.vue';
 
 
 const router = new VueRouter({
@@ -26,6 +27,11 @@ const router = new VueRouter({
             path: "/checkout",
             name: "checkout",
             component: Checkout
+        },
+        {
+            path: "/order-form",
+            name: "order-form",
+            component: OrderForm
         },
         {
             path: "/*",
