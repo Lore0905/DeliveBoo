@@ -1937,6 +1937,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -2849,7 +2850,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".text-cart[data-v-b7f93bea] {\n  font-size: 20px;\n  background-color: #00ccbc;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  padding: 7px 0px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}\n.data-cart[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n.data-cart .wrapping-total-amount[data-v-b7f93bea] {\n  border: 1px solid rgba(0, 0, 0, 0.3);\n  padding: 10px 20px;\n  border-radius: 5px;\n  display: inline-block;\n  font-size: 20px;\n}\n.data-cart .wrapping-total-amount .total-amount[data-v-b7f93bea] {\n  font-size: 17px;\n  padding: 5px 10px;\n  border-radius: 5px;\n  background-color: #00ccbc;\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 25px;\n}\n.wrapping-cart[data-v-b7f93bea] {\n  padding-left: 10%;\n  width: 100%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -2868,7 +2869,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nul[data-v-1f42fb90] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-1f42fb90] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-1f42fb90]:hover {\n  border: 1px solid #2e3333;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  border: 2px solid lightgray;\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
+exports.push([module.i, "img[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nul[data-v-1f42fb90] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-1f42fb90] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-1f42fb90]:hover {\n  border: 1px solid #2e3333;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  transform: scale(1.1);\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
 
 // exports
 
@@ -2982,7 +2983,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  border-right: 1px solid black;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
+exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  border-right: 1px solid rgba(0, 0, 0, 0.35);\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
 
 // exports
 
@@ -4357,11 +4358,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
+  return _c("div", { staticClass: "wrapping-cart" }, [
+    _c("div", { staticClass: "text-cart" }, [
+      _vm._v("\n        CARRELLO\n    "),
+    ]),
     _vm._v(" "),
     _c(
       "div",
+      { staticClass: "data-cart" },
       [
         _vm._l(_vm.selectedElement, function (food) {
           return _c("div", { key: food.id, staticClass: "py-4 cart-item" }, [
@@ -4380,7 +4384,7 @@ var render = function () {
             _c(
               "button",
               {
-                staticClass: "btn btn-danger",
+                staticClass: "btn btn-danger mx-4",
                 on: {
                   click: function ($event) {
                     return _vm.deleteElement(food)
@@ -4392,6 +4396,9 @@ var render = function () {
           ])
         }),
         _vm._v(" "),
+
+        _vm.selectedElement.length > 0 ? _c("div") : _vm._e(),
+
         _vm.selectedElement.length > 0
           ? _c(
               "div",
@@ -4408,23 +4415,21 @@ var render = function () {
               1
             )
           : _vm._e(),
+
         _vm._v(" "),
-        _c("div", [_c("span", [_vm._v(_vm._s(_vm.totalAmmount))])]),
+        _c("div", { staticClass: "wrapping-total-amount" }, [
+          _c("strong", [_vm._v("Totale Ordine")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "total-amount" }, [
+            _vm._v(_vm._s(_vm.totalAmmount.toFixed(2))),
+          ]),
+        ]),
       ],
       2
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("Carrello:")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -4459,7 +4464,7 @@ var staticRenderFns = [
           "div",
           { staticClass: "d-flex justify-content-between align-items-center" },
           [
-            _c("div", { staticClass: "left" }, [
+            _c("a", { staticClass: "left", attrs: { href: "/" } }, [
               _c("i", { staticClass: "fas fa-frog" }),
               _vm._v(" "),
               _c("span", [
@@ -22024,7 +22029,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 
 
 /***/ })

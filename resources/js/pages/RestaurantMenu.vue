@@ -172,7 +172,8 @@ export default {
     .row{
         justify-content: center;
         .selected-quantity{
-            border-right: 1px solid black;
+            border-right: 1px solid rgba($color: #000000, $alpha: 0.35);
+            min-height: 100%;
 
             .foods-box {
                 // display: flex;

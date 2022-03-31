@@ -1,5 +1,31 @@
 <template>
     <header>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="left" href="/">
+                <i class="fas fa-frog"></i>
+                <span>
+                    deliveboo
+                </span>
+            </a>
+            <div class="right">
+                <div class="m_button_header">
+                    <a href="/admin">
+                        <i class="fas fa-house-user"></i>
+                        <span>
+                            Registrati o accedi
+                        </span>
+                    </a>
+                </div>
+                <div class="m_button_header d-none d-sm-none d-md-block">
+                    <a href="#">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>
+                            Collabora con noi
+                        </span>
+                    </a>
+
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="left">
@@ -7,6 +33,7 @@
                     <span>
                         deliveboo
                     </span>
+
                 </div>
                 <div class="right">
                     <div class="m_button_header">
@@ -57,6 +84,7 @@ header{
         color: white;
         font-size: 25px;
         font-weight: 600;
+        
     }
 
     .right{
@@ -77,7 +105,7 @@ header{
                 font-weight: 300;
 
                 &:hover{
-                    border: 2px solid lightgray;
+                    transform: scale(1.1);
                 }
 
                 i{
