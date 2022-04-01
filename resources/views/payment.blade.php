@@ -25,7 +25,7 @@
                     <label for="amount">
                         <span class="input-label">Amount</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
+                            <input readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
                         </div>
                     </label>
 

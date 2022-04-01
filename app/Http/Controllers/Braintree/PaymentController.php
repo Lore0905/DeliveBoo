@@ -44,7 +44,7 @@ class PaymentController extends Controller
             ]
         ]);
         
-        if ($result->success) {
+        if ($result->success && $order->total_amount === $amount) {
             $transaction = $result->transaction;
             // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
             // $order->update(['payment_status' => 'Successful']);
