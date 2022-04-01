@@ -2179,6 +2179,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Serchbox",
@@ -2717,7 +2721,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
@@ -2981,7 +2984,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .single-box .box-details[data-v-77ddbf26] {\n  margin: 10px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid black;\n}\n.restaurant-list .single-box .box-details .image[data-v-77ddbf26] {\n  width: 100%;\n  height: 100%;\n}\n.restaurant-list .single-box .box-details .name[data-v-77ddbf26] {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .address[data-v-77ddbf26], .restaurant-list .single-box .box-details .phone[data-v-77ddbf26] {\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .link[data-v-77ddbf26] {\n  text-transform: uppercase;\n  color: #2e3333;\n}", ""]);
+exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .box-details[data-v-77ddbf26] {\n  margin: 10px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid black;\n}\n.restaurant-list .single-box .box-details .image[data-v-77ddbf26] {\n  width: 100%;\n  height: 100%;\n}\n.restaurant-list .single-box .box-details .name[data-v-77ddbf26] {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .address[data-v-77ddbf26], .restaurant-list .single-box .box-details .phone[data-v-77ddbf26] {\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .link[data-v-77ddbf26] {\n  text-transform: uppercase;\n  color: #2e3333;\n}", ""]);
 
 // exports
 
@@ -3000,7 +3003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@-webkit-keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@-webkit-keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n@keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n.wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col {\n  margin-bottom: 20px;\n}\n.wrapping-serchbox .container .row .col h1 {\n  color: black;\n  font-weight: 600;\n  text-align: center;\n  padding-bottom: 10px;\n}\n.wrapping-serchbox .container .row .col .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col .wrapping-select h6 {\n  text-align: center;\n  padding-bottom: 10px;\n}\n.wrapping-serchbox .container .row .col .wrapping-select .row .col .ms_btn {\n  background-color: #00ccbc;\n  color: white;\n}\n.wrapping-serchbox .dropdown-test {\n  position: relative;\n}\n.wrapping-serchbox .search-menu {\n  display: none;\n  position: absolute;\n  text-transform: capitalize;\n  z-index: 2;\n  top: 60px;\n  left: 0;\n  width: 100%;\n  background-color: white;\n  color: #2e3333;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid lightgray;\n  box-shadow: 5px 5px 15px -5px #000000;\n  -webkit-animation: reverseGrowDown 500ms linear;\n          animation: reverseGrowDown 500ms linear;\n  transform-origin: center top;\n}\n.wrapping-serchbox .search-menu.active {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n  align-items: space-around;\n  -webkit-animation: growDown 500ms linear;\n          animation: growDown 500ms linear;\n  transform-origin: top center;\n}\n.wrapping-serchbox button {\n  padding: 0 10px;\n  color: #2e3333;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 2px solid lightgray;\n  font-weight: 300;\n}\n.wrapping-serchbox button:hover {\n  border: 2px solid lightgray;\n}\n.wrapping-serchbox button i {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
+exports.push([module.i, "@-webkit-keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@keyframes growDown {\n0% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n100% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n}\n@-webkit-keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n@keyframes reverseGrowDown {\n0% {\n    opacity: 1;\n    transform: scaleY(1);\n}\n100% {\n    opacity: 0;\n    transform: scaleY(0);\n}\n}\n.wrapping-serchbox {\n  background-color: #00ccbc;\n  min-width: 100%;\n  overflow: hidden;\n  position: relative;\n  padding: 50px 0px;\n}\n.wrapping-serchbox .container .row .col {\n  margin-bottom: 20px;\n}\n.wrapping-serchbox .container .row .col h1 {\n  color: black;\n  font-weight: 600;\n  text-align: center;\n  padding-bottom: 10px;\n}\n.wrapping-serchbox .container .row .col .wrapping-select {\n  background-color: white;\n  padding: 20px 50px;\n  border-radius: 10px;\n  text-align: center;\n  z-index: 100;\n}\n.wrapping-serchbox .container .row .col .wrapping-select h6 {\n  text-align: center;\n  padding-bottom: 10px;\n}\n.wrapping-serchbox .container .row .col .wrapping-select .row .col .ms_btn {\n  background-color: #00ccbc;\n  color: white;\n}\n.wrapping-serchbox .dropdown-test {\n  position: relative;\n}\n.wrapping-serchbox .search-menu {\n  display: none;\n  position: absolute;\n  text-transform: capitalize;\n  z-index: 2;\n  top: 60px;\n  left: 0;\n  width: 100%;\n  background-color: white;\n  color: #2e3333;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid lightgray;\n  box-shadow: 5px 5px 15px -5px #000000;\n  -webkit-animation: reverseGrowDown 500ms linear;\n          animation: reverseGrowDown 500ms linear;\n  transform-origin: center top;\n}\n.wrapping-serchbox .search-menu.active {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n  align-items: space-around;\n  -webkit-animation: growDown 500ms linear;\n          animation: growDown 500ms linear;\n  transform-origin: top center;\n}\n.wrapping-serchbox button {\n  padding: 0 10px;\n  color: #2e3333;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 2px solid lightgray;\n  font-weight: 300;\n}\n.wrapping-serchbox button:hover {\n  border: 2px solid lightgray;\n}\n.wrapping-serchbox button i {\n  color: #00ccbc;\n  padding-right: 5px;\n}\n.restaurants-container {\n  background-color: #fff;\n  min-width: 100%;\n  overflow: hidden;\n  padding: 50px 0px;\n}", ""]);
 
 // exports
 
@@ -4635,64 +4638,76 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "restaurant-list" },
-    _vm._l(_vm.restaurants, function (item) {
-      return _c("div", { key: item.id, staticClass: "col" }, [
-        _c("div", { staticClass: "single-box" }, [
-          _c(
-            "div",
-            { staticClass: "box-details" },
-            [
-              _c("div", { staticClass: "image" }, [
-                _c("img", { attrs: { src: item.image, alt: "" } }),
+    { staticClass: "container mb-3 mt-3 restaurant-list" },
+    [
+      _vm.restaurants.length > 0
+        ? _c("div", { staticClass: "restaurants-title m-3" }, [
+            _vm._v(
+              "\n        Ecco i ristoranti che possono fare al caso tuo:\n    "
+            ),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._l(_vm.restaurants, function (item) {
+        return _c("div", { key: item.id, staticClass: "col" }, [
+          _c("div", { staticClass: "single-box" }, [
+            _c("div", { staticClass: "card mb-3" }, [
+              _c("div", { staticClass: "row g-0" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("img", {
+                    staticClass: "img-fluid rounded-start",
+                    attrs: { src: item.image, alt: item.name + " image" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card-body" },
+                    [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(item.name)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(_vm._s(item.address)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _c("small", { staticClass: "text-muted" }, [
+                          _c("i", { staticClass: "fas fa-phone-alt" }),
+                          _vm._v(" " + _vm._s(item.phone_number)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "float-right btn btn-secondary",
+                          attrs: {
+                            to: {
+                              name: "restaurant-menu",
+                              params: { slug: item.slug },
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                                Vai al menù\n                            "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
               ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "name" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(item.name) +
-                    "\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "address" }, [
-                _c("i", { staticClass: "fas fa-map-marker-alt" }),
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(item.address) +
-                    "\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "phone" }, [
-                _c("i", { staticClass: "fas fa-phone-alt" }),
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(item.phone_number) +
-                    "\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "link-to link",
-                  attrs: {
-                    to: {
-                      name: "restaurant-menu",
-                      params: { slug: item.slug },
-                    },
-                  },
-                },
-                [_vm._v("\n                    Vai al menù\n                ")]
-              ),
-            ],
-            1
-          ),
-        ]),
-      ])
-    }),
-    0
+            ]),
+          ]),
+        ])
+      }),
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -4719,116 +4734,112 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "wrapping-serchbox" }, [
-      _c(
-        "div",
-        { staticClass: "container" },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col col-xs-12 col-sm-12 col-md-12 col-lg-6" },
-              [
-                _c("h1", [_vm._v("I piatti che ami, a domicilio.")]),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col col-xs-12 col-sm-12 col-md-12 col-lg-6" },
+            [
+              _c("h1", [_vm._v("I piatti che ami, a domicilio.")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "wrapping-select" }, [
+                _c("h6", [
+                  _vm._v("Scegli la tipologia di ristorante che vuoi cercare"),
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "wrapping-select" }, [
-                  _c("h6", [
-                    _vm._v(
-                      "Scegli la tipologia di ristorante che vuoi cercare"
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col" }, [
-                      _c("div", { staticClass: "dropdown-test" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "search-button",
-                            on: {
-                              click: function ($event) {
-                                _vm.displaySearch = !_vm.displaySearch
-                              },
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col" }, [
+                    _c("div", { staticClass: "dropdown-test" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "search-button",
+                          on: {
+                            click: function ($event) {
+                              _vm.displaySearch = !_vm.displaySearch
                             },
                           },
-                          [
-                            _c("i", { staticClass: "fas fa-search" }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Cerca qualcosa")]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "search-menu",
-                            class: _vm.displaySearch == true ? "active" : "",
-                          },
-                          [
-                            _vm._l(_vm.types, function (type) {
-                              return _c(
-                                "div",
-                                {
-                                  key: type.id,
-                                  staticClass: "type-box my-1 mx-1",
-                                },
-                                [
-                                  _c(
-                                    "label",
-                                    {
-                                      attrs: { for: "single-type-" + type.id },
-                                    },
-                                    [_vm._v(_vm._s(type.name))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    attrs: {
-                                      type: "checkbox",
-                                      id: "single-type-" + type.id,
-                                      value: "type.id",
-                                    },
-                                    on: {
-                                      click: function ($event) {
-                                        return _vm.getTypeValue(type.id)
-                                      },
-                                    },
-                                  }),
-                                ]
-                              )
-                            }),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn ms_btn",
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-search" }),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Cerca qualcosa")]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "search-menu",
+                          class: _vm.displaySearch == true ? "active" : "",
+                        },
+                        [
+                          _vm._l(_vm.types, function (type) {
+                            return _c(
+                              "div",
+                              {
+                                key: type.id,
+                                staticClass: "type-box my-1 mx-1",
+                              },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "single-type-" + type.id } },
+                                  [_vm._v(_vm._s(type.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  attrs: {
+                                    type: "checkbox",
+                                    id: "single-type-" + type.id,
+                                    value: "type.id",
+                                  },
                                   on: {
                                     click: function ($event) {
-                                      _vm.getRestaurants(),
-                                        (_vm.displaySearch = false)
+                                      return _vm.getTypeValue(type.id)
                                     },
                                   },
+                                }),
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn ms_btn",
+                                on: {
+                                  click: function ($event) {
+                                    _vm.getRestaurants(),
+                                      (_vm.displaySearch = false)
+                                  },
                                 },
-                                [_vm._v("Cerca")]
-                              ),
-                            ]),
-                          ],
-                          2
-                        ),
-                      ]),
+                              },
+                              [_vm._v("Cerca")]
+                            ),
+                          ]),
+                        ],
+                        2
+                      ),
                     ]),
                   ]),
                 ]),
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-          ]),
+              ]),
+            ]
+          ),
           _vm._v(" "),
-          _c("RestaurantList", { attrs: { restaurants: _vm.restaurants } }),
-        ],
-        1
-      ),
+          _vm._m(0),
+        ]),
+      ]),
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "restaurants-container" },
+      [_c("RestaurantList", { attrs: { restaurants: _vm.restaurants } })],
+      1
+    ),
   ])
 }
 var staticRenderFns = [
@@ -22142,11 +22153,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
-module.exports = __webpack_require__(/*! C:\Users\loren\classe-48\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
-
 
 
 /***/ })

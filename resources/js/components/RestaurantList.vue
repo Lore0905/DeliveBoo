@@ -1,42 +1,42 @@
 <template>
-    <div class="restaurant-list">
-        <!-- Primo ciclo for -->
+    <div class="container mb-3 mt-3 restaurant-list">
 
-        <!-- Secondo ciclo for -->
+        <!-- {{-- Titolo --}} -->
+        <div v-if="restaurants.length > 0" class="restaurants-title m-3">
+            Ecco i ristoranti che possono fare al caso tuo:
+        </div>
+
         <div class="col" v-for="item in restaurants" :key="item.id">
 
             <div class="single-box">
 
-                <div class="box-details">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <!-- Image -->
+                            <img :src="item.image" class="img-fluid rounded-start" :alt="item.name + ' image'">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
 
-                    <!-- Immagine -->
-                    <div class="image">
-                        <img :src="item.image" alt="">
+                                <!-- Name -->
+                                <h5 class="card-title">{{ item.name }}</h5>
+
+                                <!-- Address -->
+                                <p class="card-text">{{ item.address }}</p>
+
+                                <!-- Phone -->
+                                <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
+
+                                <!-- Link -->
+                                <router-link class="float-right btn btn-secondary" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
+                                    Vai al menù
+                                </router-link>
+
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Nome -->
-                    <div class="name">
-                        {{item.name}}
-                    </div>
-
-                    <!-- Indirizzo -->
-                    <div class="address">
-                        <i class="fas fa-map-marker-alt"></i>
-                        {{item.address}}
-                    </div>
-
-                    <!-- Numero telefonico -->
-                    <div class="phone">
-                        <i class="fas fa-phone-alt"></i>
-                        {{item.phone_number}}
-                    </div>
-
-                    <!-- Link -->
-                    <router-link class="link-to link" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
-                        Vai al menù
-                    </router-link>
-
-                </div>    
+                </div>
             </div>
         </div>
 
@@ -62,6 +62,13 @@
 
 .restaurant-list{
     color: $secondary_color;
+
+    .restaurants-title{
+        font-size: $components_title;
+        font-weight: 600;
+        font-style: italic;
+        color: $secondary_color;
+    }
 
     .single-box{
 
