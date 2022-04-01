@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapping-cart">
+    <!-- <div class="wrapping-cart">
         <div class="text-cart">
             CARRELLO
         </div>
@@ -21,14 +21,48 @@
                 </router-link>  
             </div>
     
-            <!-- totale ordine -->
+            
             <div class="wrapping-total-amount">
                 <strong>Totale Ordine</strong>
                 <div class="total-amount">{{ totalAmount.toFixed(2) }}</div>
 
             </div>
         </div>
+    </div>-->
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Carrello</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li v-if="selectedElement.length === 0" class="list-group-item">
+                <small class="text-muted">Il tuo carrello è vuoto.</small>
+            </li>
+            <li v-for="food in selectedElement" :key="food.id" class="list-group-item">
+                <div>
+                    <span>{{ food.name }}</span>
+                    <button @click="deleteElement(food)" class="btn btn-danger mx-2 float-right">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div>
+                    <small class="text-muted">Q.tà: {{ food.quantity }}</small>
+                </div>
+            </li>
+        </ul>
+        <div class="card-body">
+            <div class="wrapping-total-amount">
+                <strong>Totale Ordine</strong>
+                <div class="total-amount">{{ totalAmount.toFixed(2) }} €</div>
+            </div>
+        </div>
+        <div v-if="selectedElement.length > 0" class="card-body">
+            <router-link class="btn btn-secondary" :class="selectedElement.length > 0 ? '' : 'disabled'" :to="{ name: 'order-form' }">
+                Procedi all'ordine
+            </router-link>
+        </div>
     </div>
+
 </template>
 
 <script>
