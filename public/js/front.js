@@ -1941,6 +1941,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
@@ -4454,74 +4488,91 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapping-cart" }, [
-    _c("div", { staticClass: "text-cart" }, [
-      _vm._v("\n        CARRELLO\n    "),
-    ]),
+  return _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
+    _vm._m(0),
     _vm._v(" "),
     _c(
-      "div",
-      { staticClass: "data-cart" },
+      "ul",
+      { staticClass: "list-group list-group-flush" },
       [
-        _vm._l(_vm.selectedElement, function (food) {
-          return _c("div", { key: food.id, staticClass: "py-4 cart-item" }, [
-            _c("h4", [
-              _vm._v(
-                "\n                " + _vm._s(food.name) + "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _vm._v(
-                "\n                " + _vm._s(food.quantity) + "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger mx-4",
-                on: {
-                  click: function ($event) {
-                    return _vm.deleteElement(food)
-                  },
-                },
-              },
-              [_c("i", { staticClass: "fas fa-trash" })]
-            ),
-          ])
-        }),
-        _vm._v(" "),
-        _vm.selectedElement.length > 0
-          ? _c(
-              "div",
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn m_button link-to",
-                    attrs: { to: { name: "order-form" } },
-                  },
-                  [_vm._v("\n                Procedi all'ordine\n            ")]
-                ),
-              ],
-              1
-            )
+        _vm.selectedElement.length === 0
+          ? _c("li", { staticClass: "list-group-item" }, [
+              _c("small", { staticClass: "text-muted" }, [
+                _vm._v("Il tuo carrello è vuoto."),
+              ]),
+            ])
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "wrapping-total-amount" }, [
-          _c("strong", [_vm._v("Totale Ordine")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "total-amount" }, [
-            _vm._v(_vm._s(_vm.totalAmount.toFixed(2))),
-          ]),
-        ]),
+        _vm._l(_vm.selectedElement, function (food) {
+          return _c("li", { key: food.id, staticClass: "list-group-item" }, [
+            _c("div", [
+              _c("span", [_vm._v(_vm._s(food.name))]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger mx-2 float-right",
+                  on: {
+                    click: function ($event) {
+                      return _vm.deleteElement(food)
+                    },
+                  },
+                },
+                [_c("i", { staticClass: "fas fa-trash" })]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("small", { staticClass: "text-muted" }, [
+                _vm._v("Q.tà: " + _vm._s(food.quantity)),
+              ]),
+            ]),
+          ])
+        }),
       ],
       2
     ),
+    _vm._v(" "),
+    _c("div", { staticClass: "card-body" }, [
+      _c("div", { staticClass: "wrapping-total-amount" }, [
+        _c("strong", [_vm._v("Totale Ordine")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "total-amount" }, [
+          _vm._v(_vm._s(_vm.totalAmount.toFixed(2)) + " €"),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm.selectedElement.length > 0
+      ? _c(
+          "div",
+          { staticClass: "card-body" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-secondary",
+                class: _vm.selectedElement.length > 0 ? "" : "disabled",
+                attrs: { to: { name: "order-form" } },
+              },
+              [_vm._v("\n            Procedi all'ordine\n        ")]
+            ),
+          ],
+          1
+        )
+      : _vm._e(),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Carrello")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
