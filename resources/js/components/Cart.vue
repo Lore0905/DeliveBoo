@@ -30,7 +30,7 @@
         </div>
     </div>-->
 
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="margin-top: 35px; width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Carrello</h5>
         </div>
