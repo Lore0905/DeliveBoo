@@ -2248,16 +2248,19 @@ __webpack_require__.r(__webpack_exports__);
       this.array_types_id.forEach(function (type) {
         axios.get('/api/restaurants/' + type).then(function (response) {
           response.data.restaurants.forEach(function (element) {
+            console.log(element);
+
             var item = _this2.restaurants.find(function (item) {
               return item.id === element.id;
             });
 
             if (item === undefined) {
               _this2.restaurants.push(element);
-            }
+            } // console.log(type);
+
           });
         });
-      });
+      }); // console.log(this.restaurants);
     },
     getTypeValue: function getTypeValue(n) {
       // n argument: is a number
@@ -22211,7 +22214,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lollo/boolean/classe48/laravel/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

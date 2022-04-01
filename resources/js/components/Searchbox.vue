@@ -103,17 +103,20 @@ export default {
 
                 axios.get('/api/restaurants/' + type)
                 .then((response) =>{
-
+                    
                     response.data.restaurants.forEach(element => {
+                        console.log(element);
                         let item = this.restaurants.find(item => item.id === element.id);
                         if (item === undefined){
                             this.restaurants.push(element);
                         }
+                        // console.log(type);
                     });
                    
                 });
 
             });
+            // console.log(this.restaurants);
         },
         getTypeValue: function(n) {
             // n argument: is a number

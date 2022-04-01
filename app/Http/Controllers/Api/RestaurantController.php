@@ -28,12 +28,13 @@ class RestaurantController extends Controller
     public function show($select_type){
 
         $pivot = DB::table('restaurant_type')->where('type_id', $select_type)->get();
-
+        
         $restaurant_array = [];
 
         foreach ($pivot as $item) {
-            $restaurant_to_show = Restaurant::where('id', '=', $item->restaurant_id)->first();
-
+            
+            $restaurant_to_show = Restaurant::where('id', '=', $item->restaurant_id)->with('types')->first();
+            // dd($restaurant_to_show);
             if($restaurant_to_show->image) {
                 $restaurant_to_show->image = url('storage/' . $restaurant_to_show->image);
             }
@@ -41,7 +42,7 @@ class RestaurantController extends Controller
             $restaurant_array[] = $restaurant_to_show;
 
         }
-
+        // dd($restaurant_array);
         return response()->json([
             'success' => true,
             'restaurants' => $restaurant_array
