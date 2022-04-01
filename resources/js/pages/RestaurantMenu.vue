@@ -51,7 +51,6 @@
 
                 <div class="col col-3 col-sm-3">
                     <Cart :selectedElement="selectedElement" @amount="receiveAmount" />
-
                 </div>
             </div>
         

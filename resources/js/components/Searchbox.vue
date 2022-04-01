@@ -57,8 +57,12 @@
                         <img src="https://cwa.roocdn.com/_next/static/media/campaign.df080c2b8ecbb022c066558c655167a1.svg" alt="">
                     </div>
                 </div>
-                <RestaurantList :restaurants="restaurants" />
+                
             </div>
+        </div>
+
+        <div class="restaurants-container">
+            <RestaurantList :restaurants="restaurants" />
         </div>
         
   </div>
@@ -259,6 +263,12 @@ export default {
             padding-right: 5px;
         }
     }
+}
+.restaurants-container{
+    background-color: #fff;
+    min-width: 100%;
+    overflow: hidden;
+    padding: 50px 0px;
 }
 
 
