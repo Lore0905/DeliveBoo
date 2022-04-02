@@ -59,6 +59,7 @@ header{
         color: white;
         font-size: 25px;
         font-weight: 600;
+        text-decoration: none;
         
     }
 

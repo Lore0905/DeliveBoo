@@ -1,5 +1,9 @@
 @extends('layouts.login-dashboard')
 
+@section('page-title')
+    I tuoi ordini su Deliveboo
+@endsection
+
 @section('content')
     <h1>
         Ordini

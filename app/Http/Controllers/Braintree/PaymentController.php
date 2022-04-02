@@ -66,7 +66,7 @@ class PaymentController extends Controller
             // $_SESSION["errors"] = $errorString;
             // header("Location: " . $baseUrl . "index.php");
 
-            // return back()->withErrors('An error occured with the message:'. $result->message);
+            return view('guest.failed');
 
         }
     }
