@@ -2125,6 +2125,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantList',
   props: {
@@ -3026,7 +3031,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .box-details[data-v-77ddbf26] {\n  margin: 10px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid black;\n}\n.restaurant-list .single-box .box-details .image[data-v-77ddbf26] {\n  width: 100%;\n  height: 100%;\n}\n.restaurant-list .single-box .box-details .name[data-v-77ddbf26] {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .address[data-v-77ddbf26], .restaurant-list .single-box .box-details .phone[data-v-77ddbf26] {\n  margin-bottom: 5px;\n}\n.restaurant-list .single-box .box-details .link[data-v-77ddbf26] {\n  text-transform: uppercase;\n  color: #2e3333;\n}", ""]);
+exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .card-body .types-box .single-type[data-v-77ddbf26] {\n  border-radius: 10px;\n  padding: 2px 3px;\n  text-transform: capitalize;\n  font-size: 12px;\n  font-family: \"Nunito\", sans-serif;\n  color: white;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.italiano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.internazionale[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.cinese[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.giapponese[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.messicano[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.indiano[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.americano[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.thailandese[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.vegetariano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.sushi[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.greco[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pokeria[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.fast-food[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pizza[data-v-77ddbf26] {\n  background-color: #f6993f;\n}", ""]);
 
 // exports
 
@@ -4734,6 +4739,23 @@ var render = function () {
                       _c("h5", { staticClass: "card-title" }, [
                         _vm._v(_vm._s(item.name)),
                       ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "d-flex flex-wrap mb-2 types-box" },
+                        _vm._l(item.types, function (element) {
+                          return _c(
+                            "span",
+                            {
+                              key: element.id,
+                              staticClass: "mr-2 mb-1 single-type",
+                              class: element.slug,
+                            },
+                            [_vm._v(" " + _vm._s(element.name) + " ")]
+                          )
+                        }),
+                        0
+                      ),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(_vm._s(item.address)),

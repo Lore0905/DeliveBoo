@@ -22,6 +22,11 @@
                                 <!-- Name -->
                                 <h5 class="card-title">{{ item.name }}</h5>
 
+                                <!-- Tag type  -->
+                                <div class="d-flex flex-wrap mb-2 types-box">
+                                    <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                </div>
+
                                 <!-- Address -->
                                 <p class="card-text">{{ item.address }}</p>
 
@@ -59,6 +64,7 @@
 
 <style lang="scss" scoped>
 @import '../../sass/partials/_variables.scss';
+@import '../../sass/_bootstrap_variables.scss';
 
 .restaurant-list{
     color: $secondary_color;
@@ -72,35 +78,91 @@
 
     .single-box{
 
-        .box-details{
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid black;
-
-            .image{
-                width: 100%;
-                height: 100%;
+        .card-body {
+            .types-box {
+                .single-type {
+                    // background-color: $primary_color;
+                    border-radius: 10px;
+                    padding: 2px 3px;
+                    text-transform: capitalize;
+                    font-size: 12px;
+                    font-family: $font-family-sans-serif;
+                    color: white;
+                    
+                    &.italiano {
+                        background-color: $blue;
+                    }
+                    &.internazionale {
+                        background-color: $indigo;
+                    }
+                    &.cinese {
+                        background-color: $purple;
+                    }
+                    &.giapponese {
+                        background-color: $pink;
+                    }
+                    &.messicano {
+                        background-color: $red;
+                    }
+                    &.indiano {
+                        background-color: $orange;
+                    }
+                    &.americano {
+                        background-color: $green;
+                    }
+                    &.thailandese {
+                        background-color: $green;
+                    }
+                    &.vegetariano {
+                        background-color: $blue;
+                    }
+                    &.sushi {
+                        background-color: $indigo;
+                    }
+                    &.greco {
+                        background-color: $purple;
+                    }
+                    &.pokeria {
+                        background-color: $pink;
+                    }
+                    &.fast-food {
+                        background-color: $red;
+                    }
+                    &.pizza {
+                        background-color: $orange;
+                    }
+                }
             }
-
-            .name{
-                font-size: 20px;
-                font-weight: 600;
-                margin-bottom: 5px;
-            }
-
-            .address, .phone{
-                margin-bottom: 5px;
-            }
-
-            .link{
-                text-transform: uppercase;
-                color: $secondary_color;
-            }
-
         }
+        // .box-details{
+        //     margin: 10px;
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: center;
+        //     border: 1px solid black;
+
+        //     .image{
+        //         width: 100%;
+        //         height: 100%;
+        //     }
+
+        //     .name{
+        //         font-size: 20px;
+        //         font-weight: 600;
+        //         margin-bottom: 5px;
+        //     }
+
+        //     .address, .phone{
+        //         margin-bottom: 5px;
+        //     }
+
+        //     .link{
+        //         text-transform: uppercase;
+        //         color: $secondary_color;
+        //     }
+
+        // }
     }
 }
 </style>
