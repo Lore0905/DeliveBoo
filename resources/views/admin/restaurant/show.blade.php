@@ -1,5 +1,9 @@
 @extends('layouts.login-dashboard')
 
+@section('page-title')
+    Ecco il tuo ristorante su Deliveboo
+@endsection
+
 @section('content')
 
     <div class="restaurant-show">

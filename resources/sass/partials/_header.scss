@@ -1,0 +1,51 @@
+.payment{
+    background-color: $primary_color;
+    padding: 20px 0;
+
+    .left{
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+        
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        
+        .m_button_header{
+            padding: 0 10px;
+
+            a{
+                color: $secondary_color;
+                display: inline-block;
+                text-decoration: none;
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px 15px;
+                border: 1px solid lightgray;
+                font-weight: 300;
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+
+                i{
+                    color: $primary_color;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.content{
+    margin: 150px auto;
+
+    .amount{
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        margin-bottom: 25px;
+    }
+}

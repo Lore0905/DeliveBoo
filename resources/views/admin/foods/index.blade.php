@@ -1,5 +1,9 @@
 @extends('layouts.login-dashboard')
 
+@section('page-title')
+    Il tuo menù su Deliveboo
+@endsection
+
 @section('content')
     
     <div class="foods-index">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page-title')
+    Login Deliveboo
+@endsection
+
 @section('content')
 <div class="login">
     <div class="container">

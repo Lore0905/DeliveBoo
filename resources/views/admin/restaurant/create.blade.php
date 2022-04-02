@@ -1,7 +1,8 @@
 @extends('layouts.login-dashboard')
 
-
-
+@section('page-title')
+    Crea il tuo ristorante su Deliveboo
+@endsection
 
 @section('content')
     

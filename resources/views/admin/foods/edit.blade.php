@@ -1,5 +1,9 @@
 @extends('layouts.login-dashboard')
 
+@section('page-title')
+    Modifica il tuo piatto su Deliveboo
+@endsection
+
 @section('content')
     <div class="food-edit">
 

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Pagamento Deliveboo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -12,11 +12,16 @@
         {{-- Link CSS --}}
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+        {{-- Link FontAwesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     </head>
     <body>
 
+        @include('partials.header')
+
         {{-- Content  --}}
-        <div class="content container my-4">
+        <div class="content container">
 
             {{-- Form Pagamento --}}
             <form method="post" id="payment-form" action="{{route('checkout', ['id' => $order->id])}}">
@@ -25,7 +30,7 @@
                     <label for="amount">
                         <span class="input-label">Amount</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
+                            <input class="amount" readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
                         </div>
                     </label>
 

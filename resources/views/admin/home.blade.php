@@ -1,5 +1,9 @@
 @extends('layouts.login-dashboard')
 
+@section('page-title')
+    Home Deliveboo
+@endsection
+
 @section('content')
 
     <div class="admin-home container">
