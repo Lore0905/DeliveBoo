@@ -1,6 +1,7 @@
 <template>
 
     <div>
+        
         <Header />
 
         <main>
@@ -11,6 +12,9 @@
             :selectedElement="selectedElement"
             ></router-view>
         </main>
+
+        <Footer />
+
     </div>
 </template>
 
@@ -18,6 +22,8 @@
 
 <script>
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
 export default {
     name: 'App',
     data: function() {
@@ -27,7 +33,8 @@ export default {
         }
     },
     components: {
-        Header
+        Header,
+        Footer
     },
     methods: {
         receiveAmount(totalAmount) {
