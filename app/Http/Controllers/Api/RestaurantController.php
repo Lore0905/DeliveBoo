@@ -26,9 +26,9 @@ class RestaurantController extends Controller
     }
 
     public function show($select_type){
-
-        $pivot = DB::table('restaurant_type')->where('type_id', $select_type)->get();
         
+        $pivot = DB::table('restaurant_type')->where('type_id', $select_type)->get();
+        // dd($pivot);
         $restaurant_array = [];
 
         foreach ($pivot as $item) {

@@ -10,16 +10,6 @@
                         <!-- title -->
                         <h1>I piatti che ami, a domicilio.</h1>
 
-                        <!-- <div>
-                            <div v-for="restaurant in restaurants" :key="restaurant.id">
-                                <div v-for="items in restaurant" :key="items.id">
-                                    <div v-for="item in items" :key="item.id">
-                                        <router-link class="link-to" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">{{item.name}}</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!-- select -->
                         <div class="wrapping-select">
                             <h6>Scegli la tipologia di ristorante che vuoi cercare</h6>
@@ -35,7 +25,7 @@
                                         <div class="search-menu" :class=" displaySearch == true ? 'active' : '' ">
                                             <div class="type-box my-1 mx-1" v-for="type in types" :key="type.id">
 
-                                                <!-- new // test -->
+                                                <!-- input checkbox  -->
                                                 <label :for="'single-type-' + type.id">{{type.name}}</label>
                                                 <input @click="getTypeValue(type.id)" type="checkbox" :id="'single-type-' + type.id" value="type.id">
                                             </div>
@@ -83,6 +73,7 @@ export default {
             restaurants: [],
             restaurantsType: [],
             displaySearch: false,
+            matchedId: [] 
         }
     },
     methods: {
@@ -104,19 +95,40 @@ export default {
                 axios.get('/api/restaurants/' + type)
                 .then((response) =>{
                     
-                    response.data.restaurants.forEach(element => {
-                        console.log(element);
-                        let item = this.restaurants.find(item => item.id === element.id);
+                    response.data.restaurants.forEach(restaurant => {
+                        
+                        
+                        // creaiamo un array che contiene gli 'id' dei types trovati 
+                        restaurant.types.forEach(element => {
+                            if(!this.matchedId.includes(element.id)) {
+                                this.matchedId.push(element.id);
+                            }
+                        });
+
+                        
+
+                        // verifichiamo che ogni elemento dell'array delle checkbox , sia contenuto in quello dei types trovati 
+                        // restituisce true or false 
+                        const containsAll = this.array_types_id.every(element =>{
+                            return this.matchedId.includes(element);
+                        });
+
+                        // evitiamo doppioni e pushiamo in restaurants solo se la condizione sopra è verificata
+                        let item = this.restaurants.find(item => item.id === restaurant.id);
                         if (item === undefined){
-                            this.restaurants.push(element);
+                            
+                            if(containsAll) {
+                                this.restaurants.push(restaurant);
+                            } 
                         }
-                        // console.log(type);
+                        
+                       this.matchedId = []; 
                     });
                    
                 });
 
             });
-            // console.log(this.restaurants);
+            
         },
         getTypeValue: function(n) {
             // n argument: is a number

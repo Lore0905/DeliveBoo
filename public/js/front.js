@@ -2207,16 +2207,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Serchbox",
@@ -2229,7 +2219,8 @@ __webpack_require__.r(__webpack_exports__);
       array_types_id: [],
       restaurants: [],
       restaurantsType: [],
-      displaySearch: false
+      displaySearch: false,
+      matchedId: []
     };
   },
   methods: {
@@ -2247,20 +2238,34 @@ __webpack_require__.r(__webpack_exports__);
       this.restaurants = [];
       this.array_types_id.forEach(function (type) {
         axios.get('/api/restaurants/' + type).then(function (response) {
-          response.data.restaurants.forEach(function (element) {
-            console.log(element);
+          response.data.restaurants.forEach(function (restaurant) {
+            // creaiamo un array che contiene gli 'id' dei types trovati 
+            restaurant.types.forEach(function (element) {
+              if (!_this2.matchedId.includes(element.id)) {
+                _this2.matchedId.push(element.id);
+              }
+            }); // verifichiamo che ogni elemento dell'array delle checkbox , sia contenuto in quello dei types trovati 
+            // restituisce true or false 
+
+            var containsAll = _this2.array_types_id.every(function (element) {
+              return _this2.matchedId.includes(element);
+            }); // evitiamo doppioni e pushiamo in restaurants solo se la condizione sopra è verificata
+
 
             var item = _this2.restaurants.find(function (item) {
-              return item.id === element.id;
+              return item.id === restaurant.id;
             });
 
             if (item === undefined) {
-              _this2.restaurants.push(element);
-            } // console.log(type);
+              if (containsAll) {
+                _this2.restaurants.push(restaurant);
+              }
+            }
 
+            _this2.matchedId = [];
           });
         });
-      }); // console.log(this.restaurants);
+      });
     },
     getTypeValue: function getTypeValue(n) {
       // n argument: is a number
