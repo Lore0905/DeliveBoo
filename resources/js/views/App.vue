@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div class="wrapping-content">
         
         <Header />
 
@@ -13,7 +13,7 @@
             ></router-view>
         </main>
 
-        <Footer />
+        <!-- <Footer /> -->
 
     </div>
 </template>
