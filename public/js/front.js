@@ -6033,6 +6033,11 @@ var render = function () {
                 { key: food.id, staticClass: "py-4 cards-box" },
                 [
                   _c("div", { staticClass: "card" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: food.img, alt: "Card image cap" },
+                    }),
+                    _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
                       _c("h5", { staticClass: "card-title font-weight-bold" }, [
                         _vm._v(_vm._s(food.name)),
@@ -22696,7 +22701,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

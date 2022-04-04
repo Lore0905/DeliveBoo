@@ -24,10 +24,10 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
     
-                {{-- Immagine --}}
+               {{-- Immagine --}}
                 <div class="mb-3">
                     <label class="img-label" for="img" class="form-label">Inserisci la copertina del tuo piatto</label>
-                    <input type="file"  id="img" name="img">
+                    <input type="file"  id="img" name="img" class="input-type-file-food btn-secondary">
                 </div>
     
                 {{-- error --}}
