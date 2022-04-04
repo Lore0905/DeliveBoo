@@ -1949,36 +1949,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Cart',
   data: function data() {
     return {
+      showCart: false,
       foods: this.selectedElement,
       totalAmount: 0
     };
@@ -3132,7 +3107,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".text-cart[data-v-b7f93bea] {\n  font-size: 20px;\n  background-color: #00ccbc;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  padding: 7px 0px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}\n.data-cart[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n.data-cart .wrapping-total-amount[data-v-b7f93bea] {\n  border: 1px solid rgba(0, 0, 0, 0.3);\n  padding: 10px 20px;\n  border-radius: 5px;\n  display: inline-block;\n  font-size: 20px;\n}\n.data-cart .wrapping-total-amount .total-amount[data-v-b7f93bea] {\n  font-size: 17px;\n  padding: 5px 10px;\n  border-radius: 5px;\n  background-color: #00ccbc;\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 25px;\n}\n.wrapping-cart[data-v-b7f93bea] {\n  padding-left: 10%;\n  width: 100%;\n  height: 100%;\n}", ""]);
+exports.push([module.i, "#page-cart-container[data-v-b7f93bea] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea] {\n  color: #00ccbc;\n  font-size: 25px;\n  padding: 10px;\n  background-color: #fff;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: 1px 1px 5px 0px #000000;\n  cursor: pointer;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  right: -3px;\n  top: 50%;\n  z-index: 9999;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n#page-cart-container #cart-icon span[data-v-b7f93bea] {\n  padding: 5px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-weight: 500;\n  font-size: 20px;\n}\n#page-cart-container .cart-item[data-v-b7f93bea] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  z-index: 9999;\n  box-shadow: 1px 1px 5px 0px #000000;\n  width: 25%;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea] {\n  float: right;\n  font-size: 25px;\n  color: #00ccbc;\n  cursor: pointer;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n@media (max-width: 1200px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 40%;\n}\n}\n@media (max-width: 575.98px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -3284,7 +3259,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  border-right: 1px solid rgba(0, 0, 0, 0.35);\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
+exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
 
 // exports
 
@@ -4689,98 +4664,130 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "card",
-      staticStyle: { "margin-top": "35px", width: "18rem" },
-    },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "ul",
-        { staticClass: "list-group list-group-flush" },
-        [
-          _vm.selectedElement.length === 0
-            ? _c("li", { staticClass: "list-group-item" }, [
-                _c("small", { staticClass: "text-muted" }, [
-                  _vm._v("Il tuo carrello è vuoto."),
-                ]),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._l(_vm.selectedElement, function (food) {
-            return _c("li", { key: food.id, staticClass: "list-group-item" }, [
-              _c("div", [
-                _c("span", [_vm._v(_vm._s(food.name))]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger mx-2 float-right",
-                    on: {
-                      click: function ($event) {
-                        return _vm.deleteElement(food)
-                      },
-                    },
-                  },
-                  [_c("i", { staticClass: "fas fa-trash" })]
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("small", { staticClass: "text-muted" }, [
-                  _vm._v("Q.tà: " + _vm._s(food.quantity)),
-                ]),
-              ]),
-            ])
+  return _c("div", { attrs: { id: "page-cart-container" } }, [
+    _c(
+      "i",
+      {
+        staticClass: "fas fa-shopping-cart",
+        class: _vm.showCart === false ? "" : "d-none",
+        attrs: { id: "cart-icon" },
+        on: {
+          click: function ($event) {
+            _vm.showCart = !_vm.showCart
+          },
+        },
+      },
+      [
+        _c("span", [
+          _vm._v(
+            _vm._s(
+              _vm.selectedElement.length === 0 ? "" : _vm.selectedElement.length
+            )
+          ),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "cart-item card",
+        class: _vm.showCart === false ? "d-none" : "",
+      },
+      [
+        _c("div", { staticClass: "card-body" }, [
+          _c("i", {
+            staticClass: "fas fa-angle-double-right",
+            attrs: { id: "cart-close-icon" },
+            on: {
+              click: function ($event) {
+                _vm.showCart = !_vm.showCart
+              },
+            },
           }),
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "wrapping-total-amount" }, [
-          _c("strong", [_vm._v("Totale Ordine")]),
           _vm._v(" "),
-          _c("div", { staticClass: "total-amount" }, [
-            _vm._v(_vm._s(_vm.totalAmount.toFixed(2)) + " €"),
+          _c("h5", { staticClass: "card-title" }, [_vm._v("Carrello")]),
+        ]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "list-group list-group-flush" },
+          [
+            _vm.selectedElement.length === 0
+              ? _c("li", { staticClass: "list-group-item" }, [
+                  _c("small", { staticClass: "text-muted" }, [
+                    _vm._v("Il tuo carrello è vuoto."),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.selectedElement, function (food) {
+              return _c(
+                "li",
+                { key: food.id, staticClass: "list-group-item" },
+                [
+                  _c("div", [
+                    _c("span", [_vm._v(_vm._s(food.name))]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger mx-2 float-right",
+                        on: {
+                          click: function ($event) {
+                            return _vm.deleteElement(food)
+                          },
+                        },
+                      },
+                      [_c("i", { staticClass: "fas fa-trash" })]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("small", { staticClass: "text-muted" }, [
+                      _vm._v("Q.tà: " + _vm._s(food.quantity)),
+                    ]),
+                  ]),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "wrapping-total-amount" }, [
+            _c("strong", [_vm._v("Totale Ordine")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "total-amount" }, [
+              _vm._v(_vm._s(_vm.totalAmount.toFixed(2)) + " €"),
+            ]),
           ]),
         ]),
-      ]),
-      _vm._v(" "),
-      _vm.selectedElement.length > 0
-        ? _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-secondary",
-                  class: _vm.selectedElement.length > 0 ? "" : "disabled",
-                  attrs: { to: { name: "order-form" } },
-                },
-                [_vm._v("\n            Procedi all'ordine\n        ")]
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-    ]
-  )
+        _vm._v(" "),
+        _vm.selectedElement.length > 0
+          ? _c(
+              "div",
+              { staticClass: "card-body" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-secondary",
+                    class: _vm.selectedElement.length > 0 ? "" : "disabled",
+                    attrs: { to: { name: "order-form" } },
+                  },
+                  [_vm._v("\n                Procedi all'ordine\n            ")]
+                ),
+              ],
+              1
+            )
+          : _vm._e(),
+      ]
+    ),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("h5", { staticClass: "card-title" }, [_vm._v("Carrello")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5962,7 +5969,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "wrapping-restaurant" }, [
       _c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]),
       _vm._v(" "),
@@ -5979,7 +5986,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col col-9 col-sm-9 selected-quantity" }, [
+        _c("div", { staticClass: "col selected-quantity" }, [
           _c(
             "div",
             { staticClass: "foods-box row row-cols-md-1 row-cols-lg-3" },
@@ -6084,7 +6091,6 @@ var render = function () {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col col-3 col-sm-3" },
           [
             _c("Cart", {
               attrs: { selectedElement: _vm.selectedElement },
@@ -22716,7 +22722,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+
 module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+
 
 
 /***/ })
