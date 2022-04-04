@@ -21,7 +21,7 @@ class FoodController extends Controller
     public function index()
     {       
         // faccio una query sul model Food per stampare tutti i foods del ristorante che è loggato
-        $foods = Food::where('restaurant_id', '=', Auth::user()->restaurant->user_id)->get();
+        $foods = Food::where('restaurant_id', '=', Auth::user()->restaurant->user_id)->orderBy('name')->get();
 
         $data = [
             'foods' => $foods
