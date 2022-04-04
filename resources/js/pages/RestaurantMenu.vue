@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="wrapping-restaurant" >
-            <h1>{{ restaurant.name }}</h1>
+        <div class="wrapping-restaurant " >
+            <h1 class="font-weight-bold">{{ restaurant.name }}</h1>
             <div class="restaurant-info">
                 <span class="font-weight-bold">Indirizzo:</span><span class="spec-info">{{ restaurant.address }}</span>
                 <span class="font-weight-bold">Telefono:</span><span class="spec-info">{{ restaurant.phone_number }}</span>
@@ -15,13 +15,13 @@
                             <div class="card">
                                 <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
                                 <div class="card-body">
-                                    <h5 class="card-title">{{food.name}}</h5>
+                                    <h5 class="card-title font-weight-bold">{{food.name}}</h5>
                                     <p class="card-text">{{food.descriptions}}</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     
-                                    <li class="list-group-item">Ingredienti: {{ food.ingrediants }}</li>
-                                    <li class="list-group-item">Prezzo: {{food.price}} €</li>
+                                    <li class="list-group-item"> <strong>Ingredienti: </strong>{{ food.ingrediants }}</li>
+                                    <li class="list-group-item "><strong>Prezzo: </strong> {{food.price}} €</li>
                                 </ul>
                                 <div class="card-body">
                                     <!-- <a href="#" class="card-link">Card link</a> -->
@@ -207,6 +207,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/partials/_variables.scss';
 .wrapping-restaurant{
     padding: 50px;
     .restaurant-info {
@@ -235,5 +236,13 @@ export default {
         }
         
     }
+}
+.card-title {
+    border: 1px solid rgba($color: #000000, $alpha: 0.5);
+    color: $primary-color;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 20px 0px;
+    text-align: center;
 }
 </style>>

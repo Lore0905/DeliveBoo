@@ -3130,7 +3130,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body[data-v-61a7c374] {\n  font-family: \"Open Sans\", sans-serif;\n}\nimg[data-v-61a7c374] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-61a7c374] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-61a7c374]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-61a7c374] {\n  width: 60px;\n}\nul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-61a7c374] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-61a7c374]:hover {\n  border: 1px solid #2e3333;\n}\nfooter[data-v-61a7c374] {\n  background-color: #2e3333;\n  color: white;\n}\nfooter .row .m_col[data-v-61a7c374] {\n  margin: 10px 0;\n  background-color: #434848;\n  padding: 25px;\n  border-right: 8px solid #2e3333;\n  border-left: 8px solid #2e3333;\n}\nfooter .row .m_col .title[data-v-61a7c374] {\n  font-size: 20px;\n  margin-bottom: 15px;\n  font-weight: 600;\n}\nfooter .row .m_col .list div[data-v-61a7c374] {\n  padding: 5px 0;\n  cursor: pointer;\n}\nfooter .row .m_col .list div[data-v-61a7c374]:hover {\n  color: #00ccbc;\n}\nfooter .bottom-footer[data-v-61a7c374] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 10px 0;\n  font-size: 20px;\n}\nfooter .bottom-footer .icons i[data-v-61a7c374] {\n  margin-right: 15px;\n  cursor: pointer;\n}\nfooter .bottom-footer .copyright[data-v-61a7c374] {\n  color: #434848;\n  font-weight: 300;\n}", ""]);
+exports.push([module.i, "body[data-v-61a7c374] {\n  font-family: \"Nunito\", sans-serif;\n}\nimg[data-v-61a7c374] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-61a7c374] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-61a7c374]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-61a7c374] {\n  width: 60px;\n}\nul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-61a7c374] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-61a7c374]:hover {\n  border: 1px solid #2e3333;\n}\nfooter[data-v-61a7c374] {\n  background-color: #2e3333;\n  color: white;\n}\nfooter .row .m_col[data-v-61a7c374] {\n  margin: 10px 0;\n  background-color: #434848;\n  padding: 25px;\n  border-right: 8px solid #2e3333;\n  border-left: 8px solid #2e3333;\n}\nfooter .row .m_col .title[data-v-61a7c374] {\n  font-size: 20px;\n  margin-bottom: 15px;\n  font-weight: 600;\n}\nfooter .row .m_col .list div[data-v-61a7c374] {\n  padding: 5px 0;\n  cursor: pointer;\n}\nfooter .row .m_col .list div[data-v-61a7c374]:hover {\n  color: #00ccbc;\n}\nfooter .bottom-footer[data-v-61a7c374] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 10px 0;\n  font-size: 20px;\n}\nfooter .bottom-footer .icons i[data-v-61a7c374] {\n  margin-right: 15px;\n  cursor: pointer;\n}\nfooter .bottom-footer .copyright[data-v-61a7c374] {\n  color: #434848;\n  font-weight: 300;\n}", ""]);
 
 // exports
 
@@ -3149,7 +3149,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body[data-v-1f42fb90] {\n  font-family: \"Open Sans\", sans-serif;\n}\nimg[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nul[data-v-1f42fb90] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-1f42fb90] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-1f42fb90]:hover {\n  border: 1px solid #2e3333;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n  text-decoration: none;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  transform: scale(1.1);\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
+exports.push([module.i, "body[data-v-1f42fb90] {\n  font-family: \"Nunito\", sans-serif;\n}\nimg[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\n.m_button[data-v-1f42fb90] {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button[data-v-1f42fb90]:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo[data-v-1f42fb90] {\n  width: 60px;\n}\nul[data-v-1f42fb90] {\n  list-style-type: none;\n}\n.m_button_form_create[data-v-1f42fb90] {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create[data-v-1f42fb90]:hover {\n  border: 1px solid #2e3333;\n}\nheader[data-v-1f42fb90] {\n  background-color: #00ccbc;\n  padding: 20px 0;\n}\nheader .left[data-v-1f42fb90] {\n  color: white;\n  font-size: 25px;\n  font-weight: 600;\n  text-decoration: none;\n}\nheader .right[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n}\nheader .right .m_button_header[data-v-1f42fb90] {\n  padding: 0 10px;\n}\nheader .right .m_button_header a[data-v-1f42fb90] {\n  color: #2e3333;\n  display: inline-block;\n  text-decoration: none;\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px 15px;\n  border: 1px solid lightgray;\n  font-weight: 300;\n}\nheader .right .m_button_header a[data-v-1f42fb90]:hover {\n  transform: scale(1.1);\n}\nheader .right .m_button_header a i[data-v-1f42fb90] {\n  color: #00ccbc;\n  padding-right: 5px;\n}", ""]);
 
 // exports
 
@@ -3263,7 +3263,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}", ""]);
+exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}\n.card-title[data-v-14400205] {\n  border: 1px solid rgba(0, 0, 0, 0.5);\n  color: #00ccbc;\n  padding: 5px 10px;\n  border-radius: 10px;\n  margin: 20px 0px;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -3282,7 +3282,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\n  font-family: \"Open Sans\", sans-serif;\n}\nimg {\n  width: 100%;\n  height: 100%;\n}\n.m_button {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo {\n  width: 60px;\n}\nul {\n  list-style-type: none;\n}\n.m_button_form_create {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create:hover {\n  border: 1px solid #2e3333;\n}", ""]);
+exports.push([module.i, "body {\n  font-family: \"Nunito\", sans-serif;\n}\nimg {\n  width: 100%;\n  height: 100%;\n}\n.m_button {\n  color: white;\n  text-decoration: none;\n  padding: 16px 25px;\n  background-color: #00ccbc;\n  border-radius: 8px;\n}\n.m_button:hover {\n  border: 1px solid white;\n  color: white;\n}\n.logo {\n  width: 60px;\n}\nul {\n  list-style-type: none;\n}\n.m_button_form_create {\n  border: 1px solid #00ccbc;\n  background-color: #00ccbc;\n  font-size: 20px;\n  font-weight: 600;\n}\n.m_button_form_create:hover {\n  border: 1px solid #2e3333;\n}", ""]);
 
 // exports
 
@@ -6005,8 +6005,10 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "wrapping-restaurant" }, [
-      _c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]),
+    _c("div", { staticClass: "wrapping-restaurant " }, [
+      _c("h1", { staticClass: "font-weight-bold" }, [
+        _vm._v(_vm._s(_vm.restaurant.name)),
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "restaurant-info" }, [
         _c("span", { staticClass: "font-weight-bold" }, [_vm._v("Indirizzo:")]),
@@ -6032,7 +6034,7 @@ var render = function () {
                 [
                   _c("div", { staticClass: "card" }, [
                     _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
+                      _c("h5", { staticClass: "card-title font-weight-bold" }, [
                         _vm._v(_vm._s(food.name)),
                       ]),
                       _vm._v(" "),
@@ -6043,11 +6045,13 @@ var render = function () {
                     _vm._v(" "),
                     _c("ul", { staticClass: "list-group list-group-flush" }, [
                       _c("li", { staticClass: "list-group-item" }, [
-                        _vm._v("Ingredienti: " + _vm._s(food.ingrediants)),
+                        _c("strong", [_vm._v("Ingredienti: ")]),
+                        _vm._v(_vm._s(food.ingrediants)),
                       ]),
                       _vm._v(" "),
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _vm._v("Prezzo: " + _vm._s(food.price) + " €"),
+                      _c("li", { staticClass: "list-group-item " }, [
+                        _c("strong", [_vm._v("Prezzo: ")]),
+                        _vm._v(" " + _vm._s(food.price) + " €"),
                       ]),
                     ]),
                     _vm._v(" "),
@@ -22692,11 +22696,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! /Users/alessandrogaleazzi/Documents/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
-
-module.exports = __webpack_require__(/*! C:\Users\artur\repository\laravel-projects\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
-
+module.exports = __webpack_require__(/*! /Users/lorenzocastelli/BOOLEAN/reposotory/PHP-LARAVEL/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
