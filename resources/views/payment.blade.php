@@ -21,28 +21,82 @@
         @include('partials.header')
 
         {{-- Content  --}}
-        <div class="content container">
+        <div class="content container row">
 
             {{-- Form Pagamento --}}
-            <form method="post" id="payment-form" action="{{route('checkout', ['id' => $order->id])}}">
-                @csrf
-                <section>
-                    <label for="amount">
-                        <span class="input-label">Amount</span>
-                        <div class="input-wrapper amount-wrapper">
-                            <input class="amount" readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
+            <div class="payment-form col-sm-12 col-lg-6">
+                <form method="post" id="payment-form" action="{{route('checkout', ['id' => $order->id])}}">
+                    @csrf
+                    <section>
+                        <label for="amount">
+                            <span class="input-label">Totale:</span>
+                            <div class="input-wrapper amount-wrapper">
+                                <input class="amount" readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}€">
+                            </div>
+                        </label>
+    
+                        <div class="bt-drop-in-wrapper">
+                            <div id="bt-dropin"></div>
                         </div>
-                    </label>
-
-                    <div class="bt-drop-in-wrapper">
-                        <div id="bt-dropin"></div>
-                    </div>
-                </section>
-
-                <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="btn border" type="submit"><span>Paga</span></button>
-            </form>
+                    </section>
+    
+                    <input id="nonce" name="payment_method_nonce" type="hidden" />
+                    <button class="btn border" type="submit"><span>Paga</span></button>
+                </form>
+            </div>
             {{-- End Form Pagamento --}}
+
+            {{-- Riepilogo ordine --}}
+
+            <div class="col-sm-12 col-lg-6">
+
+                <div class="summary">
+
+                    <div class="name">
+                        <i class="fas fa-user"></i>
+                        <span class="left">Nome:</span> {{$order->customer_name}}
+                    </div>
+
+                    <div class="email">
+                        <i class="fas fa-envelope"></i>
+                        <span class="left">Email:</span> {{$order->customer_email}}
+                    </div>
+
+                    <div class="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="left">Indirizzo:</span> {{$order->customer_address}}
+                    </div>
+
+                    <div class="phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="left">Numero di telefono:</span> {{$order->customer_phone_number}}
+                    </div>
+
+                    <div class="order">
+                        <i class="fas fa-utensils"></i>
+                        <span class="left">Ordine:</span>
+
+                        @foreach ($order->foods as $food)
+                            <div>
+                                {{$food->name}}:
+
+                                <ul>
+                                    <li>
+                                        prezzo: {{$food->price}}€
+                                    </li>
+                                    <li>
+                                        quantità: {{$food->pivot->quantity}}
+                                    </li>
+                                </ul>
+
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+
+            {{-- Fine riepilogo ordine --}}
         </div>
 
 
