@@ -3269,7 +3269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".order-form[data-v-713f20f9] {\n  margin: 30px 0;\n}\n.order-form .wrapping-order-form .row[data-v-713f20f9] {\n  display: flex;\n}\n.order-form .wrapping-order-form .row .col[data-v-713f20f9] {\n  flex-grow: 1;\n}\n.order-form .wrapping-order-form .row .col h3[data-v-713f20f9] {\n  box-shadow: 7px 7px 5px #dedede;\n  color: #2e3333;\n  text-align: center;\n  width: 80%;\n  margin: 20% auto;\n  padding: 10px;\n  border-radius: 10px;\n}\n.order-form .wrapping-order-form .row .col .wrapping-img[data-v-713f20f9] {\n  margin: auto;\n  width: 30%;\n}\n.order-form .wrapping-order-form .row .col form label[data-v-713f20f9] {\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n.order-form .wrapping-order-form .row .col form input[data-v-713f20f9] {\n  margin-bottom: 20px;\n  padding: 10px;\n  border-radius: 10px;\n  border: 0px;\n  background-color: rgba(46, 51, 51, 0.1);\n}\n.order-form .wrapping-order-form .row .col form #total_amount[data-v-713f20f9] {\n  background-color: white;\n}\n@media (min-width: 992px) {\n.order-form[data-v-713f20f9] {\n    width: 100%;\n    height: calc(100vh - 150px);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n}\n}", ""]);
+exports.push([module.i, ".order-form[data-v-713f20f9] {\n  margin: 30px 0;\n}\n.order-form .wrapping-order-form[data-v-713f20f9] {\n  width: 100%;\n}\n.order-form .wrapping-order-form .row[data-v-713f20f9] {\n  width: 100%;\n}\n.order-form .wrapping-order-form .row .col[data-v-713f20f9] {\n  flex-grow: 1;\n}\n.order-form .wrapping-order-form .row .col h3[data-v-713f20f9] {\n  box-shadow: 7px 7px 5px #dedede;\n  color: #2e3333;\n  text-align: center;\n  width: 80%;\n  margin: 20% auto;\n  padding: 10px;\n  border-radius: 10px;\n}\n.order-form .wrapping-order-form .row .col .wrapping-img[data-v-713f20f9] {\n  margin: auto;\n  width: 30%;\n}\n.order-form .wrapping-order-form .row .col form label[data-v-713f20f9] {\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n.order-form .wrapping-order-form .row .col form input[data-v-713f20f9] {\n  margin-bottom: 20px;\n  padding: 10px;\n  border-radius: 10px;\n  border: 0px;\n  background-color: rgba(46, 51, 51, 0.1);\n}\n.order-form .wrapping-order-form .row .col form #total_amount[data-v-713f20f9] {\n  background-color: white;\n}\n@media (min-width: 992px) {\n.order-form[data-v-713f20f9] {\n    width: 100%;\n    height: 100%;\n}\n.wrapping-order-form[data-v-713f20f9] {\n    width: 100%;\n    height: calc(100vh - 150px);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n}\n}", ""]);
 
 // exports
 
@@ -5688,7 +5688,7 @@ var render = function () {
   return _c("div", { staticClass: "order-form" }, [
     _c("div", { staticClass: "container" }, [
       _vm.success
-        ? _c("div", [
+        ? _c("div", { staticClass: "py-5" }, [
             _vm._v("Grazie per aver inserito i tuoi dati, \n            "),
             _c(
               "a",

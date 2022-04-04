@@ -3,7 +3,7 @@
 
         <div class="container">
 
-            <div v-if="success">Grazie per aver inserito i tuoi dati, 
+            <div v-if="success" class="py-5">Grazie per aver inserito i tuoi dati, 
                 <a class="btn m_button" :href="'/payment/' + order">
                     Procedi al pagamento
                 </a>
@@ -130,9 +130,10 @@ export default {
     margin: 30px 0;   
 
     .wrapping-order-form{
+        width: 100%;
         
         .row{
-            display: flex;
+            width: 100%;
             .col{
                 flex-grow: 1;
                 h3{
@@ -173,6 +174,10 @@ export default {
 }
 @media (min-width: 992px) { 
     .order-form{
+        width: 100%;
+        height: 100%;
+    }
+    .wrapping-order-form{
         width: 100%;
         height: calc(100vh - 150px);
         display: flex;
