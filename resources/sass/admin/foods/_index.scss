@@ -46,6 +46,12 @@
                 text-transform: uppercase;
                 font-size: 15px;
                 margin: 15px 0;
+
+                &.m_button {
+                    color: white;
+                    padding: 10px 15px;
+                    font-weight: 600;
+                }
             }
         }
     }
