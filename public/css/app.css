@@ -11334,6 +11334,12 @@ ul {
   margin: 15px 0;
 }
 
+.foods-index .foods .single-food .link.m_button {
+  color: white;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
 .create-food form {
   color: #2e3333;
 }
