@@ -1,65 +1,39 @@
 <template>
-    <!-- <div class="wrapping-cart">
-        <div class="text-cart">
-            CARRELLO
-        </div>
-        <div class="data-cart">
-            <div class="py-4 cart-item" v-for="food in selectedElement" :key="food.id">
-                <h4>
-                    {{food.name}}
-                </h4>
-                <span>
-                    {{food.quantity}}
-                </span>
-                <button @click="deleteElement(food)" class="btn btn-danger mx-4">
-                    <i class="fas fa-trash"></i>
-                </button>
+    <div id="page-cart-container">
+        <i id="cart-icon" @click="showCart = !showCart" :class=" showCart === false ? '' : 'd-none' " class="fas fa-shopping-cart">  <span>{{ selectedElement.length === 0 ? '' : selectedElement.length }}</span>  </i>
+        
+        <div :class=" showCart === false ? 'd-none' : '' " class="cart-item card">
+            <div class="card-body">
+                <i @click="showCart = !showCart" id="cart-close-icon" class="fas fa-angle-double-right"></i>
+                <h5 class="card-title">Carrello</h5>
             </div>
-            <div v-if="selectedElement.length > 0">
-                <router-link class="btn m_button link-to" :to="{ name: 'order-form' }">
+            <ul class="list-group list-group-flush">
+                <li v-if="selectedElement.length === 0" class="list-group-item">
+                    <small class="text-muted">Il tuo carrello è vuoto.</small>
+                </li>
+                <li v-for="food in selectedElement" :key="food.id" class="list-group-item">
+                    <div>
+                        <span>{{ food.name }}</span>
+                        <button @click="deleteElement(food)" class="btn btn-danger mx-2 float-right">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <small class="text-muted">Q.tà: {{ food.quantity }}</small>
+                    </div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <div class="wrapping-total-amount">
+                    <strong>Totale Ordine</strong>
+                    <div class="total-amount">{{ totalAmount.toFixed(2) }} €</div>
+                </div>
+            </div>
+            <div v-if="selectedElement.length > 0" class="card-body">
+                <router-link class="btn btn-secondary" :class="selectedElement.length > 0 ? '' : 'disabled'" :to="{ name: 'order-form' }">
                     Procedi all'ordine
-                </router-link>  
+                </router-link>
             </div>
-    
-            
-            <div class="wrapping-total-amount">
-                <strong>Totale Ordine</strong>
-                <div class="total-amount">{{ totalAmount.toFixed(2) }}</div>
-
-            </div>
-        </div>
-    </div>-->
-
-    <div class="card" style="margin-top: 35px; width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Carrello</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li v-if="selectedElement.length === 0" class="list-group-item">
-                <small class="text-muted">Il tuo carrello è vuoto.</small>
-            </li>
-            <li v-for="food in selectedElement" :key="food.id" class="list-group-item">
-                <div>
-                    <span>{{ food.name }}</span>
-                    <button @click="deleteElement(food)" class="btn btn-danger mx-2 float-right">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-                <div>
-                    <small class="text-muted">Q.tà: {{ food.quantity }}</small>
-                </div>
-            </li>
-        </ul>
-        <div class="card-body">
-            <div class="wrapping-total-amount">
-                <strong>Totale Ordine</strong>
-                <div class="total-amount">{{ totalAmount.toFixed(2) }} €</div>
-            </div>
-        </div>
-        <div v-if="selectedElement.length > 0" class="card-body">
-            <router-link class="btn btn-secondary" :class="selectedElement.length > 0 ? '' : 'disabled'" :to="{ name: 'order-form' }">
-                Procedi all'ordine
-            </router-link>
         </div>
     </div>
 
@@ -70,6 +44,7 @@
         name:'Cart',
         data: function(){
             return{
+                showCart: false,
                 foods : this.selectedElement,
                 totalAmount: 0,
             }
@@ -107,52 +82,76 @@
 <style lang="scss" scoped>
 @import '../../sass/partials/_variables.scss';
 
-// cart text
-.text-cart{
-    font-size: 20px;
-    background-color: $primary_color;
-    border: 1px solid rgba($color: #000000, $alpha: 0.1);
-    border-radius: 5px;
-    padding: 7px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-// total amount
-.data-cart{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-
-    .wrapping-total-amount{
-    border: 1px solid rgba($color: #000000, $alpha: 0.3);
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 20px;
-    
-
-        .total-amount{
-        font-size: 17px;
-        padding: 5px 10px;
-        border-radius: 5px;
-        background-color: $primary_color;
-        display: inline-block;
-        margin-left: 10px;
+#page-cart-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    #cart-icon{
+        color: #00ccbc;
         font-size: 25px;
+        padding: 10px;
+        background-color: #fff;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-box-shadow: 1px 1px 5px 0px #000000; 
+        box-shadow: 1px 1px 5px 0px #000000;
+        cursor: pointer;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        position: fixed;
+        right: -3px;
+        top: 50%;
+        z-index: 9999;
+        &:hover{
+            color: $secondary-color;
+        }
+        span{
+            padding: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+    .cart-item{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+
+        -webkit-box-shadow: 1px 1px 5px 0px #000000; 
+        box-shadow: 1px 1px 5px 0px #000000;
+
+        width: 25%;
+        #cart-close-icon{
+            float: right;
+            font-size: 25px;
+            color: #00ccbc;
+            cursor: pointer;
+            &:hover{
+                color: $secondary-color;
+            }
         }
     }
 }
 
-// wrapping cart
+@media (max-width: 1200px){
+    #page-cart-container{
+        .cart-item {
+            width: 40%;
+        }
+    }
+}
 
-.wrapping-cart{
-    padding-left: 10%;
-    width: 100%;
-    height: 100%;
+@media (max-width: 575.98px) {
+    #page-cart-container{
+        .cart-item {
+            width: 100%;
+        }
+    }
 }
 
 </style>

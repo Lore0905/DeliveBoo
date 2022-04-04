@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <div class="wrapping-restaurant" >
             <h1>{{ restaurant.name }}</h1>
             <div class="restaurant-info">
@@ -7,7 +7,7 @@
                 <span class="font-weight-bold">Telefono:</span><span class="spec-info">{{ restaurant.phone_number }}</span>
             </div>
             <div class="row">
-                <div class="col col-9 col-sm-9 selected-quantity">
+                <div class="col selected-quantity">
                     <div class="foods-box row row-cols-md-1 row-cols-lg-3">
                         <div class="py-4 cards-box" v-for="food in menu" :key="food.id">
 
@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <div class="col col-3 col-sm-3">
+                <div>
                     <Cart :selectedElement="selectedElement" @amount="receiveAmount" />
                 </div>
             </div>
@@ -217,7 +217,7 @@ export default {
     .row{
         justify-content: center;
         .selected-quantity{
-            border-right: 1px solid rgba($color: #000000, $alpha: 0.35);
+            // border-right: 1px solid rgba($color: #000000, $alpha: 0.35);
             min-height: 100%;
 
             .foods-box {
