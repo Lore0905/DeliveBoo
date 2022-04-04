@@ -4,6 +4,9 @@
         <!-- <News /> -->
         <Selection />
         <Work />
+
+        <Footer/>
+
     </div>
 </template>
 
@@ -12,6 +15,7 @@
 import Selection from '../components/Selection.vue';
 import Work from '../components/Work.vue';
 import Searchbox from '../components/Searchbox.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
     name: 'Home',
@@ -24,7 +28,8 @@ export default {
         Searchbox,
         // News,
         Selection,
-        Work
+        Work,
+        Footer
     },
     methods: {
         getRestaurants: function(){
