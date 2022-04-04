@@ -22,7 +22,7 @@
 
         {{-- Content  --}}
         <div class="content container row">
-
+            
             {{-- Form Pagamento --}}
             <div class="payment-form col-sm-12 col-lg-6">
                 <form method="post" id="payment-form" action="{{route('checkout', ['id' => $order->id])}}">
@@ -31,7 +31,7 @@
                         <label for="amount">
                             <span class="input-label">Totale:</span>
                             <div class="input-wrapper amount-wrapper">
-                                <input class="amount" readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}€">
+                                <input class="amount" readonly id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order->total_amount}}">
                             </div>
                         </label>
     

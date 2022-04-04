@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Braintree;
 use App\Order;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ConfirmedOrderMail;
+use App\Restaurant;
 
 class PaymentController extends Controller
 {
@@ -35,7 +38,8 @@ class PaymentController extends Controller
         $nonce = $request->payment_method_nonce;
 
         $order = Order::findOrFail($id);
-    
+
+
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
@@ -45,15 +49,26 @@ class PaymentController extends Controller
         ]);
         
         if ($result->success && $order->total_amount === $amount) {
+
             $transaction = $result->transaction;
             // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-            // $order->update(['payment_status' => 'Successful']);
 
             // return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
 
             $order->payment_status = 'Successful';
             $order->save();
             
+            // mail to customer & user 
+            Mail::to($order->customer_email)->send(new ConfirmedOrderMail($order));
+
+            $restaurant_email = ''; 
+            foreach($order->foods as $item) {
+
+                $restaurant_email =  $item->restaurant->user->email;
+            }
+            Mail::to($restaurant_email)->send(new ConfirmedOrderMail($order));
+
+
             return view('guest.success');
 
         } else {
