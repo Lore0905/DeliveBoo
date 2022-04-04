@@ -58,12 +58,12 @@
                         <span class="left-column">
                             Prezzo:
                         </span>
-                        {{$food->price}} $
+                        {{$food->price}} €
                     </div>
 
                     {{-- Visualizza --}}
-                    <div>
-                        <a class="link" href="{{route('admin.foods.show', ['food' => $food->id])}}">
+                    <div class="mt-2">
+                        <a class="link m_button" href="{{route('admin.foods.show', ['food' => $food->id])}}">
                             Visualizza il piatto
                         </a>
                     </div>
