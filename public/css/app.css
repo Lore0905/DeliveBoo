@@ -10998,6 +10998,10 @@ ul {
   border: 1px solid #2e3333;
 }
 
+.wrapping-body-blur {
+  filter: blur(2.5px);
+}
+
 .payment {
   background-color: #00ccbc;
   padding: 20px 0;

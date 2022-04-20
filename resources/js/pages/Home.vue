@@ -1,17 +1,19 @@
 <template>
     <div>
-        <Searchbox/>
-        <!-- <News /> -->
-        <Selection />
-        <Work />
-
-        <Footer/>
-
+        <!-- searchbox -->
+        <Searchbox @blurBody="blurPage"/>
+        <!-- selection -->
+        <div :class=" this.blur === true ? 'wrapping-body-blur' : '' ">
+            <Selection />
+        <!-- work -->
+            <Work />
+        <!-- footer -->
+            <Footer/>
+        </div>        
     </div>
 </template>
 
 <script>
-// import News from '../components/News.vue';
 import Selection from '../components/Selection.vue';
 import Work from '../components/Work.vue';
 import Searchbox from '../components/Searchbox.vue';
@@ -22,6 +24,8 @@ export default {
     data:function(){
         return{
             restaurants: [],
+            blur: false,
+            showModal: false
         }
     },
     components: {
@@ -29,7 +33,7 @@ export default {
         // News,
         Selection,
         Work,
-        Footer
+        Footer,
     },
     methods: {
         getRestaurants: function(){
@@ -37,6 +41,9 @@ export default {
             .then((response) => {
                 this.restaurants = response.data.restaurants;
             });
+        },
+        blurPage(restaurantSelectedCompleted){
+            this.blur = restaurantSelectedCompleted
         }
     },
     created: function(){

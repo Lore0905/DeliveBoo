@@ -1,6 +1,6 @@
 <template>
   <div>
-        <div class="wrapping-serchbox">
+        <div class="wrapping-serchbox" :class=" this.restaurantSelectedCompleted === true ? 'wrapping-body-blur' : '' " @click="closeSerchRestaurants()">
             <div class="container">
                 <div class="row">
 
@@ -32,7 +32,7 @@
 
                                             <!-- test button to get filtered restaurants -->
                                             <div>
-                                                <button class="btn ms_btn" @click="getRestaurants(), displaySearch = false">Cerca</button>
+                                                <button class="btn ms_btn" @click="getRestaurants(), displaySearch = false ">Cerca</button>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +73,8 @@ export default {
             restaurants: [],
             restaurantsType: [],
             displaySearch: false,
-            matchedId: [] 
+            matchedId: [],
+            restaurantSelectedCompleted: false,
         }
     },
     methods: {
@@ -124,11 +125,24 @@ export default {
                         
                        this.matchedId = []; 
                     });
-                   
+
+                    // variabile che serve per verificare quando la ricerca è conclusa
+                    this.restaurantSelectedCompleted = true;
+
+                    this.$emit('blurBody', this.restaurantSelectedCompleted)
+
                 });
 
             });
             
+        },
+        closeSerchRestaurants: function() {
+            this.restaurants = [];
+
+            this.restaurantSelectedCompleted = false;
+
+            this.$emit('blurBody', this.restaurantSelectedCompleted)
+
         },
         getTypeValue: function(n) {
             // n argument: is a number
@@ -138,7 +152,7 @@ export default {
                 // indexOf() dichiara l'indice di n presente nell'array , passandoglielo come argomento.  
                 this.array_types_id.splice(this.array_types_id.indexOf(n), 1);
             }
-        }
+        },
     },
     created: function(){
         this.getTypes();
@@ -177,7 +191,7 @@ export default {
     overflow: hidden;
     position: relative;
     padding: 50px 0px;
-    
+
     .container{
         
         .row{
@@ -215,13 +229,6 @@ export default {
             }
         }
     }
-
-    // #background-wave{
-    //     position: absolute;
-    //     bottom: 0px;
-    //     width: 100%;
-    //     height: 100%;
-    // }
 
     // Custom Popup select menu TEST
     .dropdown-test{
@@ -281,7 +288,7 @@ export default {
 }
 .restaurants-container{
     background-color: #fff;
-    min-width: 100%;
+    width: 100%;
     overflow: hidden;
     padding: 50px 0px;
 }

@@ -1,50 +1,56 @@
 <template>
-    <div class="container mb-3 mt-3 restaurant-list">
+    <div  v-if="restaurants.length > 0" id="wrapping-restaurant-list" @click="getRisolution()">
+        <div class=" mb-3 mt-3 restaurant-list">
 
-        <!-- {{-- Titolo --}} -->
-        <div v-if="restaurants.length > 0" class="restaurants-title m-3">
-            Ecco i ristoranti che possono fare al caso tuo:
-        </div>
+            <!-- {{-- Titolo --}} -->
+            <div class="restaurants-title m-3">
+                Ecco i ristoranti che possono fare al caso tuo:
+            </div>
 
-        <div class="col" v-for="item in restaurants" :key="item.id">
+            <div class="col" v-for="item in restaurants" :key="item.id">
 
-            <div class="single-box">
+                <div class="single-box">
 
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <!-- Image -->
-                            <img :src="item.image" class="img-fluid rounded-start" :alt="item.name + ' image'">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="d-md-block col-md-4 img-wrapping-restaurant">
+                                <div class="img-wrapping-restaurant-list">
+                                    <!-- Image -->
+                                    <img :src="item.image" class="img-fluid rounded-start" :alt="item.name + ' image'">
+                                </div>
+                            </div>
+                            <div class="col-md-8 wrapping-card-body">
+                                <!-- card body -->
+                                <div class="card-body">
 
-                                <!-- Name -->
-                                <h5 class="card-title">{{ item.name }}</h5>
+                                    <!-- Name -->
+                                    <h5 class="card-title">{{ item.name }}</h5>
 
-                                <!-- Tag type  -->
-                                <div class="d-flex flex-wrap mb-2 types-box">
-                                    <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                    <!-- Tag type  -->
+                                    <div class="d-flex flex-wrap mb-2 types-box">
+                                        <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                    </div>
+
+                                    <!-- Address -->
+                                    <p class="card-text">{{ item.address }}</p>
+
+                                    <!-- Phone -->
+                                    <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
                                 </div>
 
-                                <!-- Address -->
-                                <p class="card-text">{{ item.address }}</p>
-
-                                <!-- Phone -->
-                                <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
-
-                                <!-- Link -->
-                                <router-link class="float-right btn btn-secondary" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
-                                    Vai al menù
-                                </router-link>
-
+                                <!-- button -->
+                                <div class="btn-vai-menu">
+                                    <!-- Link -->
+                                    <router-link class="btn btn-primary" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
+                                        Vai al menù
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -58,7 +64,7 @@
             return{
 
             }
-        }
+        },
     }
 </script>
 
@@ -134,35 +140,73 @@
                 }
             }
         }
-        // .box-details{
-        //     margin: 10px;
-        //     display: flex;
-        //     flex-direction: column;
-        //     align-items: center;
-        //     justify-content: center;
-        //     border: 1px solid black;
-
-        //     .image{
-        //         width: 100%;
-        //         height: 100%;
-        //     }
-
-        //     .name{
-        //         font-size: 20px;
-        //         font-weight: 600;
-        //         margin-bottom: 5px;
-        //     }
-
-        //     .address, .phone{
-        //         margin-bottom: 5px;
-        //     }
-
-        //     .link{
-        //         text-transform: uppercase;
-        //         color: $secondary_color;
-        //     }
-
-        // }
     }
 }
+// wrapping section
+#wrapping-restaurant-list{
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 17px 0px 40px 6px #2E3333;
+    padding: 10px 5px;
+    width: 50%;
+    overflow-y: scroll;
+}
+
+// media query
+@media screen and (max-width: 1360px) {
+  #wrapping-restaurant-list {
+    width: 70%;
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 900px) {
+  #wrapping-restaurant-list {
+    width: 80%;
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 800px) {
+    .img-wrapping-restaurant{
+        display: none;
+    }
+}
+
+// img wrapping
+.img-wrapping-restaurant-list{
+    width: 100%;
+    height: 100% !important;
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.wrapping-card-body{
+    display: flex;
+    align-items: center;
+}
+// buttons
+.btn-vai-menu{
+    margin-right: 10%;
+
+    .btn{
+        padding: 10px 20px;
+        background-color: $secondary_color;
+        border: 0px;
+        &:hover{
+            background-color: $primary-color;
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+
 </style>

@@ -14,9 +14,10 @@
                 <li v-for="food in selectedElement" :key="food.id" class="list-group-item">
                     <div>
                         <span>{{ food.name }}</span>
-                        <button @click="deleteElement(food)" class="btn btn-danger mx-2 float-right">
+                        <button  class="btn btn-danger mx-2 float-right" @click="trash(food)">
                             <i class="fas fa-trash"></i>
                         </button>
+                        
                     </div>
                     <div>
                         <small class="text-muted">Q.tà: {{ food.quantity }}</small>
@@ -34,7 +35,35 @@
                     Procedi all'ordine
                 </router-link>
             </div>
+        </div> 
+
+        <!--MODEL  -->
+        <div v-if="showModal">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> ATTENZIONE ! </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" @click="showModal = false">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>sei sicuro di eliminare il piatto ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" @click="deleteFood()">ELIMINA</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </transition>
         </div>
+        <!-- END MODEL -->
+
     </div>
 
 </template>
@@ -47,16 +76,32 @@
                 showCart: false,
                 foods : this.selectedElement,
                 totalAmount: 0,
+                showModal: false,
+                selectedFood: {}
             }
         },
         props:{
             selectedElement: Array,
         },
         methods: {
-            deleteElement: function(food){
+            trash: function(food){
+
+                this.showModal = true;
+
+                console.log(food)
+
+                this.selectedFood = food;
+
+            },
+            deleteFood: function(){
+
+                let food = this.selectedFood
+
                 this.selectedElement.splice(this.selectedElement.indexOf(food), 1);
 
                 food.quantity = 0;
+
+                this.showModal = false;
 
             },
             updateCartAmount: function(){
@@ -152,6 +197,35 @@
             width: 100%;
         }
     }
+}
+
+// MODEL
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-footer{
+    padding: 20px 0px;
+}
+
+// trash
+.fa-trash-can{
+    width: 50px;
+    height: 50px;
+    color: white;
 }
 
 </style>
