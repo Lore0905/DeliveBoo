@@ -2940,6 +2940,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantMenu',
@@ -3134,6 +3136,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3172,7 +3178,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#page-cart-container[data-v-b7f93bea] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea] {\n  color: #00ccbc;\n  font-size: 25px;\n  padding: 10px;\n  background-color: #fff;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: 1px 1px 5px 0px #000000;\n  cursor: pointer;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  right: -3px;\n  top: 50%;\n  z-index: 9999;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n#page-cart-container #cart-icon span[data-v-b7f93bea] {\n  padding: 5px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-weight: 500;\n  font-size: 20px;\n}\n#page-cart-container .cart-item[data-v-b7f93bea] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  z-index: 9999;\n  box-shadow: 1px 1px 5px 0px #000000;\n  width: 25%;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea] {\n  float: right;\n  font-size: 25px;\n  color: #00ccbc;\n  cursor: pointer;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n@media (max-width: 1200px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 40%;\n}\n}\n@media (max-width: 575.98px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 100%;\n}\n}\n.modal-mask[data-v-b7f93bea] {\n  position: fixed;\n  z-index: 9998;\n  top: 0px;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: table;\n  transition: opacity 0.3s ease;\n}\n.modal-wrapper[data-v-b7f93bea] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.modal-footer[data-v-b7f93bea] {\n  padding: 20px 0px;\n}\n.fa-trash-can[data-v-b7f93bea] {\n  width: 50px;\n  height: 50px;\n  color: white;\n}", ""]);
+exports.push([module.i, "#page-cart-container[data-v-b7f93bea] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea] {\n  color: #00ccbc;\n  font-size: 25px;\n  padding: 10px;\n  background-color: #fff;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: 1px 1px 5px 0px #000000;\n  cursor: pointer;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  right: -3px;\n  top: 50%;\n  z-index: 9999;\n}\n#page-cart-container #cart-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n#page-cart-container #cart-icon span[data-v-b7f93bea] {\n  padding: 5px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-weight: 500;\n  font-size: 20px;\n}\n#page-cart-container .cart-item[data-v-b7f93bea] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  z-index: 9999;\n  box-shadow: 1px 1px 5px 0px #000000;\n  width: 25%;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea] {\n  float: right;\n  font-size: 25px;\n  color: #00ccbc;\n  cursor: pointer;\n}\n#page-cart-container .cart-item #cart-close-icon[data-v-b7f93bea]:hover {\n  color: #2e3333;\n}\n@media (max-width: 1200px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 40%;\n}\n}\n@media (max-width: 575.98px) {\n#page-cart-container .cart-item[data-v-b7f93bea] {\n    width: 100%;\n}\n}\n.modal-mask[data-v-b7f93bea] {\n  position: fixed;\n  z-index: 9998;\n  top: 0px;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: table;\n  transition: opacity 0.3s ease;\n}\n.modal-wrapper[data-v-b7f93bea] {\n  display: table-cell;\n  vertical-align: top;\n}\n.modal-footer[data-v-b7f93bea] {\n  padding: 20px 0px;\n}\n.fa-trash-can[data-v-b7f93bea] {\n  width: 50px;\n  height: 50px;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -3229,7 +3235,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .card-body .types-box .single-type[data-v-77ddbf26] {\n  border-radius: 10px;\n  padding: 2px 3px;\n  text-transform: capitalize;\n  font-size: 12px;\n  font-family: \"Nunito\", sans-serif;\n  color: white;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.italiano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.internazionale[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.cinese[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.giapponese[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.messicano[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.indiano[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.americano[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.thailandese[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.vegetariano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.sushi[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.greco[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pokeria[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.fast-food[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pizza[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n  position: fixed;\n  top: 10vh;\n  left: 50%;\n  transform: translate(-50%);\n  background-color: white;\n  border-radius: 10px;\n  z-index: 100;\n  box-shadow: 17px 0px 40px 6px #2E3333;\n  padding: 10px 5px;\n  width: 50%;\n  overflow-y: scroll;\n}\n@media screen and (max-width: 1360px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 70%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 900px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 80%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 800px) {\n.img-wrapping-restaurant[data-v-77ddbf26] {\n    display: none;\n}\n}\n.img-wrapping-restaurant-list[data-v-77ddbf26] {\n  width: 100%;\n  height: 100% !important;\n}\n.img-wrapping-restaurant-list img[data-v-77ddbf26] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n.wrapping-card-body[data-v-77ddbf26] {\n  display: flex;\n  align-items: center;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n  margin-right: 10%;\n}\n.btn-vai-menu .btn[data-v-77ddbf26] {\n  padding: 10px 20px;\n  background-color: #2e3333;\n  border: 0px;\n}\n.btn-vai-menu .btn[data-v-77ddbf26]:hover {\n  background-color: #00ccbc;\n  transform: scale(1.1);\n}", ""]);
+exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .card-body .types-box .single-type[data-v-77ddbf26] {\n  border-radius: 10px;\n  padding: 2px 3px;\n  text-transform: capitalize;\n  font-size: 12px;\n  font-family: \"Nunito\", sans-serif;\n  color: white;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.italiano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.internazionale[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.cinese[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.giapponese[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.messicano[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.indiano[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.americano[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.thailandese[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.vegetariano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.sushi[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.greco[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pokeria[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.fast-food[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pizza[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n  position: fixed;\n  top: 10vh;\n  left: 50%;\n  transform: translate(-50%);\n  background-color: white;\n  border-radius: 10px;\n  z-index: 100;\n  box-shadow: 17px 0px 40px 6px #2E3333;\n  padding: 10px 5px;\n  width: 50%;\n  max-height: 80vh;\n  overflow-y: scroll;\n  overflow-x: hidden;\n}\n@media screen and (max-width: 1360px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 70%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 900px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 80%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 800px) {\n.img-wrapping-restaurant[data-v-77ddbf26] {\n    display: none;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 90%;\n    overflow-y: scroll;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n    margin: 0px;\n}\n.btn-vai-menu #btn-smaller-menu[data-v-77ddbf26] {\n    padding: 5px 10px;\n}\n}\n.img-wrapping-restaurant-list[data-v-77ddbf26] {\n  width: 100%;\n  height: 100% !important;\n}\n.img-wrapping-restaurant-list img[data-v-77ddbf26] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n.wrapping-card-body[data-v-77ddbf26] {\n  display: flex;\n  align-items: center;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n  margin-right: 10%;\n}\n.btn-vai-menu .btn[data-v-77ddbf26] {\n  padding: 10px 20px;\n  background-color: #2e3333;\n  border: 0px;\n}\n.btn-vai-menu .btn[data-v-77ddbf26]:hover {\n  background-color: #00ccbc;\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
@@ -3324,7 +3330,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}\n.card-title[data-v-14400205] {\n  border: 1px solid rgba(0, 0, 0, 0.5);\n  color: #00ccbc;\n  padding: 5px 10px;\n  border-radius: 10px;\n  margin: 20px 0px;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".wrapping-restaurant[data-v-14400205] {\n  padding: 50px;\n}\n.wrapping-restaurant .restaurant-info .spec-info[data-v-14400205] {\n  margin: 0 10px;\n}\n.wrapping-restaurant .row[data-v-14400205] {\n  justify-content: center;\n}\n.wrapping-restaurant .row .selected-quantity[data-v-14400205] {\n  min-height: 100%;\n}\n.wrapping-restaurant .row .selected-quantity .foods-box .cards-box .card[data-v-14400205] {\n  margin: 10px;\n}\n.card-title[data-v-14400205] {\n  border: 1px solid rgba(0, 0, 0, 0.5);\n  color: #00ccbc;\n  padding: 5px 10px;\n  border-radius: 10px;\n  margin: 20px 0px;\n  text-align: center;\n}\n.img-wrapping-card[data-v-14400205] {\n  width: 100%;\n  height: 200px;\n}\n.img-wrapping-card img[data-v-14400205] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -5344,6 +5350,7 @@ var render = function () {
                                   {
                                     staticClass: "btn btn-primary",
                                     attrs: {
+                                      id: "btn-smaller-menu",
                                       to: {
                                         name: "restaurant-menu",
                                         params: { slug: item.slug },
@@ -6229,10 +6236,12 @@ var render = function () {
                 { key: food.id, staticClass: "py-4 cards-box" },
                 [
                   _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: { src: food.img, alt: "Card image cap" },
-                    }),
+                    _c("div", { staticClass: "img-wrapping-card" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: { src: food.img, alt: "Card image cap" },
+                      }),
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
                       _c("h5", { staticClass: "card-title font-weight-bold" }, [
@@ -6409,6 +6418,8 @@ var render = function () {
     "div",
     { staticClass: "wrapping-content" },
     [
+      _vm._m(0),
+      _vm._v(" "),
       _c("Header"),
       _vm._v(" "),
       _c(
@@ -6431,7 +6442,22 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("head", [
+      _c("link", {
+        attrs: {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "../../../public/img/logo-senza-scritta.png",
+        },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 

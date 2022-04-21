@@ -11325,8 +11325,19 @@ ul {
   color: #00ccbc;
 }
 
+.restaurant-show .single-restaurant .image {
+  width: 50%;
+  height: 300px;
+  margin: auto;
+}
+
 .restaurant-show .single-restaurant .image img {
-  width: 80%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 .foods-index {
@@ -11347,11 +11358,16 @@ ul {
 
 .foods-index .foods .single-food .food-img {
   width: 100%;
+  height: 200px;
 }
 
 .foods-index .foods .single-food .food-img img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .foods-index .foods .single-food .food-name {

@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('/img/logo-senza-scritta.png') }}">
 </head>
 <body>
     <div id="app">

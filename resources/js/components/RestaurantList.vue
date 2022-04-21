@@ -41,7 +41,7 @@
                                 <!-- button -->
                                 <div class="btn-vai-menu">
                                     <!-- Link -->
-                                    <router-link class="btn btn-primary" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
+                                    <router-link class="btn btn-primary" id="btn-smaller-menu"  :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
                                         Vai al menù
                                     </router-link>
                                 </div>
@@ -154,7 +154,9 @@
     box-shadow: 17px 0px 40px 6px #2E3333;
     padding: 10px 5px;
     width: 50%;
+    max-height: 80vh; 
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 // media query
@@ -173,6 +175,18 @@
 @media screen and (max-width: 800px) {
     .img-wrapping-restaurant{
         display: none;
+    }
+    #wrapping-restaurant-list {
+        width: 90%;
+        overflow-y: scroll;
+    }
+    // buttons
+    .btn-vai-menu{
+        margin: 0px;
+
+        #btn-smaller-menu{
+            padding: 5px 10px;
+        }
     }
 }
 

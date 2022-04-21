@@ -13,7 +13,9 @@
 
                             <!-- card -->
                             <div class="card">
-                                <img class="card-img-top" :src="food.img" alt="Card image cap">
+                                <div class="img-wrapping-card">
+                                    <img class="card-img-top" :src="food.img" alt="Card image cap">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title font-weight-bold">{{food.name}}</h5>
                                     <p class="card-text">{{food.descriptions}}</p>
@@ -244,5 +246,18 @@ export default {
     border-radius: 10px;
     margin: 20px 0px;
     text-align: center;
+}
+
+// img wrapping card
+// img wrapping
+.img-wrapping-card{
+    width: 100%;
+    height: 200px;
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>>
