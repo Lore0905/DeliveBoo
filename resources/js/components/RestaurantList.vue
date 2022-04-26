@@ -23,23 +23,48 @@
                                 <!-- card body -->
                                 <div class="card-body">
 
-                                    <!-- Name -->
-                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <!-- modalità per dekstop / tablet -->
+                                    <div class="d-none d-sm-none d-md-block">
 
-                                    <!-- Tag type  -->
-                                    <div class="d-flex flex-wrap mb-2 types-box">
-                                        <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                        <!-- Name -->
+                                        <h5 class="card-title">{{ item.name }}</h5>
+
+                                        <!-- Tag type  -->
+                                        <div class="d-flex flex-wrap mb-2 types-box">
+                                            <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                        </div>
+
+                                        <!-- Address -->
+                                        <p class="card-text">{{ item.address }}</p>
+
+                                        <!-- Phone -->
+                                        <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
+
                                     </div>
 
-                                    <!-- Address -->
-                                    <p class="card-text">{{ item.address }}</p>
 
-                                    <!-- Phone -->
-                                    <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
+                                    <!-- router per modalità mobile-->
+                                    <router-link id="link-m-mobile-restaurants" class="d-block d-sm-block d-md-none" :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
+
+                                        <!-- Name -->
+                                        <h5 class="card-title">{{ item.name }}</h5>
+
+                                        <!-- Tag type  -->
+                                        <div class="d-flex flex-wrap mb-2 types-box">
+                                            <span class="mr-2 mb-1 single-type" :class="element.slug" v-for="element in item.types" :key="element.id"> {{element.name}} </span>
+                                        </div>
+
+                                        <!-- Address -->
+                                        <p class="card-text">{{ item.address }}</p>
+
+                                        <!-- Phone -->
+                                        <p class="card-text"><small class="text-muted"><i class="fas fa-phone-alt"></i> {{ item.phone_number }}</small></p>
+
+                                    </router-link>
                                 </div>
 
                                 <!-- button -->
-                                <div class="btn-vai-menu">
+                                <div class="btn-vai-menu d-none d-sm-none d-md-block">
                                     <!-- Link -->
                                     <router-link class="btn btn-primary" id="btn-smaller-menu"  :to="{name: 'restaurant-menu', params: {slug: item.slug} }">
                                         Vai al menù
@@ -83,8 +108,11 @@
     }
 
     .single-box{
-
         .card-body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
             .types-box {
                 .single-type {
                     // background-color: $primary_color;
@@ -158,6 +186,9 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+#link-m-mobile-restaurants{
+    color: black;
+}
 
 // media query
 @media screen and (max-width: 1360px) {
@@ -220,6 +251,8 @@
         }
     }
 }
+
+
 
 
 

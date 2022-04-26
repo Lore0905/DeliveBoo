@@ -56,8 +56,6 @@
                             <label for="total_amount"><strong>Totale</strong></label>
                             <input v-model="totalAmount" class="" disabled type="text" name="total_amount" id="total_amount">
 
-                            <!-- <input value="{{totalAmount}}" class="" disabled type="text" name="total_amount" id="total_amount"> -->
-
                             <button class="my-4 btn m_button_form_create" type="submit" @click.prevent="sendOrder()">
                                 Invia
                             </button>

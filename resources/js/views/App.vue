@@ -1,10 +1,6 @@
 <template>
 
     <div class="wrapping-content">
-
-        <head>
-            <link rel="icon" type="image/x-icon" href="../../../public/img/logo-senza-scritta.png">
-        </head>
         
         <Header />
 

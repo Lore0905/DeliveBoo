@@ -2281,6 +2281,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantList',
   props: {
@@ -2824,8 +2849,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'OrderForm',
   data: function data() {
@@ -3136,10 +3159,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3235,7 +3254,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .card-body .types-box .single-type[data-v-77ddbf26] {\n  border-radius: 10px;\n  padding: 2px 3px;\n  text-transform: capitalize;\n  font-size: 12px;\n  font-family: \"Nunito\", sans-serif;\n  color: white;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.italiano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.internazionale[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.cinese[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.giapponese[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.messicano[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.indiano[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.americano[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.thailandese[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.vegetariano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.sushi[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.greco[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pokeria[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.fast-food[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pizza[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n  position: fixed;\n  top: 10vh;\n  left: 50%;\n  transform: translate(-50%);\n  background-color: white;\n  border-radius: 10px;\n  z-index: 100;\n  box-shadow: 17px 0px 40px 6px #2E3333;\n  padding: 10px 5px;\n  width: 50%;\n  max-height: 80vh;\n  overflow-y: scroll;\n  overflow-x: hidden;\n}\n@media screen and (max-width: 1360px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 70%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 900px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 80%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 800px) {\n.img-wrapping-restaurant[data-v-77ddbf26] {\n    display: none;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 90%;\n    overflow-y: scroll;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n    margin: 0px;\n}\n.btn-vai-menu #btn-smaller-menu[data-v-77ddbf26] {\n    padding: 5px 10px;\n}\n}\n.img-wrapping-restaurant-list[data-v-77ddbf26] {\n  width: 100%;\n  height: 100% !important;\n}\n.img-wrapping-restaurant-list img[data-v-77ddbf26] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n.wrapping-card-body[data-v-77ddbf26] {\n  display: flex;\n  align-items: center;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n  margin-right: 10%;\n}\n.btn-vai-menu .btn[data-v-77ddbf26] {\n  padding: 10px 20px;\n  background-color: #2e3333;\n  border: 0px;\n}\n.btn-vai-menu .btn[data-v-77ddbf26]:hover {\n  background-color: #00ccbc;\n  transform: scale(1.1);\n}", ""]);
+exports.push([module.i, ".restaurant-list[data-v-77ddbf26] {\n  color: #2e3333;\n}\n.restaurant-list .restaurants-title[data-v-77ddbf26] {\n  font-size: 35px;\n  font-weight: 600;\n  font-style: italic;\n  color: #2e3333;\n}\n.restaurant-list .single-box .card-body[data-v-77ddbf26] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.restaurant-list .single-box .card-body .types-box .single-type[data-v-77ddbf26] {\n  border-radius: 10px;\n  padding: 2px 3px;\n  text-transform: capitalize;\n  font-size: 12px;\n  font-family: \"Nunito\", sans-serif;\n  color: white;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.italiano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.internazionale[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.cinese[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.giapponese[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.messicano[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.indiano[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.americano[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.thailandese[data-v-77ddbf26] {\n  background-color: #38c172;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.vegetariano[data-v-77ddbf26] {\n  background-color: #3490dc;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.sushi[data-v-77ddbf26] {\n  background-color: #6574cd;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.greco[data-v-77ddbf26] {\n  background-color: #9561e2;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pokeria[data-v-77ddbf26] {\n  background-color: #f66d9b;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.fast-food[data-v-77ddbf26] {\n  background-color: #e3342f;\n}\n.restaurant-list .single-box .card-body .types-box .single-type.pizza[data-v-77ddbf26] {\n  background-color: #f6993f;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n  position: fixed;\n  top: 10vh;\n  left: 50%;\n  transform: translate(-50%);\n  background-color: white;\n  border-radius: 10px;\n  z-index: 100;\n  box-shadow: 17px 0px 40px 6px #2E3333;\n  padding: 10px 5px;\n  width: 50%;\n  max-height: 80vh;\n  overflow-y: scroll;\n  overflow-x: hidden;\n}\n#link-m-mobile-restaurants[data-v-77ddbf26] {\n  color: black;\n}\n@media screen and (max-width: 1360px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 70%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 900px) {\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 80%;\n    overflow-y: scroll;\n}\n}\n@media screen and (max-width: 800px) {\n.img-wrapping-restaurant[data-v-77ddbf26] {\n    display: none;\n}\n#wrapping-restaurant-list[data-v-77ddbf26] {\n    width: 90%;\n    overflow-y: scroll;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n    margin: 0px;\n}\n.btn-vai-menu #btn-smaller-menu[data-v-77ddbf26] {\n    padding: 5px 10px;\n}\n}\n.img-wrapping-restaurant-list[data-v-77ddbf26] {\n  width: 100%;\n  height: 100% !important;\n}\n.img-wrapping-restaurant-list img[data-v-77ddbf26] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n.wrapping-card-body[data-v-77ddbf26] {\n  display: flex;\n  align-items: center;\n}\n.btn-vai-menu[data-v-77ddbf26] {\n  margin-right: 10%;\n}\n.btn-vai-menu .btn[data-v-77ddbf26] {\n  padding: 10px 20px;\n  background-color: #2e3333;\n  border: 0px;\n}\n.btn-vai-menu .btn[data-v-77ddbf26]:hover {\n  background-color: #00ccbc;\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
@@ -5304,46 +5323,138 @@ var render = function () {
                           "div",
                           { staticClass: "col-md-8 wrapping-card-body" },
                           [
-                            _c("div", { staticClass: "card-body" }, [
-                              _c("h5", { staticClass: "card-title" }, [
-                                _vm._v(_vm._s(item.name)),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "d-flex flex-wrap mb-2 types-box",
-                                },
-                                _vm._l(item.types, function (element) {
-                                  return _c(
-                                    "span",
-                                    {
-                                      key: element.id,
-                                      staticClass: "mr-2 mb-1 single-type",
-                                      class: element.slug,
+                            _c(
+                              "div",
+                              { staticClass: "card-body" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "d-none d-sm-none d-md-block",
+                                  },
+                                  [
+                                    _c("h5", { staticClass: "card-title" }, [
+                                      _vm._v(_vm._s(item.name)),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "d-flex flex-wrap mb-2 types-box",
+                                      },
+                                      _vm._l(item.types, function (element) {
+                                        return _c(
+                                          "span",
+                                          {
+                                            key: element.id,
+                                            staticClass:
+                                              "mr-2 mb-1 single-type",
+                                            class: element.slug,
+                                          },
+                                          [
+                                            _vm._v(
+                                              " " + _vm._s(element.name) + " "
+                                            ),
+                                          ]
+                                        )
+                                      }),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text" }, [
+                                      _vm._v(_vm._s(item.address)),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text" }, [
+                                      _c(
+                                        "small",
+                                        { staticClass: "text-muted" },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-phone-alt",
+                                          }),
+                                          _vm._v(
+                                            " " + _vm._s(item.phone_number)
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "d-block d-sm-block d-md-none",
+                                    attrs: {
+                                      id: "link-m-mobile-restaurants",
+                                      to: {
+                                        name: "restaurant-menu",
+                                        params: { slug: item.slug },
+                                      },
                                     },
-                                    [_vm._v(" " + _vm._s(element.name) + " ")]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(_vm._s(item.address)),
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _c("small", { staticClass: "text-muted" }, [
-                                  _c("i", { staticClass: "fas fa-phone-alt" }),
-                                  _vm._v(" " + _vm._s(item.phone_number)),
-                                ]),
-                              ]),
-                            ]),
+                                  },
+                                  [
+                                    _c("h5", { staticClass: "card-title" }, [
+                                      _vm._v(_vm._s(item.name)),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "d-flex flex-wrap mb-2 types-box",
+                                      },
+                                      _vm._l(item.types, function (element) {
+                                        return _c(
+                                          "span",
+                                          {
+                                            key: element.id,
+                                            staticClass:
+                                              "mr-2 mb-1 single-type",
+                                            class: element.slug,
+                                          },
+                                          [
+                                            _vm._v(
+                                              " " + _vm._s(element.name) + " "
+                                            ),
+                                          ]
+                                        )
+                                      }),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text" }, [
+                                      _vm._v(_vm._s(item.address)),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text" }, [
+                                      _c(
+                                        "small",
+                                        { staticClass: "text-muted" },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-phone-alt",
+                                          }),
+                                          _vm._v(
+                                            " " + _vm._s(item.phone_number)
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
                             _c(
                               "div",
-                              { staticClass: "btn-vai-menu" },
+                              {
+                                staticClass:
+                                  "btn-vai-menu d-none d-sm-none d-md-block",
+                              },
                               [
                                 _c(
                                   "router-link",
@@ -6418,8 +6529,6 @@ var render = function () {
     "div",
     { staticClass: "wrapping-content" },
     [
-      _vm._m(0),
-      _vm._v(" "),
       _c("Header"),
       _vm._v(" "),
       _c(
@@ -6442,22 +6551,7 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("head", [
-      _c("link", {
-        attrs: {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "../../../public/img/logo-senza-scritta.png",
-        },
-      }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
