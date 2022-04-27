@@ -11044,13 +11044,18 @@ ul {
 
 .content {
   margin: 150px auto;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .content .payment-form {
-  border: 2px solid #00ccbc;
+  border: 2px solid #337bff;
   border-radius: 8px;
   padding: 10px;
   margin-top: 20px;
+  background-color: white;
 }
 
 .content .payment-form .input-label {
@@ -11067,7 +11072,6 @@ ul {
 
 .content .summary {
   margin-top: 20px;
-  border: 2px solid #00ccbc;
   border-radius: 8px;
   padding: 20px;
   font-size: 18px;
@@ -11094,6 +11098,24 @@ ul {
 .content .summary .phone i,
 .content .summary .order i {
   padding-right: 5px;
+}
+
+.content .summary .order .wrapping-order {
+  margin: 20px;
+  padding: 7px 25px;
+  border-radius: 10px;
+  background-color: #2e3333;
+  border: 2px solid white;
+  display: inline-block;
+}
+
+.content .wave-background {
+  position: absolute;
+  width: 100%;
+  height: 70vh;
+  top: 0px;
+  left: 0px;
+  z-index: -10000;
 }
 
 .success .main-text {
