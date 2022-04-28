@@ -11462,6 +11462,9 @@ ul {
   text-align: center;
   border-radius: 10px;
   padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 18px 7px 45px -13px #000000;
 }
 
 .food-show .single-food .food-name {
@@ -11489,6 +11492,11 @@ ul {
 .food-show .single-food .img img {
   width: 80%;
   border-radius: 10px;
+}
+
+.destroy-button-show-food {
+  padding: 16px 25px;
+  border-radius: 8px;
 }
 
 .food-edit {
