@@ -13,12 +13,11 @@
             margin-bottom: 20px;
             padding: 10px;
             border-radius: 10px;
-            border: 0px;
-            background-color: rgba($color: $secondary_color, $alpha: 0.1);
+            border: 1px solid rgba($color: $secondary_color, $alpha: 0.1);
         }  
         
         input[type=file]{
-            background-color: rgba($color: $secondary_color, $alpha: 0.5);
+            
             font-family: 'Nunito';
         }
 

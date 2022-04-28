@@ -50,7 +50,7 @@
                                 <i class="fas fa-money-bill-alt"></i>
                                 Prezzo:
                             </span>
-                            {{$food->price}}
+                            <strong>{{$food->price}}</strong>           
                         </div>
                     </div>
 
